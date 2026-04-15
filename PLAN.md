@@ -1,6 +1,6 @@
-# Llama-2-13B XPU 训练
+# Llama-2-13B DCU 训练
 
-曙光项目：在国产 XPU（昆仑芯 P800）上验证大模型训练能力。
+曙光项目：在国产 DCU 上验证大模型训练能力。
 
 **当前状态**: ✅ PT 预训练已跑通, ✅ SFT 全量微调已跑通, ✅ LoRA 已跑通, ✅ 推理验证完成
 
@@ -11,7 +11,7 @@
 ## 目录结构
 
 ```
-llama3_xpu_pretrain/
+llama3_dcu_pretrain/
 ├── configs/
 │   ├── pt/                     # 预训练配置
 │   │   ├── train.yaml          # 13B 基准配置

@@ -2,7 +2,7 @@
 
 ## 1. 背景
 
-以 Llama-2-13B 为基础，通过等比扩张方式构建千亿级参数模型，验证国产 XPU 的大模型训练能力。
+以 Llama-2-13B 为基础，通过等比扩张方式构建千亿级参数模型，验证国产 DCU 的大模型训练能力。
 
 ---
 
@@ -266,7 +266,7 @@ recompute_num_layers: 20
 bf16: true
 
 # device
-device: xpu
+device: gpu
 ```
 
 ### 7.4 创建启动脚本
@@ -275,15 +275,14 @@ device: xpu
 
 ```bash
 #!/bin/bash
-PROJECT_ROOT=/root/paddlejob/workspace/env_run/liuyi39/hygon_2030/llama3_xpu_pretrain
-cd $PROJECT_ROOT
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
+cd "$PROJECT_ROOT"
 
-source /root/paddlejob/workspace/env_run/liuyi39/hygon_2030/venv/bin/activate
+source /public/home/baidu_test/hygon_2030/py310/bin/activate
 
 # 16卡配置
-export XPU_VISIBLE_DEVICES="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15"
-export BKCL_TIMEOUT=2000
-export BKCL_SOCKET_IFNAME=eth0
+export CUDA_VISIBLE_DEVICES="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15"
 
 NNODES=1 MASTER_ADDR=127.0.0.1 MASTER_PORT=8080 \n  paddleformers-cli train configs/train_110b.yaml 2>&1 | tee logs/train_110b.log
 ```

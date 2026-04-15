@@ -1,15 +1,16 @@
 #!/bin/bash
-PROJECT_ROOT=/root/paddlejob/workspace/env_run/liuyi39/hygon_2030/llama3_xpu_pretrain
-cd $PROJECT_ROOT
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
+VENV_DIR="/public/home/baidu_test/hygon_2030/py310"
+cd "$PROJECT_ROOT"
 
 # 激活虚拟环境
-source /root/paddlejob/workspace/env_run/liuyi39/hygon_2030/venv/bin/activate
+source "$VENV_DIR/bin/activate"
 
-# XPU 配置 (4卡)
-export XPU_VISIBLE_DEVICES="0,1,2,3"
-export BKCL_TIMEOUT=1000
-export BKCL_SOCKET_IFNAME=eth0
+# GPU/DCU 配置 (4卡)
+export CUDA_VISIBLE_DEVICES="0"
 export PYTHONUNBUFFERED=1
 
 # 分布式配置
+mkdir -p logs/pt
 paddleformers-cli train configs/pt/train.yaml > logs/pt/train.log 2>&1

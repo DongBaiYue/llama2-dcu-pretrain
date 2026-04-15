@@ -42,4 +42,4 @@ recompute_num_layers: 1
 bf16: true
 
 # device
-device: xpu
+device: gpu

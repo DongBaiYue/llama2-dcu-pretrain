@@ -11,6 +11,7 @@ packing: true
 ### model
 model_name_or_path: ./models/Llama-2-13b
 _attn_implementation: flashmask
+fuse_rms_norm: false
 
 ### finetuning
 stage: SFT
@@ -45,4 +46,4 @@ recompute_num_layers: 1
 bf16: true
 
 # device
-device: xpu
+device: gpu

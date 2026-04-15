@@ -13,6 +13,7 @@ packing: true
 ### model
 model_name_or_path: ./models/Llama-2-26B
 _attn_implementation: flashmask
+fuse_rms_norm: false
 continue_training: false
 lora_rank: 8
 lora_alpha: 16
@@ -50,4 +51,4 @@ recompute_num_layers: 1
 bf16: true
 
 # device
-device: xpu
+device: gpu
