@@ -2,7 +2,8 @@
 models/
 checkpoints/
 data/
-logs/
+logs/*
+!logs/*/*.log
 paddleformers_dist_log/
 
 # Python
