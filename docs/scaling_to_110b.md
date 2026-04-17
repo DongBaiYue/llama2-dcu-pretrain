@@ -236,7 +236,7 @@ max_seq_len: 2048          # 110B 减少 seq_len 降低显存
 
 ### model
 model_name_or_path: ./models/Llama-2-110B
-_attn_implementation: flashmask
+_attn_implementation: eager
 continue_training: false
 
 ### finetuning

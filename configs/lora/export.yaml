@@ -1,7 +1,6 @@
 ### model
 lora: true
 model_name_or_path: ./models/Llama-2-13b
-fuse_rms_norm: false
 output_dir: ./checkpoints/lora/llama2-13b-lora
 
 device: gpu

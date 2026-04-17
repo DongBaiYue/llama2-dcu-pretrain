@@ -10,8 +10,7 @@ max_seq_len: 4096
 
 ### model
 model_name_or_path: ./models/Llama-2-26B
-_attn_implementation: flashmask
-fuse_rms_norm: false
+_attn_implementation: eager
 continue_training: false
 
 ### finetuning
@@ -30,7 +29,7 @@ save_strategy: steps
 logging_steps: 1
 gradient_accumulation_steps: 4
 logging_dir: ./logs/pt/26b
-output_dir: ./checkpoints/pt/llama2-26b-pretrain
+output_dir: ./checkpoints/pt/26b
 overwrite_output_dir: true
 
 # train
@@ -44,7 +43,7 @@ sharding: stage1
 recompute_granularity: full
 recompute_method: uniform
 recompute_num_layers: 1
-bf16: false
+bf16: true
 
 # device
 device: gpu

@@ -17,7 +17,7 @@ source /public/home/baidu_test/hygon_2030/py310/bin/activate
 git clone https://github.com/PaddlePaddle/PaddleFormers.git
 cd PaddleFormers
 pip install -e .
-# python -m pip install paddlepaddle-dcu==3.3.0 -i https://www.paddlepaddle.org.cn/packages/stable/dcu/
+# python -m pip install --pre paddlepaddle-gpu -i https://www.paddlepaddle.org.cn/packages/nightly/gpu/
 python -m pip install --pre paddlepaddle-dcu -i https://www.paddlepaddle.org.cn/packages/nightly/dcu/
 ```
 
@@ -52,14 +52,48 @@ modelscope download --model modelscope/Llama-2-13b-ms --local_dir models/Llama-2
 
 ### 26B 模型
 
-26B 由 13B 配置扩张得到：
+26B 由 13B 配置等比扩张得到。当前仓库使用 **深度翻倍** 的方式，从 40 层扩到 80 层；Tokenizer 相关文件沿用 13B。
 
 ```bash
 mkdir -p models/Llama-2-26B
-cp models/Llama-2-13b/*.json models/Llama-2-13b/*.model models/Llama-2-26B/
+
+cp models/Llama-2-13b/added_tokens.json models/Llama-2-26B/
+cp models/Llama-2-13b/config.json models/Llama-2-26B/
+cp models/Llama-2-13b/generation_config.json models/Llama-2-26B/
+cp models/Llama-2-13b/special_tokens_map.json models/Llama-2-26B/
+cp models/Llama-2-13b/tokenizer_config.json models/Llama-2-26B/
+cp models/Llama-2-13b/tokenizer.model models/Llama-2-26B/
 ```
 
-> 说明：`num_hidden_layers` 由 40 调整为 80，具体配置见 `configs/pt/train_26b.yaml`。
+这里实际修改的模型文件是 `models/Llama-2-26B/config.json`，需要将其中的 `num_hidden_layers` 从 `40` 调整为 `80`。
+
+### 52B 模型
+
+52B 使用 **2 倍深度 + 约 1.4 倍宽度** 的均衡扩张方案，适配 `node109 + node110` 两机 16 卡预训练。
+
+推荐结构：
+
+- `hidden_size: 7168`
+- `intermediate_size: 19456`
+- `num_hidden_layers: 80`
+- `num_attention_heads: 56`
+- `num_key_value_heads: 56`
+
+模型目录可直接通过脚本生成：
+
+```bash
+bash scripts/pt/prepare_52b_model.sh
+```
+
+这里实际生成并修改的模型文件是 `models/Llama-2-52B/config.json`。脚本会基于 `models/Llama-2-13b/config.json` 生成它，并将以下字段改为 52B 结构：
+
+- `hidden_size: 7168`
+- `intermediate_size: 19456`
+- `num_hidden_layers: 80`
+- `num_attention_heads: 56`
+- `num_key_value_heads: 56`
+
+同时会复制 tokenizer 相关文件；不会复制 13B 的权重索引文件。
 
 ## 4. 启动训练
 
@@ -74,6 +108,7 @@ rocm-smi
 ```bash
 bash scripts/pt/run.sh
 bash scripts/pt/run_26b.sh
+bash scripts/pt/run_52b_2node.sh
 ```
 
 ### SFT
@@ -88,6 +123,16 @@ bash scripts/sft/run_26b.sh
 ```bash
 bash scripts/lora/run.sh
 bash scripts/lora/run_26b.sh
+```
+
+### 按节点拆分执行训练脚本
+
+```bash
+# node109: 4卡任务
+bash scripts/run_all_node109.sh
+
+# node110: 8卡 / 26B 任务
+bash scripts/run_all_node110.sh
 ```
 
 ## 5. 项目结构
@@ -109,7 +154,7 @@ bash scripts/lora/run_26b.sh
 ## 6. 训练监控
 
 ```bash
-tail -f logs/pt/train.log
+tail -f logs/pt/13b.log
 watch -n 1 rocm-smi
 ```
 
@@ -117,7 +162,11 @@ watch -n 1 rocm-smi
 
 1. 训练前确认 DCU 空闲。
 2. 26B 需要 8 卡。
-3. 本仓库脚本默认使用 `/public/home/baidu_test/hygon_2030/py310` 虚拟环境。
+3. 52B 需要 `node109 + node110` 两机共 16 卡，当前采用 `mpirun` 作为双机启动方式，并通过 `NNODES`、`MASTER_ADDR`、`MASTER_PORT`、`RANK` 组装多节点训练；若未显式设置 `MASTER_ADDR`，脚本会自动解析**当前发起节点的首个 IP** 作为 master 地址。
+4. 本仓库脚本默认使用 `/public/home/baidu_test/hygon_2030/py310` 虚拟环境。
+5. 训练脚本会显式设置 `PYTHONPATH="$PROJECT_ROOT/../Paddle/build/python:${PYTHONPATH:-}"`，以优先使用本地 Paddle build。
+6. DCU 不支持 `flashmask`，配置中的 `_attn_implementation` 请使用 `eager`。
+7. 当前配置中不要再使用 `fuse_rms_norm`，否则 `paddleformers-cli` 会报参数解析错误。
 
 ## 8. 参考资料
 
