@@ -6,8 +6,8 @@ max_seq_len: 4096
 
 ### model
 model_name_or_path: ./models/Llama-2-13b
-# DCU 不支持 flashmask
-_attn_implementation: eager
+# GPU 支持 flashmask 加速
+_attn_implementation: flashmask
 continue_training: false
 
 ### finetuning
@@ -25,8 +25,8 @@ save_steps: 100
 save_strategy: steps
 logging_steps: 1
 gradient_accumulation_steps: 4
-logging_dir: ./logs/pt/13b
-output_dir: ./checkpoints/pt/13b
+logging_dir: ./logs/pt/13b_gpu
+output_dir: ./checkpoints/pt/13b_gpu
 overwrite_output_dir: true
 
 # train

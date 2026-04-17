@@ -1,32 +1,36 @@
 ### data
-dataset_type: pretrain
-input_dir: "1.0 ./data/pt/llama_openwebtext_100k"
-split: "990,10,0"
+train_dataset_type: erniekit
+eval_dataset_type: erniekit
+train_dataset_path: ./data/sft/school_math_0.25M/train.json
+train_dataset_prob: "1.0"
+eval_dataset_path: ./data/sft/school_math_0.25M/dev.json
+eval_dataset_prob: "1.0"
 max_seq_len: 4096
+packing: true
 
 ### model
 model_name_or_path: ./models/Llama-2-13b
-# DCU 不支持 flashmask
-_attn_implementation: eager
-continue_training: false
+_attn_implementation: flashmask
+lora_rank: 8
+lora_alpha: 16
 
 ### finetuning
-stage: PT
-fine_tuning: full
+stage: SFT
+fine_tuning: lora
 do_train: true
-do_eval: true
+disable_tqdm: true
 seed: 23
 per_device_train_batch_size: 1
 max_steps: 100
-eval_steps: 100
+eval_steps: 10
 evaluation_strategy: steps
 eval_iters: 10
 save_steps: 100
 save_strategy: steps
 logging_steps: 1
 gradient_accumulation_steps: 4
-logging_dir: ./logs/pt/13b
-output_dir: ./checkpoints/pt/13b
+logging_dir: ./logs/lora/13b_gpu
+output_dir: ./checkpoints/lora/13b_gpu
 overwrite_output_dir: true
 
 # train

@@ -3,10 +3,38 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
-VENV_DIR="/public/home/baidu_test/hygon_2030/py310"
-CONFIG_FILE="configs/sft/train.yaml"
-LOG_FILE="logs/sft/13b.log"
-DIST_LOG_DIR="logs/sft/13b.dist"
+VENV_DIR="$PROJECT_ROOT/../py310"
+
+# 用法: run.sh [dcu|gpu]  (默认自动检测)
+DEVICE="${1:-auto}"
+
+if [ "$DEVICE" = "auto" ]; then
+    if command -v nvidia-smi &>/dev/null; then
+        DEVICE="gpu"
+    elif command -v rocm-smi &>/dev/null; then
+        DEVICE="dcu"
+    else
+        echo "ERROR: 无法自动检测设备类型，请手动指定: run.sh [dcu|gpu]" >&2
+        exit 1
+    fi
+fi
+
+case "$DEVICE" in
+    dcu)
+        CONFIG_FILE="configs/sft/train.yaml"
+        LOG_FILE="logs/sft/13b.log"
+        DIST_LOG_DIR="logs/sft/13b.dist"
+        ;;
+    gpu)
+        CONFIG_FILE="configs/sft/train_gpu.yaml"
+        LOG_FILE="logs/sft/13b_gpu.log"
+        DIST_LOG_DIR="logs/sft/13b_gpu.dist"
+        ;;
+    *)
+        echo "ERROR: 未知设备类型 '$DEVICE', 请使用 dcu 或 gpu" >&2
+        exit 1
+        ;;
+esac
 
 cd "$PROJECT_ROOT"
 
@@ -26,6 +54,7 @@ export PYTHONUNBUFFERED=1
 mkdir -p "$(dirname "$LOG_FILE")" "$DIST_LOG_DIR"
 export PADDLEFORMERS_DIST_LOG="$DIST_LOG_DIR"
 
+echo "DEVICE=$DEVICE"
 echo "PROJECT_ROOT=$PROJECT_ROOT"
 echo "VENV_DIR=$VENV_DIR"
 echo "CONFIG_FILE=$CONFIG_FILE"
