@@ -43,6 +43,8 @@ bf16: true
 
 # checkpoint
 save_total_limit: 1
+save_rng_states: false
+save_sharded_model: true
 
 # device
 device: gpu
