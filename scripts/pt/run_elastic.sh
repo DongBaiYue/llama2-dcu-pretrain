@@ -32,18 +32,21 @@ case "$SCALE" in
         export CUDA_VISIBLE_DEVICES="0,1,2,3"
         LOG_FILE="logs/pt/13b_elastic_phase1.log"
         DIST_LOG_DIR="logs/pt/13b_elastic_phase1.dist"
-        # 4卡: TP=2, PP=2, DP=1
+        # 4卡: TP=2, PP=2, DP=1, 跑到save_steps自动保存checkpoint
         ;;
     8card)
         export CUDA_VISIBLE_DEVICES="0,1,2,3,4,5,6,7"
         LOG_FILE="logs/pt/13b_elastic_phase2.log"
         DIST_LOG_DIR="logs/pt/13b_elastic_phase2.dist"
         # 8卡: TP=2, PP=2, DP=2
+        # 停掉阶段1的训练进程
+        pkill -f "paddleformers.cli.launcher.*train_elastic" 2>/dev/null && echo "已停止阶段1训练进程" || true
+        sleep 5
         # 自动设置 resume_from_checkpoint
         LATEST=$(ls -d checkpoints/pt/13b_elastic/checkpoint-* 2>/dev/null | sort -t- -k2 -n | tail -1)
         if [ -n "$LATEST" ]; then
             echo "检测到已有checkpoint: $LATEST"
-            sed -i "s|^#* *resume_from_checkpoint:.*|resume_from_checkpoint: $LATEST|" "$CONFIG_FILE"
+            sed -i "/^# checkpoint$/a resume_from_checkpoint: $LATEST" "$CONFIG_FILE"
             echo "已自动修改YAML: resume_from_checkpoint=$LATEST"
         else
             echo "WARNING: 未检测到checkpoint，将从初始权重开始训练"

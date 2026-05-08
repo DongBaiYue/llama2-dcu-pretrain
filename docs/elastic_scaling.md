@@ -16,9 +16,7 @@
 bash scripts/pt/run_elastic.sh 4card dcu
 
 # 等待checkpoint保存后停止训练，修改YAML:
-CKPT=$(ls -d checkpoints/pt/13b_elastic/checkpoint-* | sort -t- -k2 -n | tail -1)
 sed -i "s|sharding_parallel_size: 1|sharding_parallel_size: 2|" configs/pt/train_elastic.yaml
-sed -i "s|max_steps: 20|max_steps: 40|" configs/pt/train_elastic.yaml
 # resume_from_checkpoint 由8card脚本自动设置
 
 # 阶段2: 扩容到8卡 (TP=2, PP=2, DP=2)，自动从checkpoint恢复训练
@@ -31,7 +29,8 @@ bash scripts/pt/run_elastic.sh 8card dcu
 
 | 配置项 | 阶段1 (4卡) | 阶段2 (8卡) | 说明 |
 |--------|------------|------------|------|
-| `max_steps` | 20 | 40 | 阶段1训练20步，阶段2从step 21继续到step 40 |
+| `max_steps` | 40 | 40 | 两阶段相同，保证LR schedule一致 |
+| `save_steps` | 20 | 20 | 阶段1在step 20保存checkpoint |
 | `sharding_parallel_size` | 1 | 2 | 8卡时必须为2，否则OOM |
 | `resume_from_checkpoint` | 无 | 自动设置 | 8card脚本自动检测并填入最新checkpoint路径 |
 
