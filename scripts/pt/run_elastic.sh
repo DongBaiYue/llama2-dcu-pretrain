@@ -26,16 +26,18 @@ if [ "$DEVICE" = "auto" ]; then
 fi
 
 CONFIG_FILE="configs/pt/train_elastic.yaml"
-LOG_FILE="logs/pt/13b_elastic.log"
-DIST_LOG_DIR="logs/pt/13b_elastic.dist"
 
 case "$SCALE" in
     4card)
         export CUDA_VISIBLE_DEVICES="0,1,2,3"
+        LOG_FILE="logs/pt/13b_elastic_phase1.log"
+        DIST_LOG_DIR="logs/pt/13b_elastic_phase1.dist"
         # 4卡: TP=2, PP=2, DP=1
         ;;
     8card)
         export CUDA_VISIBLE_DEVICES="0,1,2,3,4,5,6,7"
+        LOG_FILE="logs/pt/13b_elastic_phase2.log"
+        DIST_LOG_DIR="logs/pt/13b_elastic_phase2.dist"
         # 8卡: TP=2, PP=2, DP=2
         # 自动设置 resume_from_checkpoint
         LATEST=$(ls -d checkpoints/pt/13b_elastic/checkpoint-* 2>/dev/null | sort -t- -k2 -n | tail -1)
