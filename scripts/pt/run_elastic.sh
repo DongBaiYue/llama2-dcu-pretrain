@@ -53,7 +53,7 @@ sed -i "s|sharding_parallel_size: [0-9]*|sharding_parallel_size: $SHARDING_SIZE|
 echo "已设置 sharding_parallel_size=$SHARDING_SIZE"
 
 # 自动设置 resume_from_checkpoint
-LATEST=$(ls -d checkpoints/pt/13b_elastic/checkpoint-* 2>/dev/null | sort -t- -k2 -n | tail -1)
+LATEST=$(ls -d checkpoints/pt/13b_elastic/checkpoint-* 2>/dev/null | sort -t- -k2 -n | tail -1 || true)
 if [ -n "$LATEST" ]; then
     echo "检测到已有checkpoint: $LATEST"
     sed -i "/^resume_from_checkpoint:/d" "$CONFIG_FILE"
@@ -73,7 +73,8 @@ command -v paddleformers-cli >/dev/null 2>&1 || { echo "paddleformers-cli not fo
 export PYTHONPATH="$PROJECT_ROOT/../Paddle/build/python:${PYTHONPATH:-}"
 
 # 日志按规模+阶段区分（用checkpoint step，首次无checkpoint时为0）
-STEP=$(echo "$LATEST" | grep -oP '\d+$' 2>/dev/null || echo "0")
+STEP=$(echo "$LATEST" | grep -oP '\d+$' 2>/dev/null || true)
+STEP=${STEP:-0}
 LOG_FILE="logs/pt/13b_elastic_${SCALE}_step${STEP}.log"
 DIST_LOG_DIR="logs/pt/13b_elastic_${SCALE}_step${STEP}.dist"
 export PYTHONUNBUFFERED=1
