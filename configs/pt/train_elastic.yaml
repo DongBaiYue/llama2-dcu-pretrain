@@ -42,6 +42,7 @@ recompute_num_layers: 1
 bf16: true
 
 # checkpoint
+save_total_limit: 1
 
 # device
 device: gpu
