@@ -6,12 +6,11 @@ PROJECT_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
 VENV_DIR="$PROJECT_ROOT/../py310"
 
 # 用法: run_elastic.sh <scale> [dcu|gpu]
-#   scale: 4card | 8card
-#   示例:
-#     run_elastic.sh 4card gpu    # 阶段1: 4卡训练
-#     run_elastic.sh 8card gpu    # 阶段2: 扩容到8卡，自动从checkpoint恢复
+#   scale: 4card | 8card | 2node
+#   扩容: 4card → 8card → 2node
+#   缩容: 2node → 8card → 4card
 
-SCALE="${1:?用法: run_elastic.sh <4card|8card> [dcu|gpu]}"
+SCALE="${1:?用法: run_elastic.sh <4card|8card|2node> [dcu|gpu]}"
 DEVICE="${2:-auto}"
 
 if [ "$DEVICE" = "auto" ]; then
@@ -20,63 +19,80 @@ if [ "$DEVICE" = "auto" ]; then
     elif command -v rocm-smi &>/dev/null; then
         DEVICE="dcu"
     else
-        echo "ERROR: 无法自动检测设备类型，请手动指定: run_elastic.sh <4card|8card> [dcu|gpu]" >&2
-        exit 1
+        echo "ERROR: 无法自动检测设备类型，请手动指定" >&2; exit 1
     fi
 fi
 
 CONFIG_FILE="configs/pt/train_elastic.yaml"
+GPUS="0,1,2,3,4,5,6,7"
 
 case "$SCALE" in
     4card)
         export CUDA_VISIBLE_DEVICES="0,1,2,3"
-        LOG_FILE="logs/pt/13b_elastic_phase1.log"
-        DIST_LOG_DIR="logs/pt/13b_elastic_phase1.dist"
-        # 4卡: TP=2, PP=2, DP=1, 跑到save_steps自动保存checkpoint
+        SHARDING_SIZE=1
         ;;
     8card)
-        export CUDA_VISIBLE_DEVICES="0,1,2,3,4,5,6,7"
-        LOG_FILE="logs/pt/13b_elastic_phase2.log"
-        DIST_LOG_DIR="logs/pt/13b_elastic_phase2.dist"
-        # 8卡: TP=2, PP=2, DP=2
-        # 停掉阶段1的训练进程
-        pkill -f "paddleformers.cli.launcher.*train_elastic" 2>/dev/null && echo "已停止阶段1训练进程" || true
-        sleep 5
-        # 自动设置 resume_from_checkpoint
-        LATEST=$(ls -d checkpoints/pt/13b_elastic/checkpoint-* 2>/dev/null | sort -t- -k2 -n | tail -1)
-        if [ -n "$LATEST" ]; then
-            echo "检测到已有checkpoint: $LATEST"
-            sed -i "/^# checkpoint$/a resume_from_checkpoint: $LATEST" "$CONFIG_FILE"
-            echo "已自动修改YAML: resume_from_checkpoint=$LATEST"
-        else
-            echo "WARNING: 未检测到checkpoint，将从初始权重开始训练"
-        fi
+        export CUDA_VISIBLE_DEVICES="$GPUS"
+        SHARDING_SIZE=2
+        ;;
+    2node)
+        SHARDING_SIZE=4
         ;;
     *)
-        echo "ERROR: 未知规模 '$SCALE', 请使用 4card 或 8card" >&2
+        echo "ERROR: 未知规模 '$SCALE', 请使用 4card、8card 或 2node" >&2
         exit 1
         ;;
 esac
 
+# 停掉正在运行的训练进程
+pkill -f "paddleformers.cli.launcher.*train_elastic" 2>/dev/null && echo "已停止训练进程" || true
+sleep 5
+
+# 自动修改YAML: sharding_parallel_size
+sed -i "s|sharding_parallel_size: [0-9]*|sharding_parallel_size: $SHARDING_SIZE|" "$CONFIG_FILE"
+echo "已设置 sharding_parallel_size=$SHARDING_SIZE"
+
+# 自动设置 resume_from_checkpoint
+LATEST=$(ls -d checkpoints/pt/13b_elastic/checkpoint-* 2>/dev/null | sort -t- -k2 -n | tail -1)
+if [ -n "$LATEST" ]; then
+    echo "检测到已有checkpoint: $LATEST"
+    sed -i "/^resume_from_checkpoint:/d" "$CONFIG_FILE"
+    sed -i "/^# checkpoint$/a resume_from_checkpoint: $LATEST" "$CONFIG_FILE"
+    echo "已设置 resume_from_checkpoint=$LATEST"
+else
+    echo "WARNING: 未检测到checkpoint，将从初始权重开始训练"
+fi
+
 cd "$PROJECT_ROOT"
 
-[ -f "$VENV_DIR/bin/activate" ] || { echo "Virtualenv activate script not found: $VENV_DIR/bin/activate" >&2; exit 1; }
-[ -f "$CONFIG_FILE" ] || { echo "Training config not found: $CONFIG_FILE" >&2; exit 1; }
+[ -f "$VENV_DIR/bin/activate" ] || { echo "Virtualenv not found: $VENV_DIR/bin/activate" >&2; exit 1; }
+[ -f "$CONFIG_FILE" ] || { echo "Config not found: $CONFIG_FILE" >&2; exit 1; }
 
 source "$VENV_DIR/bin/activate"
-command -v paddleformers-cli >/dev/null 2>&1 || { echo "paddleformers-cli not found in current environment" >&2; exit 1; }
+command -v paddleformers-cli >/dev/null 2>&1 || { echo "paddleformers-cli not found" >&2; exit 1; }
 export PYTHONPATH="$PROJECT_ROOT/../Paddle/build/python:${PYTHONPATH:-}"
 
+# 日志按规模+阶段区分（用checkpoint step，首次无checkpoint时为0）
+STEP=$(echo "$LATEST" | grep -oP '\d+$' 2>/dev/null || echo "0")
+LOG_FILE="logs/pt/13b_elastic_${SCALE}_step${STEP}.log"
+DIST_LOG_DIR="logs/pt/13b_elastic_${SCALE}_step${STEP}.dist"
 export PYTHONUNBUFFERED=1
 mkdir -p "$(dirname "$LOG_FILE")" "$DIST_LOG_DIR"
 export PADDLEFORMERS_DIST_LOG="$DIST_LOG_DIR"
 
 echo "========== 弹性扩缩容训练 =========="
-echo "DEVICE=$DEVICE"
-echo "SCALE=$SCALE"
-echo "CUDA_VISIBLE_DEVICES=$CUDA_VISIBLE_DEVICES"
-echo "CONFIG_FILE=$CONFIG_FILE"
-echo "OUTPUT_DIR=./checkpoints/pt/13b_elastic"
+echo "DEVICE=$DEVICE  SCALE=$SCALE  CONFIG=$CONFIG_FILE"
 echo "======================================"
 
-paddleformers-cli train "$CONFIG_FILE" 2>&1 | tee "$LOG_FILE"
+if [ "$SCALE" = "2node" ]; then
+    mpirun -H f09r2n15,f09r2n16 \
+        -x PYTHONUNBUFFERED=1 \
+        -x CUDA_VISIBLE_DEVICES="$GPUS" \
+        -x PYTHONPATH="$PROJECT_ROOT/../Paddle/build/python" \
+        -x PATH \
+        -x LD_LIBRARY_PATH \
+        bash -lc "source '$VENV_DIR/bin/activate' && cd '$PROJECT_ROOT' && paddleformers-cli train '$CONFIG_FILE'" \
+        2>&1 | tee "$LOG_FILE"
+else
+    paddleformers-cli train "$CONFIG_FILE" 2>&1 | tee "$LOG_FILE"
+fi
