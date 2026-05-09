@@ -89,15 +89,16 @@ export PADDLEFORMERS_DIST_LOG="$DIST_LOG_DIR"
 echo "========== 弹性扩缩容训练 =========="
 echo "DEVICE=$DEVICE  SCALE=$SCALE  CONFIG=$CONFIG_FILE"
 echo "======================================"
-
+# -x NCCL_DEBUG=INFO
 if [ "$SCALE" = "2node" ]; then
     MASTER_ADDR="$(hostname -I 2>/dev/null | awk '{print $1}')"
     mpirun -H f09r2n15,f09r2n16 \
         -x NNODES=2 \
         -x MASTER_ADDR="$MASTER_ADDR" \
         -x NCCL_SOCKET_IFNAME=ib0 \
-        -x NCCL_IB_HCA=shca_0 \
+        -x NCCL_IB_HCA=shca_0:1,shca_1:1,shca_2:1,shca_3:1 \
         -x NCCL_IB_DISABLE=0 \
+        -x NCCL_NET_PLUGIN=shca \
         -x HSA_FORCE_FINE_GRAIN_PCIE=1 \
         -x PYTHONUNBUFFERED=1 \
         -x CUDA_VISIBLE_DEVICES="$GPUS" \
