@@ -36,7 +36,7 @@ case "$SCALE" in
         SHARDING_SIZE=2
         ;;
     2node)
-        SHARDING_SIZE=4
+        SHARDING_SIZE=2
         ;;
     *)
         echo "ERROR: 未知规模 '$SCALE', 请使用 4card、8card 或 2node" >&2
@@ -45,7 +45,12 @@ case "$SCALE" in
 esac
 
 # 停掉正在运行的训练进程
-pkill -f "paddleformers.cli.launcher.*train_elastic" 2>/dev/null && echo "已停止训练进程" || true
+if [ "$SCALE" = "2node" ]; then
+    mpirun -H f09r2n15:1,f09r2n16:1 pkill -f paddleformers.cli.launcher.*train_elastic || true
+    echo "已停止训练进程"
+else
+    pkill -f "paddleformers.cli.launcher.*train_elastic" 2>/dev/null && echo "已停止训练进程" || true
+fi
 sleep 5
 
 # 自动修改YAML: sharding_parallel_size
@@ -86,13 +91,18 @@ echo "DEVICE=$DEVICE  SCALE=$SCALE  CONFIG=$CONFIG_FILE"
 echo "======================================"
 
 if [ "$SCALE" = "2node" ]; then
+    MASTER_ADDR="$(hostname -I 2>/dev/null | awk '{print $1}')"
     mpirun -H f09r2n15,f09r2n16 \
+        -x NNODES=2 \
+        -x MASTER_ADDR="$MASTER_ADDR" \
+        -x NCCL_SOCKET_IFNAME=ib0 \
+        -x NCCL_IB_HCA=shca_0 \
+        -x NCCL_IB_DISABLE=0 \
+        -x HSA_FORCE_FINE_GRAIN_PCIE=1 \
         -x PYTHONUNBUFFERED=1 \
         -x CUDA_VISIBLE_DEVICES="$GPUS" \
-        -x PYTHONPATH="$PROJECT_ROOT/../Paddle/build/python" \
-        -x PATH \
-        -x LD_LIBRARY_PATH \
-        bash -lc "source '$VENV_DIR/bin/activate' && cd '$PROJECT_ROOT' && paddleformers-cli train '$CONFIG_FILE'" \
+        -x PYTHONPATH \
+        bash -lc "export RANK=\${OMPI_COMM_WORLD_RANK} && source '$VENV_DIR/bin/activate' && cd '$PROJECT_ROOT' && paddleformers-cli train '$CONFIG_FILE'" \
         2>&1 | tee "$LOG_FILE"
 else
     paddleformers-cli train "$CONFIG_FILE" 2>&1 | tee "$LOG_FILE"

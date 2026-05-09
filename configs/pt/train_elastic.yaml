@@ -8,6 +8,7 @@ max_seq_len: 4096
 model_name_or_path: ./models/Llama-2-13b
 _attn_implementation: eager
 continue_training: false
+share_folder: true
 
 ### finetuning
 stage: PT
@@ -35,7 +36,7 @@ learning_rate: 1.0e-4
 tensor_model_parallel_size: 2
 pipeline_model_parallel_size: 2
 sharding: stage1
-sharding_parallel_size: 1
+sharding_parallel_size: 2
 recompute_granularity: full
 recompute_method: uniform
 recompute_num_layers: 1
@@ -45,6 +46,11 @@ bf16: true
 save_total_limit: 1
 save_rng_states: false
 save_sharded_model: true
+load_sharded_model: true
+# save_checkpoint_format: flex_checkpoint
+save_checkpoint_format: sharding_io
+load_checkpoint_format: sharding_io
+save_to_hf: false
 
 # device
 device: gpu
