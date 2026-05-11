@@ -1,0 +1,2964 @@
+PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+[33m[2026-05-11 19:27:43,673] [ WARNING][0m - Due to potential compatibility issues between PaddlePaddle and PyTorch in PaddleFormers, PaddleFormers defaults `transformers.utils.import_utils.is_torch_available` and `transformers.utils.import_utils.is_torchvision_available` to False. If you need to use PyTorch in transformers or torchvision, please add `del sys.modules['transformers']` before using them.[0m
+/workspace/py310/lib/python3.10/site-packages/_distutils_hack/__init__.py:30: UserWarning: Setuptools is replacing distutils. Support for replacing an already imported distutils is deprecated. In the future, this condition will fail. Register concerns at https://github.com/pypa/setuptools/issues/new?template=distutils-deprecation.yml
+  warnings.warn(
+PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+/workspace/Paddle/build/python/paddle/distributed/launch/context/args_envs.py:54: UserWarning: Unset 'http_proxy' to ensure stable NCCL communication in distributed training (backed up as 'http_proxy_original').
+  warnings.warn(
+/workspace/Paddle/build/python/paddle/distributed/launch/context/args_envs.py:54: UserWarning: Unset 'https_proxy' to ensure stable NCCL communication in distributed training (backed up as 'https_proxy_original').
+  warnings.warn(
+LAUNCH INFO 2026-05-11 19:27:47,976 -----------  Configuration  ----------------------
+LAUNCH INFO 2026-05-11 19:27:47,976 auto_cluster_config: 0
+LAUNCH INFO 2026-05-11 19:27:47,976 auto_parallel_config: None
+LAUNCH INFO 2026-05-11 19:27:47,976 auto_tuner_json: None
+LAUNCH INFO 2026-05-11 19:27:47,976 devices: 0,1,2,3
+LAUNCH INFO 2026-05-11 19:27:47,976 elastic_level: -1
+LAUNCH INFO 2026-05-11 19:27:47,976 elastic_timeout: 30
+LAUNCH INFO 2026-05-11 19:27:47,977 enable_gpu_log: True
+LAUNCH INFO 2026-05-11 19:27:47,977 gloo_port: 6767
+LAUNCH INFO 2026-05-11 19:27:47,977 host: None
+LAUNCH INFO 2026-05-11 19:27:47,977 ips: None
+LAUNCH INFO 2026-05-11 19:27:47,977 job_id: default
+LAUNCH INFO 2026-05-11 19:27:47,977 legacy: False
+LAUNCH INFO 2026-05-11 19:27:47,977 log_dir: paddleformers_dist_log
+LAUNCH INFO 2026-05-11 19:27:47,977 log_level: INFO
+LAUNCH INFO 2026-05-11 19:27:47,977 log_overwrite: False
+LAUNCH INFO 2026-05-11 19:27:47,977 master: 127.0.0.1:8080
+LAUNCH INFO 2026-05-11 19:27:47,977 max_restart: 3
+LAUNCH INFO 2026-05-11 19:27:47,977 nnodes: 1
+LAUNCH INFO 2026-05-11 19:27:47,977 nproc_per_node: None
+LAUNCH INFO 2026-05-11 19:27:47,977 rank: 0
+LAUNCH INFO 2026-05-11 19:27:47,977 run_mode: collective
+LAUNCH INFO 2026-05-11 19:27:47,977 server_num: None
+LAUNCH INFO 2026-05-11 19:27:47,977 servers: 
+LAUNCH INFO 2026-05-11 19:27:47,977 sort_ip: False
+LAUNCH INFO 2026-05-11 19:27:47,977 start_port: 6070
+LAUNCH INFO 2026-05-11 19:27:47,977 trainer_num: None
+LAUNCH INFO 2026-05-11 19:27:47,977 trainers: 
+LAUNCH INFO 2026-05-11 19:27:47,977 training_script: /workspace/PaddleFormers/paddleformers/cli/launcher.py
+LAUNCH INFO 2026-05-11 19:27:47,978 training_script_args: ['train', 'configs/pt/train_llama3_8b.yaml']
+LAUNCH INFO 2026-05-11 19:27:47,978 with_gloo: 1
+LAUNCH INFO 2026-05-11 19:27:47,978 --------------------------------------------------
+LAUNCH INFO 2026-05-11 19:27:47,978 Job: default, mode collective, replicas 1[1:1], elastic False
+LAUNCH INFO 2026-05-11 19:27:47,979 Run Pod: cjwowp, replicas 4, status ready
+LAUNCH INFO 2026-05-11 19:27:48,032 Watching Pod: cjwowp, replicas 4, status running
+PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+[33m[2026-05-11 19:27:52,079] [ WARNING][0m - Due to potential compatibility issues between PaddlePaddle and PyTorch in PaddleFormers, PaddleFormers defaults `transformers.utils.import_utils.is_torch_available` and `transformers.utils.import_utils.is_torchvision_available` to False. If you need to use PyTorch in transformers or torchvision, please add `del sys.modules['transformers']` before using them.[0m
+/workspace/py310/lib/python3.10/site-packages/_distutils_hack/__init__.py:30: UserWarning: Setuptools is replacing distutils. Support for replacing an already imported distutils is deprecated. In the future, this condition will fail. Register concerns at https://github.com/pypa/setuptools/issues/new?template=distutils-deprecation.yml
+  warnings.warn(
+PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+[32m[2026-05-11 19:27:54,450] [    INFO][0m - user has defined resume_from_checkpoint: None[0m
+[32m[2026-05-11 19:27:54,451] [    INFO][0m - fa_version = 2 set FLAGS_flash_attn_version to 2[0m
+[33m[2026-05-11 19:27:54,451] [ WARNING][0m - sharding_parallel_size=1 means no sharding, please set sharding to empty![0m
+[2026-05-11 19:27:54,451] [    INFO] distributed_strategy.py:343 - distributed strategy initialized
+[32m[2026-05-11 19:27:54,452] [    INFO][0m - PP configs:{'micro_batch_size': 1, 'accumulate_steps': 4, 'schedule_mode': '1F1B', 'p2p_cache_shape': True, 'enable_partial_send_recv': True}, use master_grad: True[0m
+[33m[2026-05-11 19:27:54,452] [ WARNING][0m - In pipeline model, the evaluation also shares same setting with training. We will enforce that per_device_eval_batch_size=per_device_train_batch_size.[0m
+[32m[2026-05-11 19:27:54,452] [    INFO][0m - using pipeline configs:{'delay_scale_loss': True, 'dp_comm_overlap': False, 'sharding_comm_overlap': False, 'enable_timer': False, 'release_gradients': False, 'overlap_p2p_comm': False, 'clear_every_step_cache': False, 'use_batch_p2p_comm': True, 'best_unbalanced_scheduler': False, 'enable_offload_queue': False, 'use_dualpipev': False, 'forward_backward_overlap_scheduler': False, 'enable_dynamic_shape': False}[0m
+======================= Modified FLAGS detected =======================
+FLAGS(name='FLAGS_nvidia_package_dir', current_value='/workspace/Paddle/build/python/paddle/../nvidia', default_value='')
+FLAGS(name='FLAGS_cudnn_dir', current_value='/workspace/Paddle/build/python/paddle/../nvidia/cudnn/lib', default_value='')
+FLAGS(name='FLAGS_cusolver_dir', current_value='/workspace/Paddle/build/python/paddle/../nvidia/cusolver/lib', default_value='')
+FLAGS(name='FLAGS_curand_dir', current_value='/workspace/Paddle/build/python/paddle/../nvidia/curand/lib', default_value='')
+FLAGS(name='FLAGS_cupti_dir', current_value='/workspace/Paddle/build/python/paddle/../nvidia/cuda_cupti/lib', default_value='')
+FLAGS(name='FLAGS_nccl_dir', current_value='/workspace/Paddle/build/python/paddle/../nvidia/nccl/lib', default_value='')
+FLAGS(name='FLAGS_selected_gpus', current_value='0', default_value='')
+FLAGS(name='FLAGS_cusparse_dir', current_value='/workspace/Paddle/build/python/paddle/../nvidia/cusparse/lib', default_value='')
+FLAGS(name='FLAGS_enable_pir_in_executor', current_value=True, default_value=False)
+FLAGS(name='FLAGS_cublas_dir', current_value='/workspace/Paddle/build/python/paddle/../nvidia/cublas/lib', default_value='')
+FLAGS(name='FLAGS_deterministic_rng', current_value=True, default_value=False)
+=======================================================================
+I0511 19:27:54.454809 94779 tcp_store.cc:336] create libuv server at port: 35110
+I0511 19:27:54.455574 94779 tcp_utils.cc:132] Successfully connected to 10.213.179.22:35110
+I0511 19:27:57.433866 94779 process_group_nccl.cc:155] ProcessGroupNCCL pg_timeout_ 1800000
+I0511 19:27:57.433951 94779 process_group_nccl.cc:156] ProcessGroupNCCL nccl_comm_init_option_ 0
+I0511 19:27:57.434549 94779 process_group_nccl.cc:155] ProcessGroupNCCL pg_timeout_ 1800000
+I0511 19:27:57.434573 94779 process_group_nccl.cc:156] ProcessGroupNCCL nccl_comm_init_option_ 0
+[2026-05-11 19:27:57,434] [    INFO] topology.py:535 - Total 2 pipe comm group(s) create successfully!
+W0511 19:27:57.435060 94779 gpu_resources.cc:116] Please NOTE: device: 0, GPU Compute Capability: 90.2, Driver API Version: 60325.2, Runtime API Version: 60325.2
+W0511 19:27:57.595965 94779 nccl_comm_context.cc:70] ncclCommInitRankConfigMemOpt is not supported.
+[2026-05-11 19:27:58,197] [    INFO] topology.py:535 - Total 4 data comm group(s) create successfully!
+I0511 19:27:58.198133 94779 process_group_nccl.cc:155] ProcessGroupNCCL pg_timeout_ 1800000
+I0511 19:27:58.198167 94779 process_group_nccl.cc:156] ProcessGroupNCCL nccl_comm_init_option_ 0
+[2026-05-11 19:27:58,198] [    INFO] topology.py:535 - Total 2 model comm group(s) create successfully!
+[2026-05-11 19:27:58,198] [    INFO] topology.py:535 - Total 4 sharding comm group(s) create successfully!
+I0511 19:27:58.198545 94779 process_group_nccl.cc:155] ProcessGroupNCCL pg_timeout_ 1800000
+I0511 19:27:58.198647 94779 process_group_nccl.cc:156] ProcessGroupNCCL nccl_comm_init_option_ 0
+[2026-05-11 19:27:58,198] [    INFO] topology.py:449 - HybridParallelInfo: rank_id: 0, mp_degree: 2, sharding_degree: 1, pp_degree: 2, dp_degree: 1, sep_degree: 1, mp_group: [0, 1],  sharding_group: [0], pp_group: [0, 2], dp_group: [0], sep:group: None, check/clip group: [0, 1, 2, 3]
+[32m[2026-05-11 19:27:58,199] [    INFO][0m -     +==============================================================================+
+    |                                                                              |
+    |                         DistributedStrategy Overview                         |
+    |                                                                              |
+    +==============================================================================+
+    |                        a_sync=True <-> a_sync_configs                        |
+    +------------------------------------------------------------------------------+
+    |                               k_steps                    -1                  |
+    |                     max_merge_var_num                    1                   |
+    |                       send_queue_size                    16                  |
+    |               independent_recv_thread                  False                 |
+    |         min_send_grad_num_before_recv                    1                   |
+    |                      thread_pool_size                    1                   |
+    |                       send_wait_times                    1                   |
+    |               runtime_split_send_recv                  False                 |
+    |                        launch_barrier                   True                 |
+    |             heter_worker_device_guard                   cpu                  |
+    |                        lr_decay_steps                    10                  |
+    |                            use_ps_gpu                    0                   |
+    |                         use_gpu_graph                    0                   |
+    +==============================================================================+
+    |                    Environment Flags, Communication Flags                    |
+    +------------------------------------------------------------------------------+
+    |                                  mode                    1                   |
+    |                               elastic                  False                 |
+    |                                  auto                  False                 |
+    |                   sync_nccl_allreduce                   True                 |
+    |                         nccl_comm_num                    1                   |
+    |            use_hierarchical_allreduce                  False                 |
+    |   hierarchical_allreduce_inter_nranks                    1                   |
+    |                       sync_batch_norm                  False                 |
+    |                   fuse_all_reduce_ops                   True                 |
+    |                  fuse_grad_size_in_MB                    32                  |
+    |              fuse_grad_size_in_TFLOPS                   50.0                 |
+    |               cudnn_exhaustive_search                  False                 |
+    |             conv_workspace_size_limit                   512                  |
+    |    cudnn_batchnorm_spatial_persistent                  False                 |
+    |                        fp16_allreduce                  False                 |
+    |               last_comm_group_size_MB                   1.0                  |
+    |                find_unused_parameters                  False                 |
+    |            without_graph_optimization                   True                 |
+    |                 fuse_grad_size_in_num                    8                   |
+    |                 calc_comm_same_stream                  False                 |
+    |                                   asp                  False                 |
+    |                       fuse_grad_merge                  False                 |
+    |                             semi_auto                  False                 |
+    |                            adam_d2sum                  False                 |
+    |                           auto_search                  False                 |
+    |                        heter_ccl_mode                  False                 |
+    |                         is_fl_ps_mode                  False                 |
+    |                      with_coordinator                  False                 |
+    |                            split_data                   True                 |
+    |                  downpour_table_param                    []                  |
+    |                       fs_client_param                                        |
+    +==============================================================================+
+    |                                Build Strategy                                |
+    +------------------------------------------------------------------------------+
+    |              fuse_elewise_add_act_ops                  False                 |
+    |                       fuse_bn_act_ops                  False                 |
+    |              fuse_relu_depthwise_conv                  False                 |
+    |                    fuse_broadcast_ops                  False                 |
+    |                fuse_all_optimizer_ops                  False                 |
+    |                        enable_inplace                  False                 |
+    |     enable_backward_optimizer_op_deps                   True                 |
+    |                 cache_runtime_context                  False                 |
+    |                   fuse_bn_add_act_ops                   True                 |
+    |                    enable_auto_fusion                  False                 |
+    |                          enable_addto                  False                 |
+    |              allow_cuda_graph_capture                  False                 |
+    |                       reduce_strategy                    0                   |
+    |                    fuse_gemm_epilogue                  False                 |
+    |                   debug_graphviz_path                                        |
+    |                       fused_attention                  False                 |
+    |                     fused_feedforward                  False                 |
+    |            fuse_dot_product_attention                  False                 |
+    |                          fuse_resunit                  False                 |
+    +==============================================================================+
+[0m
+[32m[2026-05-11 19:27:58,200] [    INFO][0m - The default value for the training argument `--report_to` will change in v5 (from all installed integrations to none). In v5, you will need to use `--report_to all` to get the same behavior as now. You should start updating your code and make this info disappear :-).[0m
+[32m[2026-05-11 19:27:58,200] [    INFO][0m - Auto set hybrid_parallel_expert_grad_scale = 2.0[0m
+[32m[2026-05-11 19:27:58,200] [    INFO][0m - reset finetuning arguments global_batch_size to 4[0m
+[32m[2026-05-11 19:27:58,200] [    INFO][0m - fixing pp configs: {'micro_batch_size': 1, 'accumulate_steps': 4, 'schedule_mode': '1F1B', 'p2p_cache_shape': True, 'enable_partial_send_recv': True}[0m
+[35m[2026-05-11 19:27:58,241] [   DEBUG][0m - ============================================================[0m
+[35m[2026-05-11 19:27:58,241] [   DEBUG][0m -      Model Configuration Arguments      [0m
+[35m[2026-05-11 19:27:58,241] [   DEBUG][0m - paddle commit id              : 1396c92ccb52c720536b54143807ae69e073b25b[0m
+[35m[2026-05-11 19:27:58,256] [   DEBUG][0m - paddleformers commit id       : 86ec32991b7f33eb542869a54ea675405a769e92.dirty[0m
+[35m[2026-05-11 19:27:58,256] [   DEBUG][0m - _attn_implementation          : eager[0m
+[35m[2026-05-11 19:27:58,256] [   DEBUG][0m - bos_token_id                  : 0[0m
+[35m[2026-05-11 19:27:58,256] [   DEBUG][0m - continue_training             : False[0m
+[35m[2026-05-11 19:27:58,256] [   DEBUG][0m - copy_custom_file_list         : [0m
+[35m[2026-05-11 19:27:58,256] [   DEBUG][0m - download_hub                  : None[0m
+[35m[2026-05-11 19:27:58,256] [   DEBUG][0m - eos_token_id                  : 1[0m
+[35m[2026-05-11 19:27:58,257] [   DEBUG][0m - ernie_model_config            : ErniePretrainArgument(use_quant_before_a2a=False, use_async_a2a=False, use_rms_qkv_recompute=False, moe_logging=False, use_recompute=False, num_nextn_predict_layers=0, use_fp8_mlp=False, num_hidden_layers=2, num_empty_layers_add_in_tail=0, use_fp8_fuse_node=False, use_ep_comm_overlap=False, fp8_mem_configs=FP8MemConfigs(shared_expert=False, recompute_fwd_gate_up=False, dequant_input=False, offline_quant_expert_weight=False, clear_origin_weight_when_offline_quant=False), fp8_fused_ops_configs=FP8FusedOpsConfigs(stack_quant=False, swiglu_probs_bwd=False, split_group_gemm=True, spaq=True, transpose_split_quant=True), use_combine_before_a2a=False, moe_num_experts=0, moe_k=2, moe_use_aux_free=False, moe_gate='top2_fused', transpose_split_quant=False)[0m
+[35m[2026-05-11 19:27:58,257] [   DEBUG][0m - fine_tuning                   : full[0m
+[35m[2026-05-11 19:27:58,257] [   DEBUG][0m - fuse_gate_detach_matmul       : True[0m
+[35m[2026-05-11 19:27:58,257] [   DEBUG][0m - fuse_softmax_mask             : False[0m
+[35m[2026-05-11 19:27:58,257] [   DEBUG][0m - lora                          : False[0m
+[35m[2026-05-11 19:27:58,257] [   DEBUG][0m - lora_alpha                    : -1[0m
+[35m[2026-05-11 19:27:58,257] [   DEBUG][0m - lora_path                     : None[0m
+[35m[2026-05-11 19:27:58,257] [   DEBUG][0m - lora_plus_scale               : 1.0[0m
+[35m[2026-05-11 19:27:58,257] [   DEBUG][0m - lora_rank                     : 8[0m
+[35m[2026-05-11 19:27:58,257] [   DEBUG][0m - loss_subbatch_seqlen          : 32768[0m
+[35m[2026-05-11 19:27:58,258] [   DEBUG][0m - max_position_embeddings       : 4096[0m
+[35m[2026-05-11 19:27:58,258] [   DEBUG][0m - model_name_or_path            : ./models/Llama-3-8b[0m
+[35m[2026-05-11 19:27:58,258] [   DEBUG][0m - model_with_dpo_criterion      : False[0m
+[35m[2026-05-11 19:27:58,258] [   DEBUG][0m - moe_gate                      : top2_fused[0m
+[35m[2026-05-11 19:27:58,258] [   DEBUG][0m - moe_group                     : dummy[0m
+[35m[2026-05-11 19:27:58,258] [   DEBUG][0m - moe_group_experts             : False[0m
+[35m[2026-05-11 19:27:58,258] [   DEBUG][0m - moe_multimodal_dispatch_use_allgather: v2-alltoall-unpad[0m
+[35m[2026-05-11 19:27:58,258] [   DEBUG][0m - moe_orthogonal_loss_lambda    : 0.0[0m
+[35m[2026-05-11 19:27:58,258] [   DEBUG][0m - moe_use_aux_free              : None[0m
+[35m[2026-05-11 19:27:58,258] [   DEBUG][0m - moe_use_hard_gate             : False[0m
+[35m[2026-05-11 19:27:58,259] [   DEBUG][0m - neftune                       : False[0m
+[35m[2026-05-11 19:27:58,259] [   DEBUG][0m - neftune_noise_alpha           : 5.0[0m
+[35m[2026-05-11 19:27:58,259] [   DEBUG][0m - pp_seg_method                 : layer:DecoderLayer|EmptyLayer[0m
+[35m[2026-05-11 19:27:58,259] [   DEBUG][0m - rope_3d                       : True[0m
+[35m[2026-05-11 19:27:58,259] [   DEBUG][0m - rslora                        : False[0m
+[35m[2026-05-11 19:27:58,259] [   DEBUG][0m - rslora_plus                   : False[0m
+[35m[2026-05-11 19:27:58,259] [   DEBUG][0m - stage                         : PT[0m
+[35m[2026-05-11 19:27:58,259] [   DEBUG][0m - tokenizer_name_or_path        : None[0m
+[35m[2026-05-11 19:27:58,259] [   DEBUG][0m - use_attn_mask_startend_row_indices: True[0m
+[35m[2026-05-11 19:27:58,259] [   DEBUG][0m - use_fast_layer_norm           : False[0m
+[35m[2026-05-11 19:27:58,260] [   DEBUG][0m - use_global_causal_attn        : False[0m
+[35m[2026-05-11 19:27:58,260] [   DEBUG][0m - use_mem_eff_attn              : True[0m
+[35m[2026-05-11 19:27:58,260] [   DEBUG][0m - use_sparse_flash_attn         : True[0m
+[35m[2026-05-11 19:27:58,260] [   DEBUG][0m - vision_config                 : VisionArguments(attn_implementation='eager', attn_sep=True, depth=32, embed_dim=1280, hidden_act='quick_gelu', hidden_size=1280, in_channels=3, mlp_ratio=4, model_type='DFNRope_vision_transformer', num_heads=16, patch_size=14, spatial_merge_size=2, tensor_model_parallel_size=4, vit_num_recompute_layers=10000)[0m
+[35m[2026-05-11 19:27:58,260] [   DEBUG][0m - [0m
+[35m[2026-05-11 19:27:58,260] [   DEBUG][0m - ============================================================[0m
+[35m[2026-05-11 19:27:58,260] [   DEBUG][0m -       Data Configuration Arguments      [0m
+[35m[2026-05-11 19:27:58,260] [   DEBUG][0m - paddle commit id              : 1396c92ccb52c720536b54143807ae69e073b25b[0m
+[35m[2026-05-11 19:27:58,260] [   DEBUG][0m - paddleformers commit id       : 86ec32991b7f33eb542869a54ea675405a769e92.dirty[0m
+[35m[2026-05-11 19:27:58,260] [   DEBUG][0m - binpacking                    : True[0m
+[35m[2026-05-11 19:27:58,261] [   DEBUG][0m - buffer_size                   : 500[0m
+[35m[2026-05-11 19:27:58,261] [   DEBUG][0m - custom_register_path          : None[0m
+[35m[2026-05-11 19:27:58,261] [   DEBUG][0m - data_cache                    : None[0m
+[35m[2026-05-11 19:27:58,261] [   DEBUG][0m - data_impl                     : mmap[0m
+[35m[2026-05-11 19:27:58,261] [   DEBUG][0m - dataset_output_dir            : ./dataset_output[0m
+[35m[2026-05-11 19:27:58,261] [   DEBUG][0m - dataset_type                  : pretrain[0m
+[35m[2026-05-11 19:27:58,261] [   DEBUG][0m - encode_one_turn               : True[0m
+[35m[2026-05-11 19:27:58,261] [   DEBUG][0m - eval_dataset_path             : examples/data/sft-eval.jsonl[0m
+[35m[2026-05-11 19:27:58,261] [   DEBUG][0m - eval_dataset_prob             : 1.0[0m
+[35m[2026-05-11 19:27:58,261] [   DEBUG][0m - eval_dataset_type             : erniekit[0m
+[35m[2026-05-11 19:27:58,262] [   DEBUG][0m - eval_with_do_generation       : False[0m
+[35m[2026-05-11 19:27:58,262] [   DEBUG][0m - greedy_intokens               : True[0m
+[35m[2026-05-11 19:27:58,262] [   DEBUG][0m - input_dir                     : 1.0 ./data/pt/llama_openwebtext_100k[0m
+[35m[2026-05-11 19:27:58,262] [   DEBUG][0m - make_offline_data             : False[0m
+[35m[2026-05-11 19:27:58,262] [   DEBUG][0m - max_prompt_len                : 2048[0m
+[35m[2026-05-11 19:27:58,262] [   DEBUG][0m - max_seq_len                   : 4096[0m
+[35m[2026-05-11 19:27:58,262] [   DEBUG][0m - mix_strategy                  : concat[0m
+[35m[2026-05-11 19:27:58,262] [   DEBUG][0m - new_special_tokens_path       : None[0m
+[35m[2026-05-11 19:27:58,262] [   DEBUG][0m - num_samples_each_epoch        : 6000000[0m
+[35m[2026-05-11 19:27:58,262] [   DEBUG][0m - packed_idx_cache_dir          : None[0m
+[35m[2026-05-11 19:27:58,262] [   DEBUG][0m - packing                       : False[0m
+[35m[2026-05-11 19:27:58,263] [   DEBUG][0m - packing_interval              : 1000[0m
+[35m[2026-05-11 19:27:58,263] [   DEBUG][0m - padding_free                  : False[0m
+[35m[2026-05-11 19:27:58,263] [   DEBUG][0m - processor_use_fast            : None[0m
+[35m[2026-05-11 19:27:58,263] [   DEBUG][0m - random_shuffle                : True[0m
+[35m[2026-05-11 19:27:58,263] [   DEBUG][0m - share_folder                  : False[0m
+[35m[2026-05-11 19:27:58,263] [   DEBUG][0m - skip_warmup                   : True[0m
+[35m[2026-05-11 19:27:58,263] [   DEBUG][0m - split                         : 990,10,0[0m
+[35m[2026-05-11 19:27:58,263] [   DEBUG][0m - split_multi_turn              : False[0m
+[35m[2026-05-11 19:27:58,263] [   DEBUG][0m - template                      : None[0m
+[35m[2026-05-11 19:27:58,263] [   DEBUG][0m - template_backend              : custom[0m
+[35m[2026-05-11 19:27:58,264] [   DEBUG][0m - train_dataset_path            : None[0m
+[35m[2026-05-11 19:27:58,264] [   DEBUG][0m - train_dataset_prob            : None[0m
+[35m[2026-05-11 19:27:58,264] [   DEBUG][0m - train_dataset_type            : None[0m
+[35m[2026-05-11 19:27:58,264] [   DEBUG][0m - truncate_packing              : True[0m
+[35m[2026-05-11 19:27:58,264] [   DEBUG][0m - truncation_strategy           : delete[0m
+[35m[2026-05-11 19:27:58,264] [   DEBUG][0m - use_template                  : True[0m
+[35m[2026-05-11 19:27:58,264] [   DEBUG][0m - warmup_only_rank0             : False[0m
+[35m[2026-05-11 19:27:58,264] [   DEBUG][0m - [0m
+[35m[2026-05-11 19:27:58,264] [   DEBUG][0m - ============================================================[0m
+[35m[2026-05-11 19:27:58,264] [   DEBUG][0m -      Train Configuration Arguments      [0m
+[35m[2026-05-11 19:27:58,265] [   DEBUG][0m - paddle commit id              : 1396c92ccb52c720536b54143807ae69e073b25b[0m
+[35m[2026-05-11 19:27:58,265] [   DEBUG][0m - paddleformers commit id       : 86ec32991b7f33eb542869a54ea675405a769e92.dirty[0m
+[35m[2026-05-11 19:27:58,265] [   DEBUG][0m - _no_sync_in_gradient_accumulation: True[0m
+[35m[2026-05-11 19:27:58,265] [   DEBUG][0m - adam_beta1                    : 0.9[0m
+[35m[2026-05-11 19:27:58,265] [   DEBUG][0m - adam_beta2                    : 0.999[0m
+[35m[2026-05-11 19:27:58,265] [   DEBUG][0m - adam_epsilon                  : 1e-08[0m
+[35m[2026-05-11 19:27:58,265] [   DEBUG][0m - amp_custom_black_list         : ['reduce_sum', 'softmax_with_cross_entropy', 'c_softmax_with_cross_entropy', 'elementwise_div', 'sin', 'cos'][0m
+[35m[2026-05-11 19:27:58,265] [   DEBUG][0m - amp_custom_white_list         : ['lookup_table', 'lookup_table_v2', 'flash_attn', 'matmul', 'matmul_v2', 'fused_gemm_epilogue'][0m
+[35m[2026-05-11 19:27:58,266] [   DEBUG][0m - amp_master_grad               : True[0m
+[35m[2026-05-11 19:27:58,266] [   DEBUG][0m - aoa_config                    : None[0m
+[35m[2026-05-11 19:27:58,266] [   DEBUG][0m - apply_rope_fusion             : False[0m
+[35m[2026-05-11 19:27:58,266] [   DEBUG][0m - attention_probs_dropout_prob  : 0.0[0m
+[35m[2026-05-11 19:27:58,266] [   DEBUG][0m - auto_parallel_resume_form_hybrid_parallel: False[0m
+[35m[2026-05-11 19:27:58,266] [   DEBUG][0m - auto_parallel_sync_shared_params: False[0m
+[35m[2026-05-11 19:27:58,266] [   DEBUG][0m - autotuner_benchmark           : False[0m
+[35m[2026-05-11 19:27:58,266] [   DEBUG][0m - balanced_image_preprocess     : False[0m
+[35m[2026-05-11 19:27:58,266] [   DEBUG][0m - batch_p2p_comm                : True[0m
+[35m[2026-05-11 19:27:58,266] [   DEBUG][0m - benchmark                     : False[0m
+[35m[2026-05-11 19:27:58,267] [   DEBUG][0m - best_unbalanced_scheduler     : False[0m
+[35m[2026-05-11 19:27:58,267] [   DEBUG][0m - beta                          : 0.1[0m
+[35m[2026-05-11 19:27:58,267] [   DEBUG][0m - bf16                          : True[0m
+[35m[2026-05-11 19:27:58,267] [   DEBUG][0m - bf16_full_eval                : False[0m
+[35m[2026-05-11 19:27:58,267] [   DEBUG][0m - ckpt_quant_stage              : O0[0m
+[35m[2026-05-11 19:27:58,267] [   DEBUG][0m - clear_every_step_cache        : False[0m
+[35m[2026-05-11 19:27:58,267] [   DEBUG][0m - compute_type                  : bf16[0m
+[35m[2026-05-11 19:27:58,267] [   DEBUG][0m - context_parallel_rank         : 0[0m
+[35m[2026-05-11 19:27:58,267] [   DEBUG][0m - context_parallel_size         : 1[0m
+[35m[2026-05-11 19:27:58,267] [   DEBUG][0m - convert_from_hf               : True[0m
+[35m[2026-05-11 19:27:58,267] [   DEBUG][0m - copy_custom_file_list         : [0m
+[35m[2026-05-11 19:27:58,268] [   DEBUG][0m - count_trained_tokens          : False[0m
+[35m[2026-05-11 19:27:58,268] [   DEBUG][0m - cp_comm_type                  : None[0m
+[35m[2026-05-11 19:27:58,268] [   DEBUG][0m - cp_sharding_degree            : 1[0m
+[35m[2026-05-11 19:27:58,268] [   DEBUG][0m - cp_sharding_rank              : 0[0m
+[35m[2026-05-11 19:27:58,268] [   DEBUG][0m - current_device                : gpu:0[0m
+[35m[2026-05-11 19:27:58,268] [   DEBUG][0m - data_parallel_config          : [0m
+[35m[2026-05-11 19:27:58,268] [   DEBUG][0m - data_parallel_rank            : 0[0m
+[35m[2026-05-11 19:27:58,268] [   DEBUG][0m - data_parallel_size            : 1[0m
+[35m[2026-05-11 19:27:58,268] [   DEBUG][0m - dataloader_drop_last          : False[0m
+[35m[2026-05-11 19:27:58,269] [   DEBUG][0m - dataloader_num_workers        : 0[0m
+[35m[2026-05-11 19:27:58,269] [   DEBUG][0m - dataloader_shuffle            : True[0m
+[35m[2026-05-11 19:27:58,269] [   DEBUG][0m - dataset_batch_size            : 1000[0m
+[35m[2026-05-11 19:27:58,269] [   DEBUG][0m - dataset_kwargs                : None[0m
+[35m[2026-05-11 19:27:58,269] [   DEBUG][0m - dataset_num_proc              : None[0m
+[35m[2026-05-11 19:27:58,269] [   DEBUG][0m - dataset_rank                  : 0[0m
+[35m[2026-05-11 19:27:58,269] [   DEBUG][0m - dataset_text_field            : text[0m
+[35m[2026-05-11 19:27:58,269] [   DEBUG][0m - dataset_world_size            : 1[0m
+[35m[2026-05-11 19:27:58,269] [   DEBUG][0m - ddp_find_unused_parameters    : None[0m
+[35m[2026-05-11 19:27:58,269] [   DEBUG][0m - decay_function                : half_life[0m
+[35m[2026-05-11 19:27:58,270] [   DEBUG][0m - decay_steps                   : None[0m
+[35m[2026-05-11 19:27:58,270] [   DEBUG][0m - deterministic_mode            : False[0m
+[35m[2026-05-11 19:27:58,270] [   DEBUG][0m - device                        : gpu[0m
+[35m[2026-05-11 19:27:58,270] [   DEBUG][0m - disable_tqdm                  : False[0m
+[35m[2026-05-11 19:27:58,270] [   DEBUG][0m - distributed_dataloader        : False[0m
+[35m[2026-05-11 19:27:58,270] [   DEBUG][0m - do_eval                       : True[0m
+[35m[2026-05-11 19:27:58,270] [   DEBUG][0m - do_export                     : False[0m
+[35m[2026-05-11 19:27:58,270] [   DEBUG][0m - do_predict                    : False[0m
+[35m[2026-05-11 19:27:58,270] [   DEBUG][0m - do_train                      : True[0m
+[35m[2026-05-11 19:27:58,270] [   DEBUG][0m - download_hub                  : None[0m
+[35m[2026-05-11 19:27:58,270] [   DEBUG][0m - dp_allreduce_avg_in_gradinent_scale: False[0m
+[35m[2026-05-11 19:27:58,271] [   DEBUG][0m - dp_comm_overlap               : False[0m
+[35m[2026-05-11 19:27:58,271] [   DEBUG][0m - dpop_lambda                   : 50[0m
+[35m[2026-05-11 19:27:58,271] [   DEBUG][0m - embedding_init_method         : None[0m
+[35m[2026-05-11 19:27:58,271] [   DEBUG][0m - embedding_init_method_std     : 0.02[0m
+[35m[2026-05-11 19:27:58,271] [   DEBUG][0m - enable_auto_parallel          : False[0m
+[35m[2026-05-11 19:27:58,271] [   DEBUG][0m - enable_linear_fused_grad_add  : False[0m
+[35m[2026-05-11 19:27:58,271] [   DEBUG][0m - enable_mtp_magic_send         : False[0m
+[35m[2026-05-11 19:27:58,271] [   DEBUG][0m - enable_sharding_comm_overlap  : False[0m
+[35m[2026-05-11 19:27:58,271] [   DEBUG][0m - enable_zero_cost_checkpoint   : False[0m
+[35m[2026-05-11 19:27:58,271] [   DEBUG][0m - estimation_output_file        : estimation_output.json[0m
+[35m[2026-05-11 19:27:58,272] [   DEBUG][0m - eval_accumulation_steps       : None[0m
+[35m[2026-05-11 19:27:58,272] [   DEBUG][0m - eval_batch_size               : 1[0m
+[35m[2026-05-11 19:27:58,272] [   DEBUG][0m - eval_iters                    : 10[0m
+[35m[2026-05-11 19:27:58,272] [   DEBUG][0m - eval_steps                    : 300[0m
+[35m[2026-05-11 19:27:58,272] [   DEBUG][0m - evaluation_strategy           : IntervalStrategy.STEPS[0m
+[35m[2026-05-11 19:27:58,272] [   DEBUG][0m - expert_model_parallel_size    : 1[0m
+[35m[2026-05-11 19:27:58,272] [   DEBUG][0m - expert_parallel_rank          : 0[0m
+[35m[2026-05-11 19:27:58,272] [   DEBUG][0m - expert_tensor_model_parallel_size: 1[0m
+[35m[2026-05-11 19:27:58,272] [   DEBUG][0m - fa_version                    : 2[0m
+[35m[2026-05-11 19:27:58,272] [   DEBUG][0m - factor                        : 20[0m
+[35m[2026-05-11 19:27:58,273] [   DEBUG][0m - flash_device_save_steps       : 0[0m
+[35m[2026-05-11 19:27:58,273] [   DEBUG][0m - flatten_param_grads           : False[0m
+[35m[2026-05-11 19:27:58,273] [   DEBUG][0m - force_reshard_pp              : False[0m
+[35m[2026-05-11 19:27:58,273] [   DEBUG][0m - forward_backward_overlap_scheduler: False[0m
+[35m[2026-05-11 19:27:58,273] [   DEBUG][0m - fp16                          : False[0m
+[35m[2026-05-11 19:27:58,273] [   DEBUG][0m - fp16_full_eval                : False[0m
+[35m[2026-05-11 19:27:58,273] [   DEBUG][0m - fp16_opt_level                : O1[0m
+[35m[2026-05-11 19:27:58,273] [   DEBUG][0m - fp32_residual_connection      : True[0m
+[35m[2026-05-11 19:27:58,273] [   DEBUG][0m - fp8                           : None[0m
+[35m[2026-05-11 19:27:58,273] [   DEBUG][0m - fp8_wgrad                     : True[0m
+[35m[2026-05-11 19:27:58,274] [   DEBUG][0m - freeze_config                 : [0m
+[35m[2026-05-11 19:27:58,274] [   DEBUG][0m - fuse_optimizer_states         : False[0m
+[35m[2026-05-11 19:27:58,274] [   DEBUG][0m - fuse_sequence_parallel_allreduce: False[0m
+[35m[2026-05-11 19:27:58,274] [   DEBUG][0m - fuse_swiglu                   : False[0m
+[35m[2026-05-11 19:27:58,274] [   DEBUG][0m - gated_linear_unit             : True[0m
+[35m[2026-05-11 19:27:58,274] [   DEBUG][0m - gc_interval                   : 0[0m
+[35m[2026-05-11 19:27:58,274] [   DEBUG][0m - global_batch_size             : 4[0m
+[35m[2026-05-11 19:27:58,274] [   DEBUG][0m - global_logging_interval       : 1[0m
+[35m[2026-05-11 19:27:58,274] [   DEBUG][0m - gradient_accumulation_steps   : 4[0m
+[35m[2026-05-11 19:27:58,274] [   DEBUG][0m - gradient_sync_after_accumulate: False[0m
+[35m[2026-05-11 19:27:58,275] [   DEBUG][0m - greater_is_better             : None[0m
+[35m[2026-05-11 19:27:58,275] [   DEBUG][0m - hidden_dropout_prob           : 0.0[0m
+[35m[2026-05-11 19:27:58,275] [   DEBUG][0m - hidden_size                   : None[0m
+[35m[2026-05-11 19:27:58,275] [   DEBUG][0m - hybrid_parallel_expert_grad_scale: 2.0[0m
+[35m[2026-05-11 19:27:58,275] [   DEBUG][0m - hybrid_parallel_topo_order    : sharding_first[0m
+[35m[2026-05-11 19:27:58,275] [   DEBUG][0m - ignore_data_skip              : False[0m
+[35m[2026-05-11 19:27:58,275] [   DEBUG][0m - ignore_eos_token              : False[0m
+[35m[2026-05-11 19:27:58,275] [   DEBUG][0m - ignore_load_lr_and_optim      : False[0m
+[35m[2026-05-11 19:27:58,275] [   DEBUG][0m - ignore_save_lr_and_optim      : False[0m
+[35m[2026-05-11 19:27:58,275] [   DEBUG][0m - init_method                   : None[0m
+[35m[2026-05-11 19:27:58,275] [   DEBUG][0m - intermediate_size             : None[0m
+[35m[2026-05-11 19:27:58,276] [   DEBUG][0m - label_names                   : None[0m
+[35m[2026-05-11 19:27:58,276] [   DEBUG][0m - label_smoothing               : 0.0[0m
+[35m[2026-05-11 19:27:58,276] [   DEBUG][0m - lazy_data_processing          : True[0m
+[35m[2026-05-11 19:27:58,276] [   DEBUG][0m - learning_rate                 : 0.0001[0m
+[35m[2026-05-11 19:27:58,276] [   DEBUG][0m - load_best_model_at_end        : False[0m
+[35m[2026-05-11 19:27:58,276] [   DEBUG][0m - load_checkpoint_format        : flex_checkpoint[0m
+[35m[2026-05-11 19:27:58,276] [   DEBUG][0m - load_from_hf                  : False[0m
+[35m[2026-05-11 19:27:58,276] [   DEBUG][0m - load_sharded_model            : False[0m
+[35m[2026-05-11 19:27:58,276] [   DEBUG][0m - load_sharded_model_remap_parameter_name: False[0m
+[35m[2026-05-11 19:27:58,276] [   DEBUG][0m - load_via_cpu                  : True[0m
+[35m[2026-05-11 19:27:58,277] [   DEBUG][0m - local_process_index           : 0[0m
+[35m[2026-05-11 19:27:58,277] [   DEBUG][0m - local_rank                    : 0[0m
+[35m[2026-05-11 19:27:58,277] [   DEBUG][0m - log_global_grad_norm          : False[0m
+[35m[2026-05-11 19:27:58,277] [   DEBUG][0m - log_level                     : -1[0m
+[35m[2026-05-11 19:27:58,277] [   DEBUG][0m - log_level_replica             : -1[0m
+[35m[2026-05-11 19:27:58,277] [   DEBUG][0m - log_on_each_node              : True[0m
+[35m[2026-05-11 19:27:58,277] [   DEBUG][0m - logging_dir                   : ./logs/pt/llama3-8b[0m
+[35m[2026-05-11 19:27:58,277] [   DEBUG][0m - logging_first_step            : False[0m
+[35m[2026-05-11 19:27:58,277] [   DEBUG][0m - logging_steps                 : 1[0m
+[35m[2026-05-11 19:27:58,277] [   DEBUG][0m - logging_strategy              : IntervalStrategy.STEPS[0m
+[35m[2026-05-11 19:27:58,278] [   DEBUG][0m - logical_process_index         : 0[0m
+[35m[2026-05-11 19:27:58,278] [   DEBUG][0m - loss_subbatch_sequence_length : -1[0m
+[35m[2026-05-11 19:27:58,278] [   DEBUG][0m - loss_type                     : sigmoid[0m
+[35m[2026-05-11 19:27:58,278] [   DEBUG][0m - lr_end                        : 1e-07[0m
+[35m[2026-05-11 19:27:58,278] [   DEBUG][0m - lr_scheduler                  : cosine[0m
+[35m[2026-05-11 19:27:58,278] [   DEBUG][0m - lr_scheduler_type             : SchedulerType.LINEAR[0m
+[35m[2026-05-11 19:27:58,278] [   DEBUG][0m - max_estimate_samples          : 100000.0[0m
+[35m[2026-05-11 19:27:58,278] [   DEBUG][0m - max_evaluate_steps            : -1[0m
+[35m[2026-05-11 19:27:58,278] [   DEBUG][0m - max_grad_norm                 : 1.0[0m
+[35m[2026-05-11 19:27:58,278] [   DEBUG][0m - max_gradient_accumulation_steps: 4[0m
+[35m[2026-05-11 19:27:58,278] [   DEBUG][0m - max_seq_len                   : 4096[0m
+[35m[2026-05-11 19:27:58,279] [   DEBUG][0m - max_steps                     : 300[0m
+[35m[2026-05-11 19:27:58,279] [   DEBUG][0m - merge_with_qdq_base_model     : False[0m
+[35m[2026-05-11 19:27:58,279] [   DEBUG][0m - metric_for_best_model         : None[0m
+[35m[2026-05-11 19:27:58,279] [   DEBUG][0m - metrics_output_path           : None[0m
+[35m[2026-05-11 19:27:58,279] [   DEBUG][0m - min_lr                        : 0.0[0m
+[35m[2026-05-11 19:27:58,279] [   DEBUG][0m - minimum_eval_times            : None[0m
+[35m[2026-05-11 19:27:58,279] [   DEBUG][0m - model_name_or_path            : ./models/Llama-3-8b[0m
+[35m[2026-05-11 19:27:58,279] [   DEBUG][0m - moe_deep_gemm                 : False[0m
+[35m[2026-05-11 19:27:58,279] [   DEBUG][0m - moe_deepep_num_sms            : None[0m
+[35m[2026-05-11 19:27:58,279] [   DEBUG][0m - moe_dequant_input             : False[0m
+[35m[2026-05-11 19:27:58,280] [   DEBUG][0m - moe_dropout_prob              : 0.0[0m
+[35m[2026-05-11 19:27:58,280] [   DEBUG][0m - moe_ep_barrier                : True[0m
+[35m[2026-05-11 19:27:58,280] [   DEBUG][0m - moe_expert_capacity_factor    : 0.0[0m
+[35m[2026-05-11 19:27:58,280] [   DEBUG][0m - moe_expert_fusion             : True[0m
+[35m[2026-05-11 19:27:58,280] [   DEBUG][0m - moe_gate_lr_ratio             : None[0m
+[35m[2026-05-11 19:27:58,280] [   DEBUG][0m - moe_grouped_gemm              : False[0m
+[35m[2026-05-11 19:27:58,280] [   DEBUG][0m - moe_pad_expert_input_to_capacity: False[0m
+[35m[2026-05-11 19:27:58,280] [   DEBUG][0m - moe_router_bias_update_rate   : 0.0[0m
+[35m[2026-05-11 19:27:58,280] [   DEBUG][0m - moe_router_force_load_balancing: False[0m
+[35m[2026-05-11 19:27:58,280] [   DEBUG][0m - moe_router_fusion             : True[0m
+[35m[2026-05-11 19:27:58,281] [   DEBUG][0m - moe_router_load_balancing_type: seq_aux_loss[0m
+[35m[2026-05-11 19:27:58,281] [   DEBUG][0m - moe_sharding_parallel_rank    : 0[0m
+[35m[2026-05-11 19:27:58,281] [   DEBUG][0m - moe_sharding_parallel_size    : 1[0m
+[35m[2026-05-11 19:27:58,281] [   DEBUG][0m - moe_shared_expert_overlap     : True[0m
+[35m[2026-05-11 19:27:58,281] [   DEBUG][0m - moe_subbatch_token_num_after_dispatch: None[0m
+[35m[2026-05-11 19:27:58,281] [   DEBUG][0m - moe_subbatch_token_num_before_dispatch: 0[0m
+[35m[2026-05-11 19:27:58,281] [   DEBUG][0m - moe_token_dispatcher_type     : deepep[0m
+[35m[2026-05-11 19:27:58,281] [   DEBUG][0m - moe_token_drop_policy         : probs[0m
+[35m[2026-05-11 19:27:58,281] [   DEBUG][0m - moe_use_fusion_node           : True[0m
+[35m[2026-05-11 19:27:58,281] [   DEBUG][0m - moe_with_send_router_loss     : True[0m
+[35m[2026-05-11 19:27:58,281] [   DEBUG][0m - mp_async_allreduce            : False[0m
+[35m[2026-05-11 19:27:58,282] [   DEBUG][0m - mp_fused_linear_param_grad_add: False[0m
+[35m[2026-05-11 19:27:58,282] [   DEBUG][0m - mp_skip_c_identity            : False[0m
+[35m[2026-05-11 19:27:58,282] [   DEBUG][0m - mtp_distillation_loss         : False[0m
+[35m[2026-05-11 19:27:58,282] [   DEBUG][0m - mtp_num_layers                : 0[0m
+[35m[2026-05-11 19:27:58,282] [   DEBUG][0m - multi_latent_attention        : False[0m
+[35m[2026-05-11 19:27:58,282] [   DEBUG][0m - n_routed_experts              : None[0m
+[35m[2026-05-11 19:27:58,282] [   DEBUG][0m - nccl_comm_group_config        : None[0m
+[35m[2026-05-11 19:27:58,282] [   DEBUG][0m - need_data                     : True[0m
+[35m[2026-05-11 19:27:58,282] [   DEBUG][0m - no_cuda                       : False[0m
+[35m[2026-05-11 19:27:58,282] [   DEBUG][0m - no_recompute_layers           : None[0m
+[35m[2026-05-11 19:27:58,283] [   DEBUG][0m - no_rope_freq                  : False[0m
+[35m[2026-05-11 19:27:58,283] [   DEBUG][0m - non_batch_p2p_comm            : False[0m
+[35m[2026-05-11 19:27:58,283] [   DEBUG][0m - normalization                 : RMSNorm[0m
+[35m[2026-05-11 19:27:58,283] [   DEBUG][0m - normalize_logps               : False[0m
+[35m[2026-05-11 19:27:58,283] [   DEBUG][0m - num_attention_heads           : None[0m
+[35m[2026-05-11 19:27:58,283] [   DEBUG][0m - num_consecutive               : 1[0m
+[35m[2026-05-11 19:27:58,283] [   DEBUG][0m - num_cycles                    : 0.5[0m
+[35m[2026-05-11 19:27:58,283] [   DEBUG][0m - num_empty_layers_add_in_head  : 0[0m
+[35m[2026-05-11 19:27:58,283] [   DEBUG][0m - num_empty_layers_add_in_tail  : 0[0m
+[35m[2026-05-11 19:27:58,283] [   DEBUG][0m - num_experts_per_tok           : None[0m
+[35m[2026-05-11 19:27:58,283] [   DEBUG][0m - num_hidden_layers             : None[0m
+[35m[2026-05-11 19:27:58,284] [   DEBUG][0m - num_key_value_heads           : None[0m
+[35m[2026-05-11 19:27:58,284] [   DEBUG][0m - num_nextn_predict_layers      : 0[0m
+[35m[2026-05-11 19:27:58,284] [   DEBUG][0m - num_of_gpus                   : -1[0m
+[35m[2026-05-11 19:27:58,284] [   DEBUG][0m - num_train_epochs              : 1.0[0m
+[35m[2026-05-11 19:27:58,284] [   DEBUG][0m - offload_fp8_expert_master_weight: True[0m
+[35m[2026-05-11 19:27:58,284] [   DEBUG][0m - offload_queue                 : False[0m
+[35m[2026-05-11 19:27:58,284] [   DEBUG][0m - offset_alpha                  : 0.0[0m
+[35m[2026-05-11 19:27:58,284] [   DEBUG][0m - optim                         : OptimizerNames.ADAMW[0m
+[35m[2026-05-11 19:27:58,284] [   DEBUG][0m - optim_shard_num               : 1[0m
+[35m[2026-05-11 19:27:58,284] [   DEBUG][0m - optimizer_name_suffix         : tp00_pp00[0m
+[35m[2026-05-11 19:27:58,285] [   DEBUG][0m - ordered_save_group_size       : 0[0m
+[35m[2026-05-11 19:27:58,285] [   DEBUG][0m - output_dir                    : ./checkpoints/pt/llama3-8b[0m
+[35m[2026-05-11 19:27:58,285] [   DEBUG][0m - output_layer_init_method      : None[0m
+[35m[2026-05-11 19:27:58,285] [   DEBUG][0m - output_signal_dir             : ./checkpoints/pt/llama3-8b[0m
+[35m[2026-05-11 19:27:58,285] [   DEBUG][0m - overlap                       : False[0m
+[35m[2026-05-11 19:27:58,285] [   DEBUG][0m - overlap_p2p_comm              : False[0m
+[35m[2026-05-11 19:27:58,285] [   DEBUG][0m - overwrite_output_dir          : True[0m
+[35m[2026-05-11 19:27:58,285] [   DEBUG][0m - p2p_cache_shape               : True[0m
+[35m[2026-05-11 19:27:58,285] [   DEBUG][0m - pad_token_id                  : 0[0m
+[35m[2026-05-11 19:27:58,285] [   DEBUG][0m - partial_send_recv             : True[0m
+[35m[2026-05-11 19:27:58,286] [   DEBUG][0m - past_index                    : -1[0m
+[35m[2026-05-11 19:27:58,286] [   DEBUG][0m - pdc_download_ckpt             : False[0m
+[35m[2026-05-11 19:27:58,286] [   DEBUG][0m - pdc_download_timeout          : 300[0m
+[35m[2026-05-11 19:27:58,286] [   DEBUG][0m - per_device_eval_batch_size    : 1[0m
+[35m[2026-05-11 19:27:58,286] [   DEBUG][0m - per_device_train_batch_size   : 1[0m
+[35m[2026-05-11 19:27:58,286] [   DEBUG][0m - pipeline_model_parallel_size  : 2[0m
+[35m[2026-05-11 19:27:58,286] [   DEBUG][0m - pipeline_parallel_config      : [0m
+[35m[2026-05-11 19:27:58,286] [   DEBUG][0m - pipeline_parallel_rank        : 0[0m
+[35m[2026-05-11 19:27:58,286] [   DEBUG][0m - position_embedding_type       : rope[0m
+[35m[2026-05-11 19:27:58,286] [   DEBUG][0m - power                         : 1.0[0m
+[35m[2026-05-11 19:27:58,287] [   DEBUG][0m - pp_delay_scale_loss           : True[0m
+[35m[2026-05-11 19:27:58,287] [   DEBUG][0m - pp_need_data                  : False[0m
+[35m[2026-05-11 19:27:58,287] [   DEBUG][0m - pp_need_data_degree           : 0[0m
+[35m[2026-05-11 19:27:58,287] [   DEBUG][0m - pp_release_grads              : False[0m
+[35m[2026-05-11 19:27:58,287] [   DEBUG][0m - pp_sharding_comm_overlap      : False[0m
+[35m[2026-05-11 19:27:58,287] [   DEBUG][0m - pp_sync_moment                : False[0m
+[35m[2026-05-11 19:27:58,287] [   DEBUG][0m - pp_sync_param                 : False[0m
+[35m[2026-05-11 19:27:58,287] [   DEBUG][0m - pre_alloc_memory              : 0[0m
+[35m[2026-05-11 19:27:58,287] [   DEBUG][0m - prediction_loss_only          : False[0m
+[35m[2026-05-11 19:27:58,287] [   DEBUG][0m - pref_loss_ratio               : 1.0[0m
+[35m[2026-05-11 19:27:58,287] [   DEBUG][0m - prefetch_factor               : 2[0m
+[35m[2026-05-11 19:27:58,288] [   DEBUG][0m - process_index                 : 0[0m
+[35m[2026-05-11 19:27:58,288] [   DEBUG][0m - profile                       : False[0m
+[35m[2026-05-11 19:27:58,288] [   DEBUG][0m - profile_step_end              : 12[0m
+[35m[2026-05-11 19:27:58,288] [   DEBUG][0m - profile_step_start            : 10[0m
+[35m[2026-05-11 19:27:58,288] [   DEBUG][0m - recompute_granularity         : full[0m
+[35m[2026-05-11 19:27:58,288] [   DEBUG][0m - recompute_method              : uniform[0m
+[35m[2026-05-11 19:27:58,288] [   DEBUG][0m - recompute_modules             : None[0m
+[35m[2026-05-11 19:27:58,288] [   DEBUG][0m - recompute_mtp_granularity     : None[0m
+[35m[2026-05-11 19:27:58,288] [   DEBUG][0m - recompute_mtp_method          : None[0m
+[35m[2026-05-11 19:27:58,288] [   DEBUG][0m - recompute_mtp_modules         : None[0m
+[35m[2026-05-11 19:27:58,289] [   DEBUG][0m - recompute_num_layers          : 1[0m
+[35m[2026-05-11 19:27:58,289] [   DEBUG][0m - recompute_use_reentrant       : True[0m
+[35m[2026-05-11 19:27:58,289] [   DEBUG][0m - reeao_dataset_rank            : 0[0m
+[35m[2026-05-11 19:27:58,289] [   DEBUG][0m - reeao_dataset_world_size      : 1[0m
+[35m[2026-05-11 19:27:58,289] [   DEBUG][0m - ref_model_update_steps        : -1[0m
+[35m[2026-05-11 19:27:58,289] [   DEBUG][0m - reference_free                : False[0m
+[35m[2026-05-11 19:27:58,289] [   DEBUG][0m - release_grads                 : False[0m
+[35m[2026-05-11 19:27:58,289] [   DEBUG][0m - remove_unused_columns         : True[0m
+[35m[2026-05-11 19:27:58,289] [   DEBUG][0m - reorder_pipeline_priority     : False[0m
+[35m[2026-05-11 19:27:58,289] [   DEBUG][0m - replace_with_c_embedding      : False[0m
+[35m[2026-05-11 19:27:58,290] [   DEBUG][0m - replace_with_parallel_cross_entropy: False[0m
+[35m[2026-05-11 19:27:58,290] [   DEBUG][0m - replicate_saved_into_local    : False[0m
+[35m[2026-05-11 19:27:58,290] [   DEBUG][0m - report_to                     : ['visualdl'][0m
+[35m[2026-05-11 19:27:58,290] [   DEBUG][0m - resume_from_checkpoint        : None[0m
+[35m[2026-05-11 19:27:58,290] [   DEBUG][0m - resume_from_huggingface_ckpt  : None[0m
+[35m[2026-05-11 19:27:58,290] [   DEBUG][0m - router_aux_loss_coef          : 0.0[0m
+[35m[2026-05-11 19:27:58,290] [   DEBUG][0m - router_z_loss_coef            : None[0m
+[35m[2026-05-11 19:27:58,290] [   DEBUG][0m - run_name                      : ./checkpoints/pt/llama3-8b[0m
+[35m[2026-05-11 19:27:58,290] [   DEBUG][0m - same_data                     : None[0m
+[35m[2026-05-11 19:27:58,290] [   DEBUG][0m - save_checkpoint_format        : flex_checkpoint[0m
+[35m[2026-05-11 19:27:58,290] [   DEBUG][0m - save_hf_memory_growth_threshold: 8[0m
+[35m[2026-05-11 19:27:58,291] [   DEBUG][0m - save_hf_steps                 : -1[0m
+[35m[2026-05-11 19:27:58,291] [   DEBUG][0m - save_hf_total_limit           : None[0m
+[35m[2026-05-11 19:27:58,291] [   DEBUG][0m - save_last_step                : False[0m
+[35m[2026-05-11 19:27:58,291] [   DEBUG][0m - save_on_each_node             : False[0m
+[35m[2026-05-11 19:27:58,291] [   DEBUG][0m - save_rng_states               : True[0m
+[35m[2026-05-11 19:27:58,291] [   DEBUG][0m - save_sharded_model            : False[0m
+[35m[2026-05-11 19:27:58,291] [   DEBUG][0m - save_sharding_stage1_model_include_freeze_params: False[0m
+[35m[2026-05-11 19:27:58,291] [   DEBUG][0m - save_steps                    : 300[0m
+[35m[2026-05-11 19:27:58,291] [   DEBUG][0m - save_strategy                 : IntervalStrategy.NO[0m
+[35m[2026-05-11 19:27:58,291] [   DEBUG][0m - save_to_hf                    : True[0m
+[35m[2026-05-11 19:27:58,292] [   DEBUG][0m - save_tokenizer                : True[0m
+[35m[2026-05-11 19:27:58,292] [   DEBUG][0m - save_total_limit              : None[0m
+[35m[2026-05-11 19:27:58,292] [   DEBUG][0m - scale_loss                    : 32768[0m
+[35m[2026-05-11 19:27:58,292] [   DEBUG][0m - sd_release_grads              : False[0m
+[35m[2026-05-11 19:27:58,292] [   DEBUG][0m - sd_sharding_comm_overlap      : False[0m
+[35m[2026-05-11 19:27:58,292] [   DEBUG][0m - sd_shardingv1_comm_overlap    : False[0m
+[35m[2026-05-11 19:27:58,292] [   DEBUG][0m - seed                          : 23[0m
+[35m[2026-05-11 19:27:58,292] [   DEBUG][0m - send_recv_overlap             : False[0m
+[35m[2026-05-11 19:27:58,292] [   DEBUG][0m - sep_parallel_size             : 1[0m
+[35m[2026-05-11 19:27:58,292] [   DEBUG][0m - sequence_parallel             : False[0m
+[35m[2026-05-11 19:27:58,293] [   DEBUG][0m - sequence_parallel_config      : [0m
+[35m[2026-05-11 19:27:58,293] [   DEBUG][0m - sft_loss_ratio                : 0.0[0m
+[35m[2026-05-11 19:27:58,293] [   DEBUG][0m - sharded_model_from_ema        : False[0m
+[35m[2026-05-11 19:27:58,293] [   DEBUG][0m - sharding                      : [][0m
+[35m[2026-05-11 19:27:58,293] [   DEBUG][0m - sharding_comm_buffer_size_MB  : -1[0m
+[35m[2026-05-11 19:27:58,293] [   DEBUG][0m - sharding_degree               : -1[0m
+[35m[2026-05-11 19:27:58,293] [   DEBUG][0m - sharding_offload_opt_buffersize_GB: -1[0m
+[35m[2026-05-11 19:27:58,293] [   DEBUG][0m - sharding_parallel_config      : [0m
+[35m[2026-05-11 19:27:58,293] [   DEBUG][0m - sharding_parallel_mesh_dimension: dp[0m
+[35m[2026-05-11 19:27:58,293] [   DEBUG][0m - sharding_parallel_rank        : 0[0m
+[35m[2026-05-11 19:27:58,293] [   DEBUG][0m - sharding_parallel_size        : 1[0m
+[35m[2026-05-11 19:27:58,294] [   DEBUG][0m - should_load_dataset           : True[0m
+[35m[2026-05-11 19:27:58,294] [   DEBUG][0m - should_load_sharding_stage1_model: False[0m
+[35m[2026-05-11 19:27:58,294] [   DEBUG][0m - should_log                    : True[0m
+[35m[2026-05-11 19:27:58,294] [   DEBUG][0m - should_save                   : True[0m
+[35m[2026-05-11 19:27:58,294] [   DEBUG][0m - should_save_model_state       : True[0m
+[35m[2026-05-11 19:27:58,294] [   DEBUG][0m - should_save_model_with_tensor_fusion: False[0m
+[35m[2026-05-11 19:27:58,294] [   DEBUG][0m - should_save_sharding_stage1_model: False[0m
+[35m[2026-05-11 19:27:58,294] [   DEBUG][0m - shuffle_consecutive           : False[0m
+[35m[2026-05-11 19:27:58,294] [   DEBUG][0m - simpo_gamma                   : 0.5[0m
+[35m[2026-05-11 19:27:58,294] [   DEBUG][0m - skip_data_intervals           : None[0m
+[35m[2026-05-11 19:27:58,295] [   DEBUG][0m - skip_memory_metrics           : True[0m
+[35m[2026-05-11 19:27:58,295] [   DEBUG][0m - skip_profile_timer            : True[0m
+[35m[2026-05-11 19:27:58,295] [   DEBUG][0m - softmax_scale                 : None[0m
+[35m[2026-05-11 19:27:58,295] [   DEBUG][0m - softmax_type                  : vanilla[0m
+[35m[2026-05-11 19:27:58,295] [   DEBUG][0m - sp_allreduce_avg_in_gradinent_scale: False[0m
+[35m[2026-05-11 19:27:58,295] [   DEBUG][0m - sp_async_reduce_scatter       : False[0m
+[35m[2026-05-11 19:27:58,295] [   DEBUG][0m - split_backward                : False[0m
+[35m[2026-05-11 19:27:58,295] [   DEBUG][0m - split_inputs_sequence_dim     : True[0m
+[35m[2026-05-11 19:27:58,295] [   DEBUG][0m - split_norm_comm               : False[0m
+[35m[2026-05-11 19:27:58,295] [   DEBUG][0m - split_param                   : True[0m
+[35m[2026-05-11 19:27:58,296] [   DEBUG][0m - stage1_allgather_overlap      : False[0m
+[35m[2026-05-11 19:27:58,296] [   DEBUG][0m - stage1_broadcast_overlap      : False[0m
+[35m[2026-05-11 19:27:58,296] [   DEBUG][0m - stage1_overlap                : False[0m
+[35m[2026-05-11 19:27:58,296] [   DEBUG][0m - stage1_reduce_avg             : True[0m
+[35m[2026-05-11 19:27:58,296] [   DEBUG][0m - stage1_tensor_fusion          : False[0m
+[35m[2026-05-11 19:27:58,296] [   DEBUG][0m - stage2_overlap                : False[0m
+[35m[2026-05-11 19:27:58,296] [   DEBUG][0m - sync_grad                     : False[0m
+[35m[2026-05-11 19:27:58,296] [   DEBUG][0m - tensor_fusion                 : False[0m
+[35m[2026-05-11 19:27:58,296] [   DEBUG][0m - tensor_model_parallel_size    : 2[0m
+[35m[2026-05-11 19:27:58,296] [   DEBUG][0m - tensor_parallel_config        : [0m
+[35m[2026-05-11 19:27:58,297] [   DEBUG][0m - tensor_parallel_output        : True[0m
+[35m[2026-05-11 19:27:58,297] [   DEBUG][0m - tensor_parallel_rank          : 0[0m
+[35m[2026-05-11 19:27:58,297] [   DEBUG][0m - tensorwise_offload_optimizer  : False[0m
+[35m[2026-05-11 19:27:58,297] [   DEBUG][0m - tie_word_embeddings           : None[0m
+[35m[2026-05-11 19:27:58,297] [   DEBUG][0m - timer                         : False[0m
+[35m[2026-05-11 19:27:58,297] [   DEBUG][0m - to_static                     : False[0m
+[35m[2026-05-11 19:27:58,297] [   DEBUG][0m - token_balance_loss            : False[0m
+[35m[2026-05-11 19:27:58,297] [   DEBUG][0m - tp_async_allreduce            : False[0m
+[35m[2026-05-11 19:27:58,297] [   DEBUG][0m - tp_sync_moment                : False[0m
+[35m[2026-05-11 19:27:58,297] [   DEBUG][0m - tp_sync_param                 : False[0m
+[35m[2026-05-11 19:27:58,297] [   DEBUG][0m - train_batch_size              : 1[0m
+[35m[2026-05-11 19:27:58,298] [   DEBUG][0m - train_mtp_only                : False[0m
+[35m[2026-05-11 19:27:58,298] [   DEBUG][0m - unified_checkpoint            : False[0m
+[35m[2026-05-11 19:27:58,298] [   DEBUG][0m - unified_checkpoint_config     : [0m
+[35m[2026-05-11 19:27:58,298] [   DEBUG][0m - use_async_save                : False[0m
+[35m[2026-05-11 19:27:58,298] [   DEBUG][0m - use_cache                     : False[0m
+[35m[2026-05-11 19:27:58,298] [   DEBUG][0m - use_dualpipev                 : False[0m
+[35m[2026-05-11 19:27:58,298] [   DEBUG][0m - use_expert_parallel           : False[0m
+[35m[2026-05-11 19:27:58,298] [   DEBUG][0m - use_filtered_label_loss       : False[0m
+[35m[2026-05-11 19:27:58,298] [   DEBUG][0m - use_fp8                       : False[0m
+[35m[2026-05-11 19:27:58,298] [   DEBUG][0m - use_fused_head_and_loss_fn    : False[0m
+[35m[2026-05-11 19:27:58,299] [   DEBUG][0m - use_fused_linear_cross_entropy: False[0m
+[35m[2026-05-11 19:27:58,299] [   DEBUG][0m - use_hybrid_parallel           : True[0m
+[35m[2026-05-11 19:27:58,299] [   DEBUG][0m - use_intermediate_api          : False[0m
+[35m[2026-05-11 19:27:58,299] [   DEBUG][0m - use_lowprecision_moment       : False[0m
+[35m[2026-05-11 19:27:58,299] [   DEBUG][0m - use_moe                       : False[0m
+[35m[2026-05-11 19:27:58,299] [   DEBUG][0m - use_ortho_loss_callback       : False[0m
+[35m[2026-05-11 19:27:58,299] [   DEBUG][0m - use_qk_norm                   : None[0m
+[35m[2026-05-11 19:27:58,299] [   DEBUG][0m - use_recompute_mtp             : False[0m
+[35m[2026-05-11 19:27:58,299] [   DEBUG][0m - use_unified_moe               : False[0m
+[35m[2026-05-11 19:27:58,299] [   DEBUG][0m - using_sonic_moe               : False[0m
+[35m[2026-05-11 19:27:58,300] [   DEBUG][0m - variable_seq_lengths          : False[0m
+[35m[2026-05-11 19:27:58,300] [   DEBUG][0m - virtual_pipeline_model_parallel_size: 1[0m
+[35m[2026-05-11 19:27:58,300] [   DEBUG][0m - wandb_api_key                 : None[0m
+[35m[2026-05-11 19:27:58,300] [   DEBUG][0m - wandb_http_proxy              : None[0m
+[35m[2026-05-11 19:27:58,300] [   DEBUG][0m - warmup_ratio                  : 0.0[0m
+[35m[2026-05-11 19:27:58,300] [   DEBUG][0m - warmup_steps                  : 10[0m
+[35m[2026-05-11 19:27:58,300] [   DEBUG][0m - weight_decay                  : 0.0[0m
+[35m[2026-05-11 19:27:58,300] [   DEBUG][0m - weight_name_suffix            : tp00_pp00[0m
+[35m[2026-05-11 19:27:58,300] [   DEBUG][0m - weight_quantize_algo          : None[0m
+[35m[2026-05-11 19:27:58,300] [   DEBUG][0m - world_size                    : 4[0m
+[35m[2026-05-11 19:27:58,301] [   DEBUG][0m - zcc_ema_interval              : 1[0m
+[35m[2026-05-11 19:27:58,301] [   DEBUG][0m - zcc_ema_loss_threshold        : None[0m
+[35m[2026-05-11 19:27:58,301] [   DEBUG][0m - zcc_pipeline_hooks_capacity_usage: 0.6[0m
+[35m[2026-05-11 19:27:58,301] [   DEBUG][0m - zcc_save_ema_coef             : None[0m
+[35m[2026-05-11 19:27:58,301] [   DEBUG][0m - zcc_workers_num               : 3[0m
+[35m[2026-05-11 19:27:58,301] [   DEBUG][0m - [0m
+[32m[2026-05-11 19:27:58,302] [    INFO][0m - The global seed is set to 23, local seed is set to 27 and random seed is set to 23.[0m
+[33m[2026-05-11 19:27:58,303] [ WARNING][0m - Process rank: 0, device: gpu, world_size: 4, distributed training: True, 16-bits training: True[0m
+[32m[2026-05-11 19:27:58,303] [    INFO][0m - Using download source: huggingface[0m
+[32m[2026-05-11 19:27:58,303] [    INFO][0m - Using download source: huggingface[0m
+[32m[2026-05-11 19:27:58,303] [    INFO][0m - Loading configuration file ./models/Llama-3-8b/config.json[0m
+[32m[2026-05-11 19:27:58,307] [    INFO][0m - Final model config: LlamaConfig {
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 128000,
+  "enable_auto_parallel": false,
+  "eos_token_id": 128001,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.02,
+  "intermediate_size": 14336,
+  "is_lora": false,
+  "max_position_embeddings": 8192,
+  "max_sequence_length": 4096,
+  "mlp_bias": false,
+  "model_type": "llama",
+  "moe_router_bias_update_rate": 0.0,
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "pad_token_id": 0,
+  "paddleformers_version": "1.1.0.post20260511",
+  "pipeline_model_parallel_size": 2,
+  "pp_seg_method": "layer:DecoderLayer|EmptyLayer",
+  "pretraining_tp": 1,
+  "recompute_granularity": "full",
+  "recompute_method": "uniform",
+  "recompute_num_layers": 1,
+  "rms_norm_eps": 1e-05,
+  "rope_parameters": {
+    "rope_theta": 500000.0,
+    "rope_type": "default"
+  },
+  "rope_scaling": null,
+  "rope_theta": 500000.0,
+  "seq_length": 4096,
+  "tensor_model_parallel_size": 2,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float32",
+  "use_cache": true,
+  "use_fast_layer_norm": false,
+  "vocab_size": 128256
+}
+[0m
+[32m[2026-05-11 19:27:58,307] [    INFO][0m - Creating model[0m
+[32m[2026-05-11 19:27:58,307] [    INFO][0m - Loading model weights from ./models/Llama-3-8b[0m
+[32m[2026-05-11 19:27:58,312] [    INFO][0m - change initializer-range from 0.02 to 0.009020646889913162[0m
+[32m[2026-05-11 19:27:58,312] [    INFO][0m - using moe-group: dummy[0m
+[32m[2026-05-11 19:27:58,313] [    INFO][0m - use no_recompute_layers: {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31}[0m
+[32m[2026-05-11 19:27:58,313] [    INFO][0m - using recompute_interval=0, seg_method=layer:DecoderLayer|EmptyLayer[0m
+[32m[2026-05-11 19:27:58,313] [    INFO][0m - loss_subbatch_sequence_length: -1 , use_fused_head_and_loss_fn: False, use_filtered_label_loss: False[0m
+[32m[2026-05-11 19:27:58,314] [    INFO][0m - using parallel cross entroy, take care[0m
+[2026-05-11 19:27:58,315] [    INFO] pp_layers.py:871 - start segment network..
+[2026-05-11 19:27:58,315] [    INFO] pp_layers.py:877 - segment with method: layer:DecoderLayer|EmptyLayer; result: 0, 17, 35
+[2026-05-11 19:27:58,315] [    INFO] pp_layers.py:894 - stage=0, global_rank=0 ,layer_number=17
+[2026-05-11 19:27:58,318] [    INFO] pp_layers.py:899 - 0: EmbeddingPipe(config=LlamaConfig {
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 128000,
+  "enable_auto_parallel": false,
+  "eos_token_id": 128001,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.009020646889913162,
+  "intermediate_size": 14336,
+  "is_lora": false,
+  "max_position_embeddings": 8192,
+  "max_sequence_length": 4096,
+  "mlp_bias": false,
+  "model_type": "llama",
+  "moe_group_origin": "dummy",
+  "moe_rank": 0,
+  "moe_router_bias_update_rate": 0.0,
+  "moe_world_size": 1,
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "pad_token_id": 0,
+  "paddleformers_version": "1.1.0.post20260511",
+  "pipeline_model_parallel_size": 2,
+  "pp_seg_method": "layer:DecoderLayer|EmptyLayer",
+  "pretraining_tp": 1,
+  "recompute_granularity": "full",
+  "recompute_method": "uniform",
+  "recompute_num_layers": 1,
+  "rms_norm_eps": 1e-05,
+  "rope_parameters": {
+    "rope_theta": 500000.0,
+    "rope_type": "default"
+  },
+  "rope_scaling": null,
+  "rope_theta": 500000.0,
+  "seq_length": 4096,
+  "tensor_model_parallel_size": 2,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float32",
+  "use_cache": true,
+  "use_fast_layer_norm": false,
+  "vocab_size": 128256
+}
+, embed_cls=None, rotary_emb_cls=None)
+[2026-05-11 19:27:58,321] [    INFO] pp_layers.py:899 - 1: DecoderLayerPipe(config=LlamaConfig {
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 128000,
+  "enable_auto_parallel": false,
+  "eos_token_id": 128001,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.009020646889913162,
+  "intermediate_size": 14336,
+  "is_lora": false,
+  "max_position_embeddings": 8192,
+  "max_sequence_length": 4096,
+  "mlp_bias": false,
+  "model_type": "llama",
+  "moe_group_origin": "dummy",
+  "moe_rank": 0,
+  "moe_router_bias_update_rate": 0.0,
+  "moe_world_size": 1,
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "pad_token_id": 0,
+  "paddleformers_version": "1.1.0.post20260511",
+  "pipeline_model_parallel_size": 2,
+  "pp_seg_method": "layer:DecoderLayer|EmptyLayer",
+  "pretraining_tp": 1,
+  "recompute_granularity": "full",
+  "recompute_method": "uniform",
+  "recompute_num_layers": 1,
+  "rms_norm_eps": 1e-05,
+  "rope_parameters": {
+    "rope_theta": 500000.0,
+    "rope_type": "default"
+  },
+  "rope_scaling": null,
+  "rope_theta": 500000.0,
+  "seq_length": 4096,
+  "tensor_model_parallel_size": 2,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float32",
+  "use_cache": true,
+  "use_fast_layer_norm": false,
+  "vocab_size": 128256
+}
+, layer_idx=0)
+[2026-05-11 19:27:58,323] [    INFO] pp_layers.py:899 - 2: DecoderLayerPipe(config=LlamaConfig {
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 128000,
+  "enable_auto_parallel": false,
+  "eos_token_id": 128001,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.009020646889913162,
+  "intermediate_size": 14336,
+  "is_lora": false,
+  "max_position_embeddings": 8192,
+  "max_sequence_length": 4096,
+  "mlp_bias": false,
+  "model_type": "llama",
+  "moe_group_origin": "dummy",
+  "moe_rank": 0,
+  "moe_router_bias_update_rate": 0.0,
+  "moe_world_size": 1,
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "pad_token_id": 0,
+  "paddleformers_version": "1.1.0.post20260511",
+  "pipeline_model_parallel_size": 2,
+  "pp_seg_method": "layer:DecoderLayer|EmptyLayer",
+  "pretraining_tp": 1,
+  "recompute_granularity": "full",
+  "recompute_method": "uniform",
+  "recompute_num_layers": 1,
+  "rms_norm_eps": 1e-05,
+  "rope_parameters": {
+    "rope_theta": 500000.0,
+    "rope_type": "default"
+  },
+  "rope_scaling": null,
+  "rope_theta": 500000.0,
+  "seq_length": 4096,
+  "tensor_model_parallel_size": 2,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float32",
+  "use_cache": true,
+  "use_fast_layer_norm": false,
+  "vocab_size": 128256
+}
+, layer_idx=1)
+[2026-05-11 19:27:58,326] [    INFO] pp_layers.py:899 - 3: DecoderLayerPipe(config=LlamaConfig {
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 128000,
+  "enable_auto_parallel": false,
+  "eos_token_id": 128001,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.009020646889913162,
+  "intermediate_size": 14336,
+  "is_lora": false,
+  "max_position_embeddings": 8192,
+  "max_sequence_length": 4096,
+  "mlp_bias": false,
+  "model_type": "llama",
+  "moe_group_origin": "dummy",
+  "moe_rank": 0,
+  "moe_router_bias_update_rate": 0.0,
+  "moe_world_size": 1,
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "pad_token_id": 0,
+  "paddleformers_version": "1.1.0.post20260511",
+  "pipeline_model_parallel_size": 2,
+  "pp_seg_method": "layer:DecoderLayer|EmptyLayer",
+  "pretraining_tp": 1,
+  "recompute_granularity": "full",
+  "recompute_method": "uniform",
+  "recompute_num_layers": 1,
+  "rms_norm_eps": 1e-05,
+  "rope_parameters": {
+    "rope_theta": 500000.0,
+    "rope_type": "default"
+  },
+  "rope_scaling": null,
+  "rope_theta": 500000.0,
+  "seq_length": 4096,
+  "tensor_model_parallel_size": 2,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float32",
+  "use_cache": true,
+  "use_fast_layer_norm": false,
+  "vocab_size": 128256
+}
+, layer_idx=2)
+[2026-05-11 19:27:58,329] [    INFO] pp_layers.py:899 - 4: DecoderLayerPipe(config=LlamaConfig {
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 128000,
+  "enable_auto_parallel": false,
+  "eos_token_id": 128001,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.009020646889913162,
+  "intermediate_size": 14336,
+  "is_lora": false,
+  "max_position_embeddings": 8192,
+  "max_sequence_length": 4096,
+  "mlp_bias": false,
+  "model_type": "llama",
+  "moe_group_origin": "dummy",
+  "moe_rank": 0,
+  "moe_router_bias_update_rate": 0.0,
+  "moe_world_size": 1,
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "pad_token_id": 0,
+  "paddleformers_version": "1.1.0.post20260511",
+  "pipeline_model_parallel_size": 2,
+  "pp_seg_method": "layer:DecoderLayer|EmptyLayer",
+  "pretraining_tp": 1,
+  "recompute_granularity": "full",
+  "recompute_method": "uniform",
+  "recompute_num_layers": 1,
+  "rms_norm_eps": 1e-05,
+  "rope_parameters": {
+    "rope_theta": 500000.0,
+    "rope_type": "default"
+  },
+  "rope_scaling": null,
+  "rope_theta": 500000.0,
+  "seq_length": 4096,
+  "tensor_model_parallel_size": 2,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float32",
+  "use_cache": true,
+  "use_fast_layer_norm": false,
+  "vocab_size": 128256
+}
+, layer_idx=3)
+[2026-05-11 19:27:58,331] [    INFO] pp_layers.py:899 - 5: DecoderLayerPipe(config=LlamaConfig {
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 128000,
+  "enable_auto_parallel": false,
+  "eos_token_id": 128001,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.009020646889913162,
+  "intermediate_size": 14336,
+  "is_lora": false,
+  "max_position_embeddings": 8192,
+  "max_sequence_length": 4096,
+  "mlp_bias": false,
+  "model_type": "llama",
+  "moe_group_origin": "dummy",
+  "moe_rank": 0,
+  "moe_router_bias_update_rate": 0.0,
+  "moe_world_size": 1,
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "pad_token_id": 0,
+  "paddleformers_version": "1.1.0.post20260511",
+  "pipeline_model_parallel_size": 2,
+  "pp_seg_method": "layer:DecoderLayer|EmptyLayer",
+  "pretraining_tp": 1,
+  "recompute_granularity": "full",
+  "recompute_method": "uniform",
+  "recompute_num_layers": 1,
+  "rms_norm_eps": 1e-05,
+  "rope_parameters": {
+    "rope_theta": 500000.0,
+    "rope_type": "default"
+  },
+  "rope_scaling": null,
+  "rope_theta": 500000.0,
+  "seq_length": 4096,
+  "tensor_model_parallel_size": 2,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float32",
+  "use_cache": true,
+  "use_fast_layer_norm": false,
+  "vocab_size": 128256
+}
+, layer_idx=4)
+[2026-05-11 19:27:58,334] [    INFO] pp_layers.py:899 - 6: DecoderLayerPipe(config=LlamaConfig {
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 128000,
+  "enable_auto_parallel": false,
+  "eos_token_id": 128001,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.009020646889913162,
+  "intermediate_size": 14336,
+  "is_lora": false,
+  "max_position_embeddings": 8192,
+  "max_sequence_length": 4096,
+  "mlp_bias": false,
+  "model_type": "llama",
+  "moe_group_origin": "dummy",
+  "moe_rank": 0,
+  "moe_router_bias_update_rate": 0.0,
+  "moe_world_size": 1,
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "pad_token_id": 0,
+  "paddleformers_version": "1.1.0.post20260511",
+  "pipeline_model_parallel_size": 2,
+  "pp_seg_method": "layer:DecoderLayer|EmptyLayer",
+  "pretraining_tp": 1,
+  "recompute_granularity": "full",
+  "recompute_method": "uniform",
+  "recompute_num_layers": 1,
+  "rms_norm_eps": 1e-05,
+  "rope_parameters": {
+    "rope_theta": 500000.0,
+    "rope_type": "default"
+  },
+  "rope_scaling": null,
+  "rope_theta": 500000.0,
+  "seq_length": 4096,
+  "tensor_model_parallel_size": 2,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float32",
+  "use_cache": true,
+  "use_fast_layer_norm": false,
+  "vocab_size": 128256
+}
+, layer_idx=5)
+[2026-05-11 19:27:58,337] [    INFO] pp_layers.py:899 - 7: DecoderLayerPipe(config=LlamaConfig {
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 128000,
+  "enable_auto_parallel": false,
+  "eos_token_id": 128001,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.009020646889913162,
+  "intermediate_size": 14336,
+  "is_lora": false,
+  "max_position_embeddings": 8192,
+  "max_sequence_length": 4096,
+  "mlp_bias": false,
+  "model_type": "llama",
+  "moe_group_origin": "dummy",
+  "moe_rank": 0,
+  "moe_router_bias_update_rate": 0.0,
+  "moe_world_size": 1,
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "pad_token_id": 0,
+  "paddleformers_version": "1.1.0.post20260511",
+  "pipeline_model_parallel_size": 2,
+  "pp_seg_method": "layer:DecoderLayer|EmptyLayer",
+  "pretraining_tp": 1,
+  "recompute_granularity": "full",
+  "recompute_method": "uniform",
+  "recompute_num_layers": 1,
+  "rms_norm_eps": 1e-05,
+  "rope_parameters": {
+    "rope_theta": 500000.0,
+    "rope_type": "default"
+  },
+  "rope_scaling": null,
+  "rope_theta": 500000.0,
+  "seq_length": 4096,
+  "tensor_model_parallel_size": 2,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float32",
+  "use_cache": true,
+  "use_fast_layer_norm": false,
+  "vocab_size": 128256
+}
+, layer_idx=6)
+[2026-05-11 19:27:58,339] [    INFO] pp_layers.py:899 - 8: DecoderLayerPipe(config=LlamaConfig {
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 128000,
+  "enable_auto_parallel": false,
+  "eos_token_id": 128001,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.009020646889913162,
+  "intermediate_size": 14336,
+  "is_lora": false,
+  "max_position_embeddings": 8192,
+  "max_sequence_length": 4096,
+  "mlp_bias": false,
+  "model_type": "llama",
+  "moe_group_origin": "dummy",
+  "moe_rank": 0,
+  "moe_router_bias_update_rate": 0.0,
+  "moe_world_size": 1,
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "pad_token_id": 0,
+  "paddleformers_version": "1.1.0.post20260511",
+  "pipeline_model_parallel_size": 2,
+  "pp_seg_method": "layer:DecoderLayer|EmptyLayer",
+  "pretraining_tp": 1,
+  "recompute_granularity": "full",
+  "recompute_method": "uniform",
+  "recompute_num_layers": 1,
+  "rms_norm_eps": 1e-05,
+  "rope_parameters": {
+    "rope_theta": 500000.0,
+    "rope_type": "default"
+  },
+  "rope_scaling": null,
+  "rope_theta": 500000.0,
+  "seq_length": 4096,
+  "tensor_model_parallel_size": 2,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float32",
+  "use_cache": true,
+  "use_fast_layer_norm": false,
+  "vocab_size": 128256
+}
+, layer_idx=7)
+[2026-05-11 19:27:58,342] [    INFO] pp_layers.py:899 - 9: DecoderLayerPipe(config=LlamaConfig {
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 128000,
+  "enable_auto_parallel": false,
+  "eos_token_id": 128001,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.009020646889913162,
+  "intermediate_size": 14336,
+  "is_lora": false,
+  "max_position_embeddings": 8192,
+  "max_sequence_length": 4096,
+  "mlp_bias": false,
+  "model_type": "llama",
+  "moe_group_origin": "dummy",
+  "moe_rank": 0,
+  "moe_router_bias_update_rate": 0.0,
+  "moe_world_size": 1,
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "pad_token_id": 0,
+  "paddleformers_version": "1.1.0.post20260511",
+  "pipeline_model_parallel_size": 2,
+  "pp_seg_method": "layer:DecoderLayer|EmptyLayer",
+  "pretraining_tp": 1,
+  "recompute_granularity": "full",
+  "recompute_method": "uniform",
+  "recompute_num_layers": 1,
+  "rms_norm_eps": 1e-05,
+  "rope_parameters": {
+    "rope_theta": 500000.0,
+    "rope_type": "default"
+  },
+  "rope_scaling": null,
+  "rope_theta": 500000.0,
+  "seq_length": 4096,
+  "tensor_model_parallel_size": 2,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float32",
+  "use_cache": true,
+  "use_fast_layer_norm": false,
+  "vocab_size": 128256
+}
+, layer_idx=8)
+[2026-05-11 19:27:58,345] [    INFO] pp_layers.py:899 - 10: DecoderLayerPipe(config=LlamaConfig {
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 128000,
+  "enable_auto_parallel": false,
+  "eos_token_id": 128001,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.009020646889913162,
+  "intermediate_size": 14336,
+  "is_lora": false,
+  "max_position_embeddings": 8192,
+  "max_sequence_length": 4096,
+  "mlp_bias": false,
+  "model_type": "llama",
+  "moe_group_origin": "dummy",
+  "moe_rank": 0,
+  "moe_router_bias_update_rate": 0.0,
+  "moe_world_size": 1,
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "pad_token_id": 0,
+  "paddleformers_version": "1.1.0.post20260511",
+  "pipeline_model_parallel_size": 2,
+  "pp_seg_method": "layer:DecoderLayer|EmptyLayer",
+  "pretraining_tp": 1,
+  "recompute_granularity": "full",
+  "recompute_method": "uniform",
+  "recompute_num_layers": 1,
+  "rms_norm_eps": 1e-05,
+  "rope_parameters": {
+    "rope_theta": 500000.0,
+    "rope_type": "default"
+  },
+  "rope_scaling": null,
+  "rope_theta": 500000.0,
+  "seq_length": 4096,
+  "tensor_model_parallel_size": 2,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float32",
+  "use_cache": true,
+  "use_fast_layer_norm": false,
+  "vocab_size": 128256
+}
+, layer_idx=9)
+[2026-05-11 19:27:58,347] [    INFO] pp_layers.py:899 - 11: DecoderLayerPipe(config=LlamaConfig {
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 128000,
+  "enable_auto_parallel": false,
+  "eos_token_id": 128001,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.009020646889913162,
+  "intermediate_size": 14336,
+  "is_lora": false,
+  "max_position_embeddings": 8192,
+  "max_sequence_length": 4096,
+  "mlp_bias": false,
+  "model_type": "llama",
+  "moe_group_origin": "dummy",
+  "moe_rank": 0,
+  "moe_router_bias_update_rate": 0.0,
+  "moe_world_size": 1,
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "pad_token_id": 0,
+  "paddleformers_version": "1.1.0.post20260511",
+  "pipeline_model_parallel_size": 2,
+  "pp_seg_method": "layer:DecoderLayer|EmptyLayer",
+  "pretraining_tp": 1,
+  "recompute_granularity": "full",
+  "recompute_method": "uniform",
+  "recompute_num_layers": 1,
+  "rms_norm_eps": 1e-05,
+  "rope_parameters": {
+    "rope_theta": 500000.0,
+    "rope_type": "default"
+  },
+  "rope_scaling": null,
+  "rope_theta": 500000.0,
+  "seq_length": 4096,
+  "tensor_model_parallel_size": 2,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float32",
+  "use_cache": true,
+  "use_fast_layer_norm": false,
+  "vocab_size": 128256
+}
+, layer_idx=10)
+[2026-05-11 19:27:58,350] [    INFO] pp_layers.py:899 - 12: DecoderLayerPipe(config=LlamaConfig {
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 128000,
+  "enable_auto_parallel": false,
+  "eos_token_id": 128001,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.009020646889913162,
+  "intermediate_size": 14336,
+  "is_lora": false,
+  "max_position_embeddings": 8192,
+  "max_sequence_length": 4096,
+  "mlp_bias": false,
+  "model_type": "llama",
+  "moe_group_origin": "dummy",
+  "moe_rank": 0,
+  "moe_router_bias_update_rate": 0.0,
+  "moe_world_size": 1,
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "pad_token_id": 0,
+  "paddleformers_version": "1.1.0.post20260511",
+  "pipeline_model_parallel_size": 2,
+  "pp_seg_method": "layer:DecoderLayer|EmptyLayer",
+  "pretraining_tp": 1,
+  "recompute_granularity": "full",
+  "recompute_method": "uniform",
+  "recompute_num_layers": 1,
+  "rms_norm_eps": 1e-05,
+  "rope_parameters": {
+    "rope_theta": 500000.0,
+    "rope_type": "default"
+  },
+  "rope_scaling": null,
+  "rope_theta": 500000.0,
+  "seq_length": 4096,
+  "tensor_model_parallel_size": 2,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float32",
+  "use_cache": true,
+  "use_fast_layer_norm": false,
+  "vocab_size": 128256
+}
+, layer_idx=11)
+[2026-05-11 19:27:58,352] [    INFO] pp_layers.py:899 - 13: DecoderLayerPipe(config=LlamaConfig {
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 128000,
+  "enable_auto_parallel": false,
+  "eos_token_id": 128001,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.009020646889913162,
+  "intermediate_size": 14336,
+  "is_lora": false,
+  "max_position_embeddings": 8192,
+  "max_sequence_length": 4096,
+  "mlp_bias": false,
+  "model_type": "llama",
+  "moe_group_origin": "dummy",
+  "moe_rank": 0,
+  "moe_router_bias_update_rate": 0.0,
+  "moe_world_size": 1,
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "pad_token_id": 0,
+  "paddleformers_version": "1.1.0.post20260511",
+  "pipeline_model_parallel_size": 2,
+  "pp_seg_method": "layer:DecoderLayer|EmptyLayer",
+  "pretraining_tp": 1,
+  "recompute_granularity": "full",
+  "recompute_method": "uniform",
+  "recompute_num_layers": 1,
+  "rms_norm_eps": 1e-05,
+  "rope_parameters": {
+    "rope_theta": 500000.0,
+    "rope_type": "default"
+  },
+  "rope_scaling": null,
+  "rope_theta": 500000.0,
+  "seq_length": 4096,
+  "tensor_model_parallel_size": 2,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float32",
+  "use_cache": true,
+  "use_fast_layer_norm": false,
+  "vocab_size": 128256
+}
+, layer_idx=12)
+[2026-05-11 19:27:58,355] [    INFO] pp_layers.py:899 - 14: DecoderLayerPipe(config=LlamaConfig {
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 128000,
+  "enable_auto_parallel": false,
+  "eos_token_id": 128001,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.009020646889913162,
+  "intermediate_size": 14336,
+  "is_lora": false,
+  "max_position_embeddings": 8192,
+  "max_sequence_length": 4096,
+  "mlp_bias": false,
+  "model_type": "llama",
+  "moe_group_origin": "dummy",
+  "moe_rank": 0,
+  "moe_router_bias_update_rate": 0.0,
+  "moe_world_size": 1,
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "pad_token_id": 0,
+  "paddleformers_version": "1.1.0.post20260511",
+  "pipeline_model_parallel_size": 2,
+  "pp_seg_method": "layer:DecoderLayer|EmptyLayer",
+  "pretraining_tp": 1,
+  "recompute_granularity": "full",
+  "recompute_method": "uniform",
+  "recompute_num_layers": 1,
+  "rms_norm_eps": 1e-05,
+  "rope_parameters": {
+    "rope_theta": 500000.0,
+    "rope_type": "default"
+  },
+  "rope_scaling": null,
+  "rope_theta": 500000.0,
+  "seq_length": 4096,
+  "tensor_model_parallel_size": 2,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float32",
+  "use_cache": true,
+  "use_fast_layer_norm": false,
+  "vocab_size": 128256
+}
+, layer_idx=13)
+[2026-05-11 19:27:58,358] [    INFO] pp_layers.py:899 - 15: DecoderLayerPipe(config=LlamaConfig {
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 128000,
+  "enable_auto_parallel": false,
+  "eos_token_id": 128001,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.009020646889913162,
+  "intermediate_size": 14336,
+  "is_lora": false,
+  "max_position_embeddings": 8192,
+  "max_sequence_length": 4096,
+  "mlp_bias": false,
+  "model_type": "llama",
+  "moe_group_origin": "dummy",
+  "moe_rank": 0,
+  "moe_router_bias_update_rate": 0.0,
+  "moe_world_size": 1,
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "pad_token_id": 0,
+  "paddleformers_version": "1.1.0.post20260511",
+  "pipeline_model_parallel_size": 2,
+  "pp_seg_method": "layer:DecoderLayer|EmptyLayer",
+  "pretraining_tp": 1,
+  "recompute_granularity": "full",
+  "recompute_method": "uniform",
+  "recompute_num_layers": 1,
+  "rms_norm_eps": 1e-05,
+  "rope_parameters": {
+    "rope_theta": 500000.0,
+    "rope_type": "default"
+  },
+  "rope_scaling": null,
+  "rope_theta": 500000.0,
+  "seq_length": 4096,
+  "tensor_model_parallel_size": 2,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float32",
+  "use_cache": true,
+  "use_fast_layer_norm": false,
+  "vocab_size": 128256
+}
+, layer_idx=14)
+[2026-05-11 19:27:58,360] [    INFO] pp_layers.py:899 - 16: DecoderLayerPipe(config=LlamaConfig {
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 128000,
+  "enable_auto_parallel": false,
+  "eos_token_id": 128001,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.009020646889913162,
+  "intermediate_size": 14336,
+  "is_lora": false,
+  "max_position_embeddings": 8192,
+  "max_sequence_length": 4096,
+  "mlp_bias": false,
+  "model_type": "llama",
+  "moe_group_origin": "dummy",
+  "moe_rank": 0,
+  "moe_router_bias_update_rate": 0.0,
+  "moe_world_size": 1,
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "pad_token_id": 0,
+  "paddleformers_version": "1.1.0.post20260511",
+  "pipeline_model_parallel_size": 2,
+  "pp_seg_method": "layer:DecoderLayer|EmptyLayer",
+  "pretraining_tp": 1,
+  "recompute_granularity": "full",
+  "recompute_method": "uniform",
+  "recompute_num_layers": 1,
+  "rms_norm_eps": 1e-05,
+  "rope_parameters": {
+    "rope_theta": 500000.0,
+    "rope_type": "default"
+  },
+  "rope_scaling": null,
+  "rope_theta": 500000.0,
+  "seq_length": 4096,
+  "tensor_model_parallel_size": 2,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float32",
+  "use_cache": true,
+  "use_fast_layer_norm": false,
+  "vocab_size": 128256
+}
+, layer_idx=15)
+[2026-05-11 19:27:58,360] [    INFO] pp_layers.py:894 - stage=1, global_rank=0 ,layer_number=18
+[2026-05-11 19:27:58,363] [    INFO] pp_layers.py:899 - 17: DecoderLayerPipe(config=LlamaConfig {
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 128000,
+  "enable_auto_parallel": false,
+  "eos_token_id": 128001,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.009020646889913162,
+  "intermediate_size": 14336,
+  "is_lora": false,
+  "max_position_embeddings": 8192,
+  "max_sequence_length": 4096,
+  "mlp_bias": false,
+  "model_type": "llama",
+  "moe_group_origin": "dummy",
+  "moe_rank": 0,
+  "moe_router_bias_update_rate": 0.0,
+  "moe_world_size": 1,
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "pad_token_id": 0,
+  "paddleformers_version": "1.1.0.post20260511",
+  "pipeline_model_parallel_size": 2,
+  "pp_seg_method": "layer:DecoderLayer|EmptyLayer",
+  "pretraining_tp": 1,
+  "recompute_granularity": "full",
+  "recompute_method": "uniform",
+  "recompute_num_layers": 1,
+  "rms_norm_eps": 1e-05,
+  "rope_parameters": {
+    "rope_theta": 500000.0,
+    "rope_type": "default"
+  },
+  "rope_scaling": null,
+  "rope_theta": 500000.0,
+  "seq_length": 4096,
+  "tensor_model_parallel_size": 2,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float32",
+  "use_cache": true,
+  "use_fast_layer_norm": false,
+  "vocab_size": 128256
+}
+, layer_idx=16)
+[2026-05-11 19:27:58,365] [    INFO] pp_layers.py:899 - 18: DecoderLayerPipe(config=LlamaConfig {
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 128000,
+  "enable_auto_parallel": false,
+  "eos_token_id": 128001,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.009020646889913162,
+  "intermediate_size": 14336,
+  "is_lora": false,
+  "max_position_embeddings": 8192,
+  "max_sequence_length": 4096,
+  "mlp_bias": false,
+  "model_type": "llama",
+  "moe_group_origin": "dummy",
+  "moe_rank": 0,
+  "moe_router_bias_update_rate": 0.0,
+  "moe_world_size": 1,
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "pad_token_id": 0,
+  "paddleformers_version": "1.1.0.post20260511",
+  "pipeline_model_parallel_size": 2,
+  "pp_seg_method": "layer:DecoderLayer|EmptyLayer",
+  "pretraining_tp": 1,
+  "recompute_granularity": "full",
+  "recompute_method": "uniform",
+  "recompute_num_layers": 1,
+  "rms_norm_eps": 1e-05,
+  "rope_parameters": {
+    "rope_theta": 500000.0,
+    "rope_type": "default"
+  },
+  "rope_scaling": null,
+  "rope_theta": 500000.0,
+  "seq_length": 4096,
+  "tensor_model_parallel_size": 2,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float32",
+  "use_cache": true,
+  "use_fast_layer_norm": false,
+  "vocab_size": 128256
+}
+, layer_idx=17)
+[2026-05-11 19:27:58,368] [    INFO] pp_layers.py:899 - 19: DecoderLayerPipe(config=LlamaConfig {
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 128000,
+  "enable_auto_parallel": false,
+  "eos_token_id": 128001,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.009020646889913162,
+  "intermediate_size": 14336,
+  "is_lora": false,
+  "max_position_embeddings": 8192,
+  "max_sequence_length": 4096,
+  "mlp_bias": false,
+  "model_type": "llama",
+  "moe_group_origin": "dummy",
+  "moe_rank": 0,
+  "moe_router_bias_update_rate": 0.0,
+  "moe_world_size": 1,
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "pad_token_id": 0,
+  "paddleformers_version": "1.1.0.post20260511",
+  "pipeline_model_parallel_size": 2,
+  "pp_seg_method": "layer:DecoderLayer|EmptyLayer",
+  "pretraining_tp": 1,
+  "recompute_granularity": "full",
+  "recompute_method": "uniform",
+  "recompute_num_layers": 1,
+  "rms_norm_eps": 1e-05,
+  "rope_parameters": {
+    "rope_theta": 500000.0,
+    "rope_type": "default"
+  },
+  "rope_scaling": null,
+  "rope_theta": 500000.0,
+  "seq_length": 4096,
+  "tensor_model_parallel_size": 2,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float32",
+  "use_cache": true,
+  "use_fast_layer_norm": false,
+  "vocab_size": 128256
+}
+, layer_idx=18)
+[2026-05-11 19:27:58,371] [    INFO] pp_layers.py:899 - 20: DecoderLayerPipe(config=LlamaConfig {
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 128000,
+  "enable_auto_parallel": false,
+  "eos_token_id": 128001,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.009020646889913162,
+  "intermediate_size": 14336,
+  "is_lora": false,
+  "max_position_embeddings": 8192,
+  "max_sequence_length": 4096,
+  "mlp_bias": false,
+  "model_type": "llama",
+  "moe_group_origin": "dummy",
+  "moe_rank": 0,
+  "moe_router_bias_update_rate": 0.0,
+  "moe_world_size": 1,
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "pad_token_id": 0,
+  "paddleformers_version": "1.1.0.post20260511",
+  "pipeline_model_parallel_size": 2,
+  "pp_seg_method": "layer:DecoderLayer|EmptyLayer",
+  "pretraining_tp": 1,
+  "recompute_granularity": "full",
+  "recompute_method": "uniform",
+  "recompute_num_layers": 1,
+  "rms_norm_eps": 1e-05,
+  "rope_parameters": {
+    "rope_theta": 500000.0,
+    "rope_type": "default"
+  },
+  "rope_scaling": null,
+  "rope_theta": 500000.0,
+  "seq_length": 4096,
+  "tensor_model_parallel_size": 2,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float32",
+  "use_cache": true,
+  "use_fast_layer_norm": false,
+  "vocab_size": 128256
+}
+, layer_idx=19)
+[2026-05-11 19:27:58,373] [    INFO] pp_layers.py:899 - 21: DecoderLayerPipe(config=LlamaConfig {
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 128000,
+  "enable_auto_parallel": false,
+  "eos_token_id": 128001,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.009020646889913162,
+  "intermediate_size": 14336,
+  "is_lora": false,
+  "max_position_embeddings": 8192,
+  "max_sequence_length": 4096,
+  "mlp_bias": false,
+  "model_type": "llama",
+  "moe_group_origin": "dummy",
+  "moe_rank": 0,
+  "moe_router_bias_update_rate": 0.0,
+  "moe_world_size": 1,
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "pad_token_id": 0,
+  "paddleformers_version": "1.1.0.post20260511",
+  "pipeline_model_parallel_size": 2,
+  "pp_seg_method": "layer:DecoderLayer|EmptyLayer",
+  "pretraining_tp": 1,
+  "recompute_granularity": "full",
+  "recompute_method": "uniform",
+  "recompute_num_layers": 1,
+  "rms_norm_eps": 1e-05,
+  "rope_parameters": {
+    "rope_theta": 500000.0,
+    "rope_type": "default"
+  },
+  "rope_scaling": null,
+  "rope_theta": 500000.0,
+  "seq_length": 4096,
+  "tensor_model_parallel_size": 2,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float32",
+  "use_cache": true,
+  "use_fast_layer_norm": false,
+  "vocab_size": 128256
+}
+, layer_idx=20)
+[2026-05-11 19:27:58,376] [    INFO] pp_layers.py:899 - 22: DecoderLayerPipe(config=LlamaConfig {
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 128000,
+  "enable_auto_parallel": false,
+  "eos_token_id": 128001,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.009020646889913162,
+  "intermediate_size": 14336,
+  "is_lora": false,
+  "max_position_embeddings": 8192,
+  "max_sequence_length": 4096,
+  "mlp_bias": false,
+  "model_type": "llama",
+  "moe_group_origin": "dummy",
+  "moe_rank": 0,
+  "moe_router_bias_update_rate": 0.0,
+  "moe_world_size": 1,
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "pad_token_id": 0,
+  "paddleformers_version": "1.1.0.post20260511",
+  "pipeline_model_parallel_size": 2,
+  "pp_seg_method": "layer:DecoderLayer|EmptyLayer",
+  "pretraining_tp": 1,
+  "recompute_granularity": "full",
+  "recompute_method": "uniform",
+  "recompute_num_layers": 1,
+  "rms_norm_eps": 1e-05,
+  "rope_parameters": {
+    "rope_theta": 500000.0,
+    "rope_type": "default"
+  },
+  "rope_scaling": null,
+  "rope_theta": 500000.0,
+  "seq_length": 4096,
+  "tensor_model_parallel_size": 2,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float32",
+  "use_cache": true,
+  "use_fast_layer_norm": false,
+  "vocab_size": 128256
+}
+, layer_idx=21)
+[2026-05-11 19:27:58,379] [    INFO] pp_layers.py:899 - 23: DecoderLayerPipe(config=LlamaConfig {
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 128000,
+  "enable_auto_parallel": false,
+  "eos_token_id": 128001,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.009020646889913162,
+  "intermediate_size": 14336,
+  "is_lora": false,
+  "max_position_embeddings": 8192,
+  "max_sequence_length": 4096,
+  "mlp_bias": false,
+  "model_type": "llama",
+  "moe_group_origin": "dummy",
+  "moe_rank": 0,
+  "moe_router_bias_update_rate": 0.0,
+  "moe_world_size": 1,
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "pad_token_id": 0,
+  "paddleformers_version": "1.1.0.post20260511",
+  "pipeline_model_parallel_size": 2,
+  "pp_seg_method": "layer:DecoderLayer|EmptyLayer",
+  "pretraining_tp": 1,
+  "recompute_granularity": "full",
+  "recompute_method": "uniform",
+  "recompute_num_layers": 1,
+  "rms_norm_eps": 1e-05,
+  "rope_parameters": {
+    "rope_theta": 500000.0,
+    "rope_type": "default"
+  },
+  "rope_scaling": null,
+  "rope_theta": 500000.0,
+  "seq_length": 4096,
+  "tensor_model_parallel_size": 2,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float32",
+  "use_cache": true,
+  "use_fast_layer_norm": false,
+  "vocab_size": 128256
+}
+, layer_idx=22)
+[2026-05-11 19:27:58,381] [    INFO] pp_layers.py:899 - 24: DecoderLayerPipe(config=LlamaConfig {
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 128000,
+  "enable_auto_parallel": false,
+  "eos_token_id": 128001,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.009020646889913162,
+  "intermediate_size": 14336,
+  "is_lora": false,
+  "max_position_embeddings": 8192,
+  "max_sequence_length": 4096,
+  "mlp_bias": false,
+  "model_type": "llama",
+  "moe_group_origin": "dummy",
+  "moe_rank": 0,
+  "moe_router_bias_update_rate": 0.0,
+  "moe_world_size": 1,
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "pad_token_id": 0,
+  "paddleformers_version": "1.1.0.post20260511",
+  "pipeline_model_parallel_size": 2,
+  "pp_seg_method": "layer:DecoderLayer|EmptyLayer",
+  "pretraining_tp": 1,
+  "recompute_granularity": "full",
+  "recompute_method": "uniform",
+  "recompute_num_layers": 1,
+  "rms_norm_eps": 1e-05,
+  "rope_parameters": {
+    "rope_theta": 500000.0,
+    "rope_type": "default"
+  },
+  "rope_scaling": null,
+  "rope_theta": 500000.0,
+  "seq_length": 4096,
+  "tensor_model_parallel_size": 2,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float32",
+  "use_cache": true,
+  "use_fast_layer_norm": false,
+  "vocab_size": 128256
+}
+, layer_idx=23)
+[2026-05-11 19:27:58,384] [    INFO] pp_layers.py:899 - 25: DecoderLayerPipe(config=LlamaConfig {
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 128000,
+  "enable_auto_parallel": false,
+  "eos_token_id": 128001,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.009020646889913162,
+  "intermediate_size": 14336,
+  "is_lora": false,
+  "max_position_embeddings": 8192,
+  "max_sequence_length": 4096,
+  "mlp_bias": false,
+  "model_type": "llama",
+  "moe_group_origin": "dummy",
+  "moe_rank": 0,
+  "moe_router_bias_update_rate": 0.0,
+  "moe_world_size": 1,
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "pad_token_id": 0,
+  "paddleformers_version": "1.1.0.post20260511",
+  "pipeline_model_parallel_size": 2,
+  "pp_seg_method": "layer:DecoderLayer|EmptyLayer",
+  "pretraining_tp": 1,
+  "recompute_granularity": "full",
+  "recompute_method": "uniform",
+  "recompute_num_layers": 1,
+  "rms_norm_eps": 1e-05,
+  "rope_parameters": {
+    "rope_theta": 500000.0,
+    "rope_type": "default"
+  },
+  "rope_scaling": null,
+  "rope_theta": 500000.0,
+  "seq_length": 4096,
+  "tensor_model_parallel_size": 2,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float32",
+  "use_cache": true,
+  "use_fast_layer_norm": false,
+  "vocab_size": 128256
+}
+, layer_idx=24)
+[2026-05-11 19:27:58,386] [    INFO] pp_layers.py:899 - 26: DecoderLayerPipe(config=LlamaConfig {
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 128000,
+  "enable_auto_parallel": false,
+  "eos_token_id": 128001,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.009020646889913162,
+  "intermediate_size": 14336,
+  "is_lora": false,
+  "max_position_embeddings": 8192,
+  "max_sequence_length": 4096,
+  "mlp_bias": false,
+  "model_type": "llama",
+  "moe_group_origin": "dummy",
+  "moe_rank": 0,
+  "moe_router_bias_update_rate": 0.0,
+  "moe_world_size": 1,
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "pad_token_id": 0,
+  "paddleformers_version": "1.1.0.post20260511",
+  "pipeline_model_parallel_size": 2,
+  "pp_seg_method": "layer:DecoderLayer|EmptyLayer",
+  "pretraining_tp": 1,
+  "recompute_granularity": "full",
+  "recompute_method": "uniform",
+  "recompute_num_layers": 1,
+  "rms_norm_eps": 1e-05,
+  "rope_parameters": {
+    "rope_theta": 500000.0,
+    "rope_type": "default"
+  },
+  "rope_scaling": null,
+  "rope_theta": 500000.0,
+  "seq_length": 4096,
+  "tensor_model_parallel_size": 2,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float32",
+  "use_cache": true,
+  "use_fast_layer_norm": false,
+  "vocab_size": 128256
+}
+, layer_idx=25)
+[2026-05-11 19:27:58,389] [    INFO] pp_layers.py:899 - 27: DecoderLayerPipe(config=LlamaConfig {
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 128000,
+  "enable_auto_parallel": false,
+  "eos_token_id": 128001,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.009020646889913162,
+  "intermediate_size": 14336,
+  "is_lora": false,
+  "max_position_embeddings": 8192,
+  "max_sequence_length": 4096,
+  "mlp_bias": false,
+  "model_type": "llama",
+  "moe_group_origin": "dummy",
+  "moe_rank": 0,
+  "moe_router_bias_update_rate": 0.0,
+  "moe_world_size": 1,
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "pad_token_id": 0,
+  "paddleformers_version": "1.1.0.post20260511",
+  "pipeline_model_parallel_size": 2,
+  "pp_seg_method": "layer:DecoderLayer|EmptyLayer",
+  "pretraining_tp": 1,
+  "recompute_granularity": "full",
+  "recompute_method": "uniform",
+  "recompute_num_layers": 1,
+  "rms_norm_eps": 1e-05,
+  "rope_parameters": {
+    "rope_theta": 500000.0,
+    "rope_type": "default"
+  },
+  "rope_scaling": null,
+  "rope_theta": 500000.0,
+  "seq_length": 4096,
+  "tensor_model_parallel_size": 2,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float32",
+  "use_cache": true,
+  "use_fast_layer_norm": false,
+  "vocab_size": 128256
+}
+, layer_idx=26)
+[2026-05-11 19:27:58,392] [    INFO] pp_layers.py:899 - 28: DecoderLayerPipe(config=LlamaConfig {
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 128000,
+  "enable_auto_parallel": false,
+  "eos_token_id": 128001,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.009020646889913162,
+  "intermediate_size": 14336,
+  "is_lora": false,
+  "max_position_embeddings": 8192,
+  "max_sequence_length": 4096,
+  "mlp_bias": false,
+  "model_type": "llama",
+  "moe_group_origin": "dummy",
+  "moe_rank": 0,
+  "moe_router_bias_update_rate": 0.0,
+  "moe_world_size": 1,
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "pad_token_id": 0,
+  "paddleformers_version": "1.1.0.post20260511",
+  "pipeline_model_parallel_size": 2,
+  "pp_seg_method": "layer:DecoderLayer|EmptyLayer",
+  "pretraining_tp": 1,
+  "recompute_granularity": "full",
+  "recompute_method": "uniform",
+  "recompute_num_layers": 1,
+  "rms_norm_eps": 1e-05,
+  "rope_parameters": {
+    "rope_theta": 500000.0,
+    "rope_type": "default"
+  },
+  "rope_scaling": null,
+  "rope_theta": 500000.0,
+  "seq_length": 4096,
+  "tensor_model_parallel_size": 2,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float32",
+  "use_cache": true,
+  "use_fast_layer_norm": false,
+  "vocab_size": 128256
+}
+, layer_idx=27)
+[2026-05-11 19:27:58,394] [    INFO] pp_layers.py:899 - 29: DecoderLayerPipe(config=LlamaConfig {
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 128000,
+  "enable_auto_parallel": false,
+  "eos_token_id": 128001,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.009020646889913162,
+  "intermediate_size": 14336,
+  "is_lora": false,
+  "max_position_embeddings": 8192,
+  "max_sequence_length": 4096,
+  "mlp_bias": false,
+  "model_type": "llama",
+  "moe_group_origin": "dummy",
+  "moe_rank": 0,
+  "moe_router_bias_update_rate": 0.0,
+  "moe_world_size": 1,
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "pad_token_id": 0,
+  "paddleformers_version": "1.1.0.post20260511",
+  "pipeline_model_parallel_size": 2,
+  "pp_seg_method": "layer:DecoderLayer|EmptyLayer",
+  "pretraining_tp": 1,
+  "recompute_granularity": "full",
+  "recompute_method": "uniform",
+  "recompute_num_layers": 1,
+  "rms_norm_eps": 1e-05,
+  "rope_parameters": {
+    "rope_theta": 500000.0,
+    "rope_type": "default"
+  },
+  "rope_scaling": null,
+  "rope_theta": 500000.0,
+  "seq_length": 4096,
+  "tensor_model_parallel_size": 2,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float32",
+  "use_cache": true,
+  "use_fast_layer_norm": false,
+  "vocab_size": 128256
+}
+, layer_idx=28)
+[2026-05-11 19:27:58,397] [    INFO] pp_layers.py:899 - 30: DecoderLayerPipe(config=LlamaConfig {
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 128000,
+  "enable_auto_parallel": false,
+  "eos_token_id": 128001,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.009020646889913162,
+  "intermediate_size": 14336,
+  "is_lora": false,
+  "max_position_embeddings": 8192,
+  "max_sequence_length": 4096,
+  "mlp_bias": false,
+  "model_type": "llama",
+  "moe_group_origin": "dummy",
+  "moe_rank": 0,
+  "moe_router_bias_update_rate": 0.0,
+  "moe_world_size": 1,
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "pad_token_id": 0,
+  "paddleformers_version": "1.1.0.post20260511",
+  "pipeline_model_parallel_size": 2,
+  "pp_seg_method": "layer:DecoderLayer|EmptyLayer",
+  "pretraining_tp": 1,
+  "recompute_granularity": "full",
+  "recompute_method": "uniform",
+  "recompute_num_layers": 1,
+  "rms_norm_eps": 1e-05,
+  "rope_parameters": {
+    "rope_theta": 500000.0,
+    "rope_type": "default"
+  },
+  "rope_scaling": null,
+  "rope_theta": 500000.0,
+  "seq_length": 4096,
+  "tensor_model_parallel_size": 2,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float32",
+  "use_cache": true,
+  "use_fast_layer_norm": false,
+  "vocab_size": 128256
+}
+, layer_idx=29)
+[2026-05-11 19:27:58,399] [    INFO] pp_layers.py:899 - 31: DecoderLayerPipe(config=LlamaConfig {
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 128000,
+  "enable_auto_parallel": false,
+  "eos_token_id": 128001,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.009020646889913162,
+  "intermediate_size": 14336,
+  "is_lora": false,
+  "max_position_embeddings": 8192,
+  "max_sequence_length": 4096,
+  "mlp_bias": false,
+  "model_type": "llama",
+  "moe_group_origin": "dummy",
+  "moe_rank": 0,
+  "moe_router_bias_update_rate": 0.0,
+  "moe_world_size": 1,
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "pad_token_id": 0,
+  "paddleformers_version": "1.1.0.post20260511",
+  "pipeline_model_parallel_size": 2,
+  "pp_seg_method": "layer:DecoderLayer|EmptyLayer",
+  "pretraining_tp": 1,
+  "recompute_granularity": "full",
+  "recompute_method": "uniform",
+  "recompute_num_layers": 1,
+  "rms_norm_eps": 1e-05,
+  "rope_parameters": {
+    "rope_theta": 500000.0,
+    "rope_type": "default"
+  },
+  "rope_scaling": null,
+  "rope_theta": 500000.0,
+  "seq_length": 4096,
+  "tensor_model_parallel_size": 2,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float32",
+  "use_cache": true,
+  "use_fast_layer_norm": false,
+  "vocab_size": 128256
+}
+, layer_idx=30)
+[2026-05-11 19:27:58,402] [    INFO] pp_layers.py:899 - 32: DecoderLayerPipe(config=LlamaConfig {
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 128000,
+  "enable_auto_parallel": false,
+  "eos_token_id": 128001,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.009020646889913162,
+  "intermediate_size": 14336,
+  "is_lora": false,
+  "max_position_embeddings": 8192,
+  "max_sequence_length": 4096,
+  "mlp_bias": false,
+  "model_type": "llama",
+  "moe_group_origin": "dummy",
+  "moe_rank": 0,
+  "moe_router_bias_update_rate": 0.0,
+  "moe_world_size": 1,
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "pad_token_id": 0,
+  "paddleformers_version": "1.1.0.post20260511",
+  "pipeline_model_parallel_size": 2,
+  "pp_seg_method": "layer:DecoderLayer|EmptyLayer",
+  "pretraining_tp": 1,
+  "recompute_granularity": "full",
+  "recompute_method": "uniform",
+  "recompute_num_layers": 1,
+  "rms_norm_eps": 1e-05,
+  "rope_parameters": {
+    "rope_theta": 500000.0,
+    "rope_type": "default"
+  },
+  "rope_scaling": null,
+  "rope_theta": 500000.0,
+  "seq_length": 4096,
+  "tensor_model_parallel_size": 2,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float32",
+  "use_cache": true,
+  "use_fast_layer_norm": false,
+  "vocab_size": 128256
+}
+, layer_idx=31)
+[2026-05-11 19:27:58,405] [    INFO] pp_layers.py:899 - 33: RMSNormPipe(config=LlamaConfig {
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 128000,
+  "enable_auto_parallel": false,
+  "eos_token_id": 128001,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.009020646889913162,
+  "intermediate_size": 14336,
+  "is_lora": false,
+  "max_position_embeddings": 8192,
+  "max_sequence_length": 4096,
+  "mlp_bias": false,
+  "model_type": "llama",
+  "moe_group_origin": "dummy",
+  "moe_rank": 0,
+  "moe_router_bias_update_rate": 0.0,
+  "moe_world_size": 1,
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "pad_token_id": 0,
+  "paddleformers_version": "1.1.0.post20260511",
+  "pipeline_model_parallel_size": 2,
+  "pp_seg_method": "layer:DecoderLayer|EmptyLayer",
+  "pretraining_tp": 1,
+  "recompute_granularity": "full",
+  "recompute_method": "uniform",
+  "recompute_num_layers": 1,
+  "rms_norm_eps": 1e-05,
+  "rope_parameters": {
+    "rope_theta": 500000.0,
+    "rope_type": "default"
+  },
+  "rope_scaling": null,
+  "rope_theta": 500000.0,
+  "seq_length": 4096,
+  "tensor_model_parallel_size": 2,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float32",
+  "use_cache": true,
+  "use_fast_layer_norm": false,
+  "vocab_size": 128256
+}
+)
+[2026-05-11 19:27:58,407] [    INFO] pp_layers.py:899 - 34: LMHeadPipe(config=LlamaConfig {
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 128000,
+  "enable_auto_parallel": false,
+  "eos_token_id": 128001,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.009020646889913162,
+  "intermediate_size": 14336,
+  "is_lora": false,
+  "max_position_embeddings": 8192,
+  "max_sequence_length": 4096,
+  "mlp_bias": false,
+  "model_type": "llama",
+  "moe_group_origin": "dummy",
+  "moe_rank": 0,
+  "moe_router_bias_update_rate": 0.0,
+  "moe_world_size": 1,
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "pad_token_id": 0,
+  "paddleformers_version": "1.1.0.post20260511",
+  "pipeline_model_parallel_size": 2,
+  "pp_seg_method": "layer:DecoderLayer|EmptyLayer",
+  "pretraining_tp": 1,
+  "recompute_granularity": "full",
+  "recompute_method": "uniform",
+  "recompute_num_layers": 1,
+  "rms_norm_eps": 1e-05,
+  "rope_parameters": {
+    "rope_theta": 500000.0,
+    "rope_type": "default"
+  },
+  "rope_scaling": null,
+  "rope_theta": 500000.0,
+  "seq_length": 4096,
+  "tensor_model_parallel_size": 2,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float32",
+  "use_cache": true,
+  "use_fast_layer_norm": false,
+  "vocab_size": 128256
+}
+)
+[2026-05-11 19:27:58,407] [    INFO] pp_layers.py:921 - loss: CriterionLayerPipe
+[2026-05-11 19:27:58,536] [    INFO] pp_layers.py:978 - flush 17 of layers into run_function
+/workspace/Paddle/build/python/paddle/distributed/fleet/meta_parallel/parallel_layers/pp_layers.py:674: UserWarning: No shared comm will be constructed, this may happen when all shared attrs are on a same stage.
+  warnings.warn(
+[32m[2026-05-11 19:27:58,540] [    INFO][0m - Using download source: huggingface[0m
+[32m[2026-05-11 19:28:00,158] [    INFO][0m - Loading configuration file ./models/Llama-3-8b/config.json[0m
+[32m[2026-05-11 19:28:00,160] [    INFO][0m - Using download source: huggingface[0m
+[33m[2026-05-11 19:28:01,765] [ WARNING][0m - `template` was not specified, use `empty` template.[0m
+[33m[2026-05-11 19:28:01,768] [ WARNING][0m - suffix is not specified, using eos token as suffix.[0m
+ > building dataset index ...
+    reading sizes...
+    reading pointers...
+    reading document index...
+    creating numpy buffer of mmap...
+    creating memory view of numpy buffer...
+ > finished creating indexed dataset in 0.000585 seconds
+    number of documents: 100000
+ > dataset split:
+    train:
+     document indices in [0, 99000) total of 99000 documents
+    validation:
+     document indices in [99000, 100000) total of 1000 documents
+    test:
+     document indices in [100000, 100000) total of 0 documents
+W0511 19:28:01.773617 94779 nccl_comm_context.cc:70] ncclCommInitRankConfigMemOpt is not supported.
+searching for causal dataset, build_indices=False, share_folder False, check_rank_flag False
+build success
+ > loading doc-idx mapping from ./data/pt/index-cache/00a74943708040165f8e0a4dfe65118f_doc_idx.npy
+ > loading sample-idx mapping from ./data/pt/index-cache/00a74943708040165f8e0a4dfe65118f_sample_idx.npy
+ > loading shuffle-idx mapping from ./data/pt/index-cache/00a74943708040165f8e0a4dfe65118f_shuffle_idx.npy
+    loaded indexed file in 0.001 seconds
+    total number of samples: 29863
+    total number of epochs: 1
+searching for causal dataset, build_indices=False, share_folder False, check_rank_flag False
+build success
+ > loading doc-idx mapping from ./data/pt/index-cache/f4d62d1780d11fcba403c74e115b8ab0_doc_idx.npy
+ > loading sample-idx mapping from ./data/pt/index-cache/f4d62d1780d11fcba403c74e115b8ab0_sample_idx.npy
+ > loading shuffle-idx mapping from ./data/pt/index-cache/f4d62d1780d11fcba403c74e115b8ab0_shuffle_idx.npy
+    loaded indexed file in 0.001 seconds
+    total number of samples: 257
+    total number of epochs: 1
+building indices for the blendable dataset, Since --data_cache is not specified, the index file will not be stored.
+> building indices for blendable datasets ...
+ > sample ratios:
+   dataset 0, input: 1, achieved: 1
+> elapsed time for building blendable dataset indices: 0.00 (sec)
+> size of blendable dataset: 1200 samples
+building indices for the blendable dataset, Since --data_cache is not specified, the index file will not be stored.
+> building indices for blendable datasets ...
+ > sample ratios:
+   dataset 0, input: 1, achieved: 1
+> elapsed time for building blendable dataset indices: 0.00 (sec)
+> size of blendable dataset: 20 samples
+[32m[2026-05-11 19:28:02,623] [    INFO][0m - Setting max_seq_len to None using PaddleFormers Model.[0m
+callbacks: [<paddleformers.trainer.trainer_callback.FP8QuantWeightCallback object at 0x7f3b59cf4af0>]
+[35m[2026-05-11 19:28:02,623] [   DEBUG][0m - 0: main local process completed work, releasing all replicas[0m
+[32m[2026-05-11 19:28:02,625] [    INFO][0m - The global seed is set to 23, local seed is set to 27 and random seed is set to 23.[0m
+[32m[2026-05-11 19:28:02,685] [    INFO][0m - max_steps is given, it will override any value given in num_train_epochs[0m
+[32m[2026-05-11 19:28:02,685] [    INFO][0m - Using half precision[0m
+/workspace/PaddleFormers/paddleformers/trainer/trainer.py:641: VisibleDeprecationWarning: [93m
+Warning:
+API "paddle.distributed.fleet.utils.mix_precision_utils.MixPrecisionScaler" is deprecated since 2.5.0, and will be removed in future versions. Please use "paddle.distributed_scaler" instead. [0m
+  mix_precision_utils.MixPrecisionScaler(self.scaler)  # return value has no use
+[35m[2026-05-11 19:28:02,690] [   DEBUG][0m - ============================================================[0m
+[35m[2026-05-11 19:28:02,690] [   DEBUG][0m -     Training Configuration Arguments    [0m
+[35m[2026-05-11 19:28:02,690] [   DEBUG][0m - paddle commit id              : 1396c92ccb52c720536b54143807ae69e073b25b[0m
+[35m[2026-05-11 19:28:02,690] [   DEBUG][0m - paddleformers commit id       : 86ec32991b7f33eb542869a54ea675405a769e92.dirty[0m
+[35m[2026-05-11 19:28:02,691] [   DEBUG][0m - _no_sync_in_gradient_accumulation: True[0m
+[35m[2026-05-11 19:28:02,691] [   DEBUG][0m - adam_beta1                    : 0.9[0m
+[35m[2026-05-11 19:28:02,691] [   DEBUG][0m - adam_beta2                    : 0.999[0m
+[35m[2026-05-11 19:28:02,691] [   DEBUG][0m - adam_epsilon                  : 1e-08[0m
+[35m[2026-05-11 19:28:02,691] [   DEBUG][0m - amp_custom_black_list         : ['reduce_sum', 'softmax_with_cross_entropy', 'c_softmax_with_cross_entropy', 'elementwise_div', 'sin', 'cos'][0m
+[35m[2026-05-11 19:28:02,692] [   DEBUG][0m - amp_custom_white_list         : ['lookup_table', 'lookup_table_v2', 'flash_attn', 'matmul', 'matmul_v2', 'fused_gemm_epilogue'][0m
+[35m[2026-05-11 19:28:02,692] [   DEBUG][0m - amp_master_grad               : True[0m
+[35m[2026-05-11 19:28:02,692] [   DEBUG][0m - aoa_config                    : None[0m
+[35m[2026-05-11 19:28:02,692] [   DEBUG][0m - apply_rope_fusion             : False[0m
+[35m[2026-05-11 19:28:02,692] [   DEBUG][0m - attention_probs_dropout_prob  : 0.0[0m
+[35m[2026-05-11 19:28:02,692] [   DEBUG][0m - auto_parallel_resume_form_hybrid_parallel: False[0m
+[35m[2026-05-11 19:28:02,692] [   DEBUG][0m - auto_parallel_sync_shared_params: False[0m
+[35m[2026-05-11 19:28:02,692] [   DEBUG][0m - autotuner_benchmark           : False[0m
+[35m[2026-05-11 19:28:02,692] [   DEBUG][0m - balanced_image_preprocess     : False[0m
+[35m[2026-05-11 19:28:02,693] [   DEBUG][0m - batch_p2p_comm                : True[0m
+[35m[2026-05-11 19:28:02,693] [   DEBUG][0m - benchmark                     : False[0m
+[35m[2026-05-11 19:28:02,693] [   DEBUG][0m - best_unbalanced_scheduler     : False[0m
+[35m[2026-05-11 19:28:02,693] [   DEBUG][0m - beta                          : 0.1[0m
+[35m[2026-05-11 19:28:02,693] [   DEBUG][0m - bf16                          : True[0m
+[35m[2026-05-11 19:28:02,693] [   DEBUG][0m - bf16_full_eval                : False[0m
+[35m[2026-05-11 19:28:02,693] [   DEBUG][0m - ckpt_quant_stage              : O0[0m
+[35m[2026-05-11 19:28:02,693] [   DEBUG][0m - clear_every_step_cache        : False[0m
+[35m[2026-05-11 19:28:02,693] [   DEBUG][0m - compute_type                  : bf16[0m
+[35m[2026-05-11 19:28:02,693] [   DEBUG][0m - context_parallel_rank         : 0[0m
+[35m[2026-05-11 19:28:02,694] [   DEBUG][0m - context_parallel_size         : 1[0m
+[35m[2026-05-11 19:28:02,694] [   DEBUG][0m - convert_from_hf               : True[0m
+[35m[2026-05-11 19:28:02,694] [   DEBUG][0m - copy_custom_file_list         : [0m
+[35m[2026-05-11 19:28:02,694] [   DEBUG][0m - count_trained_tokens          : False[0m
+[35m[2026-05-11 19:28:02,694] [   DEBUG][0m - cp_comm_type                  : None[0m
+[35m[2026-05-11 19:28:02,694] [   DEBUG][0m - cp_sharding_degree            : 1[0m
+[35m[2026-05-11 19:28:02,694] [   DEBUG][0m - cp_sharding_rank              : 0[0m
+[35m[2026-05-11 19:28:02,694] [   DEBUG][0m - current_device                : gpu:0[0m
+[35m[2026-05-11 19:28:02,694] [   DEBUG][0m - data_parallel_config          : [0m
+[35m[2026-05-11 19:28:02,694] [   DEBUG][0m - data_parallel_rank            : 0[0m
+[35m[2026-05-11 19:28:02,695] [   DEBUG][0m - data_parallel_size            : 1[0m
+[35m[2026-05-11 19:28:02,695] [   DEBUG][0m - dataloader_drop_last          : False[0m
+[35m[2026-05-11 19:28:02,695] [   DEBUG][0m - dataloader_num_workers        : 0[0m
+[35m[2026-05-11 19:28:02,695] [   DEBUG][0m - dataloader_shuffle            : True[0m
+[35m[2026-05-11 19:28:02,695] [   DEBUG][0m - dataset_batch_size            : 1000[0m
+[35m[2026-05-11 19:28:02,695] [   DEBUG][0m - dataset_kwargs                : {}[0m
+[35m[2026-05-11 19:28:02,695] [   DEBUG][0m - dataset_num_proc              : None[0m
+[35m[2026-05-11 19:28:02,695] [   DEBUG][0m - dataset_rank                  : 0[0m
+[35m[2026-05-11 19:28:02,695] [   DEBUG][0m - dataset_text_field            : text[0m
+[35m[2026-05-11 19:28:02,695] [   DEBUG][0m - dataset_world_size            : 1[0m
+[35m[2026-05-11 19:28:02,696] [   DEBUG][0m - ddp_find_unused_parameters    : None[0m
+[35m[2026-05-11 19:28:02,696] [   DEBUG][0m - decay_function                : half_life[0m
+[35m[2026-05-11 19:28:02,696] [   DEBUG][0m - decay_steps                   : 300[0m
+[35m[2026-05-11 19:28:02,696] [   DEBUG][0m - deterministic_mode            : False[0m
+[35m[2026-05-11 19:28:02,696] [   DEBUG][0m - device                        : gpu[0m
+[35m[2026-05-11 19:28:02,696] [   DEBUG][0m - disable_tqdm                  : False[0m
+[35m[2026-05-11 19:28:02,696] [   DEBUG][0m - distributed_dataloader        : False[0m
+[35m[2026-05-11 19:28:02,696] [   DEBUG][0m - do_eval                       : True[0m
+[35m[2026-05-11 19:28:02,696] [   DEBUG][0m - do_export                     : False[0m
+[35m[2026-05-11 19:28:02,696] [   DEBUG][0m - do_predict                    : False[0m
+[35m[2026-05-11 19:28:02,697] [   DEBUG][0m - do_train                      : True[0m
+[35m[2026-05-11 19:28:02,697] [   DEBUG][0m - download_hub                  : None[0m
+[35m[2026-05-11 19:28:02,697] [   DEBUG][0m - dp_allreduce_avg_in_gradinent_scale: False[0m
+[35m[2026-05-11 19:28:02,697] [   DEBUG][0m - dp_comm_overlap               : False[0m
+[35m[2026-05-11 19:28:02,697] [   DEBUG][0m - dpop_lambda                   : 50[0m
+[35m[2026-05-11 19:28:02,697] [   DEBUG][0m - embedding_init_method         : None[0m
+[35m[2026-05-11 19:28:02,697] [   DEBUG][0m - embedding_init_method_std     : 0.02[0m
+[35m[2026-05-11 19:28:02,697] [   DEBUG][0m - enable_auto_parallel          : False[0m
+[35m[2026-05-11 19:28:02,697] [   DEBUG][0m - enable_linear_fused_grad_add  : False[0m
+[35m[2026-05-11 19:28:02,697] [   DEBUG][0m - enable_mtp_magic_send         : False[0m
+[35m[2026-05-11 19:28:02,698] [   DEBUG][0m - enable_sharding_comm_overlap  : False[0m
+[35m[2026-05-11 19:28:02,698] [   DEBUG][0m - enable_zero_cost_checkpoint   : False[0m
+[35m[2026-05-11 19:28:02,698] [   DEBUG][0m - estimation_output_file        : estimation_output.json[0m
+[35m[2026-05-11 19:28:02,698] [   DEBUG][0m - eval_accumulation_steps       : None[0m
+[35m[2026-05-11 19:28:02,698] [   DEBUG][0m - eval_batch_size               : 1[0m
+[35m[2026-05-11 19:28:02,698] [   DEBUG][0m - eval_iters                    : 10[0m
+[35m[2026-05-11 19:28:02,698] [   DEBUG][0m - eval_steps                    : 300[0m
+[35m[2026-05-11 19:28:02,698] [   DEBUG][0m - evaluation_strategy           : IntervalStrategy.STEPS[0m
+[35m[2026-05-11 19:28:02,698] [   DEBUG][0m - expert_model_parallel_size    : 1[0m
+[35m[2026-05-11 19:28:02,698] [   DEBUG][0m - expert_parallel_rank          : 0[0m
+[35m[2026-05-11 19:28:02,698] [   DEBUG][0m - expert_tensor_model_parallel_size: 1[0m
+[35m[2026-05-11 19:28:02,699] [   DEBUG][0m - fa_version                    : 2[0m
+[35m[2026-05-11 19:28:02,699] [   DEBUG][0m - factor                        : 20[0m
+[35m[2026-05-11 19:28:02,699] [   DEBUG][0m - flash_device_save_steps       : 0[0m
+[35m[2026-05-11 19:28:02,699] [   DEBUG][0m - flatten_param_grads           : False[0m
+[35m[2026-05-11 19:28:02,699] [   DEBUG][0m - force_reshard_pp              : False[0m
+[35m[2026-05-11 19:28:02,699] [   DEBUG][0m - forward_backward_overlap_scheduler: False[0m
+[35m[2026-05-11 19:28:02,699] [   DEBUG][0m - fp16                          : False[0m
+[35m[2026-05-11 19:28:02,699] [   DEBUG][0m - fp16_full_eval                : False[0m
+[35m[2026-05-11 19:28:02,699] [   DEBUG][0m - fp16_opt_level                : O1[0m
+[35m[2026-05-11 19:28:02,699] [   DEBUG][0m - fp32_residual_connection      : True[0m
+[35m[2026-05-11 19:28:02,700] [   DEBUG][0m - fp8                           : None[0m
+[35m[2026-05-11 19:28:02,700] [   DEBUG][0m - fp8_wgrad                     : True[0m
+[35m[2026-05-11 19:28:02,700] [   DEBUG][0m - freeze_config                 : [0m
+[35m[2026-05-11 19:28:02,700] [   DEBUG][0m - fuse_optimizer_states         : False[0m
+[35m[2026-05-11 19:28:02,700] [   DEBUG][0m - fuse_sequence_parallel_allreduce: False[0m
+[35m[2026-05-11 19:28:02,700] [   DEBUG][0m - fuse_swiglu                   : False[0m
+[35m[2026-05-11 19:28:02,700] [   DEBUG][0m - gated_linear_unit             : True[0m
+[35m[2026-05-11 19:28:02,700] [   DEBUG][0m - gc_interval                   : 0[0m
+[35m[2026-05-11 19:28:02,700] [   DEBUG][0m - global_batch_size             : 4[0m
+[35m[2026-05-11 19:28:02,700] [   DEBUG][0m - global_logging_interval       : 1[0m
+[35m[2026-05-11 19:28:02,701] [   DEBUG][0m - gradient_accumulation_steps   : 4[0m
+[35m[2026-05-11 19:28:02,701] [   DEBUG][0m - gradient_sync_after_accumulate: False[0m
+[35m[2026-05-11 19:28:02,701] [   DEBUG][0m - greater_is_better             : None[0m
+[35m[2026-05-11 19:28:02,701] [   DEBUG][0m - hidden_dropout_prob           : 0.0[0m
+[35m[2026-05-11 19:28:02,701] [   DEBUG][0m - hidden_size                   : None[0m
+[35m[2026-05-11 19:28:02,701] [   DEBUG][0m - hybrid_parallel_expert_grad_scale: 2.0[0m
+[35m[2026-05-11 19:28:02,701] [   DEBUG][0m - hybrid_parallel_topo_order    : sharding_first[0m
+[35m[2026-05-11 19:28:02,701] [   DEBUG][0m - ignore_data_skip              : False[0m
+[35m[2026-05-11 19:28:02,701] [   DEBUG][0m - ignore_eos_token              : False[0m
+[35m[2026-05-11 19:28:02,702] [   DEBUG][0m - ignore_load_lr_and_optim      : False[0m
+[35m[2026-05-11 19:28:02,702] [   DEBUG][0m - ignore_save_lr_and_optim      : False[0m
+[35m[2026-05-11 19:28:02,702] [   DEBUG][0m - init_method                   : None[0m
+[35m[2026-05-11 19:28:02,702] [   DEBUG][0m - intermediate_size             : None[0m
+[35m[2026-05-11 19:28:02,702] [   DEBUG][0m - label_names                   : None[0m
+[35m[2026-05-11 19:28:02,702] [   DEBUG][0m - label_smoothing               : 0.0[0m
+[35m[2026-05-11 19:28:02,702] [   DEBUG][0m - lazy_data_processing          : True[0m
+[35m[2026-05-11 19:28:02,702] [   DEBUG][0m - learning_rate                 : 0.0001[0m
+[35m[2026-05-11 19:28:02,702] [   DEBUG][0m - load_best_model_at_end        : False[0m
+[35m[2026-05-11 19:28:02,702] [   DEBUG][0m - load_checkpoint_format        : flex_checkpoint[0m
+[35m[2026-05-11 19:28:02,703] [   DEBUG][0m - load_from_hf                  : False[0m
+[35m[2026-05-11 19:28:02,703] [   DEBUG][0m - load_sharded_model            : False[0m
+[35m[2026-05-11 19:28:02,703] [   DEBUG][0m - load_sharded_model_remap_parameter_name: False[0m
+[35m[2026-05-11 19:28:02,703] [   DEBUG][0m - load_via_cpu                  : True[0m
+[35m[2026-05-11 19:28:02,703] [   DEBUG][0m - local_process_index           : 0[0m
+[35m[2026-05-11 19:28:02,703] [   DEBUG][0m - local_rank                    : 0[0m
+[35m[2026-05-11 19:28:02,703] [   DEBUG][0m - log_global_grad_norm          : False[0m
+[35m[2026-05-11 19:28:02,703] [   DEBUG][0m - log_level                     : -1[0m
+[35m[2026-05-11 19:28:02,703] [   DEBUG][0m - log_level_replica             : -1[0m
+[35m[2026-05-11 19:28:02,703] [   DEBUG][0m - log_on_each_node              : True[0m
+[35m[2026-05-11 19:28:02,703] [   DEBUG][0m - logging_dir                   : ./logs/pt/llama3-8b[0m
+[35m[2026-05-11 19:28:02,704] [   DEBUG][0m - logging_first_step            : False[0m
+[35m[2026-05-11 19:28:02,704] [   DEBUG][0m - logging_steps                 : 1[0m
+[35m[2026-05-11 19:28:02,704] [   DEBUG][0m - logging_strategy              : IntervalStrategy.STEPS[0m
+[35m[2026-05-11 19:28:02,704] [   DEBUG][0m - logical_process_index         : 0[0m
+[35m[2026-05-11 19:28:02,704] [   DEBUG][0m - loss_subbatch_sequence_length : -1[0m
+[35m[2026-05-11 19:28:02,704] [   DEBUG][0m - loss_type                     : sigmoid[0m
+[35m[2026-05-11 19:28:02,704] [   DEBUG][0m - lr_end                        : 1e-07[0m
+[35m[2026-05-11 19:28:02,704] [   DEBUG][0m - lr_scheduler                  : cosine[0m
+[35m[2026-05-11 19:28:02,704] [   DEBUG][0m - lr_scheduler_type             : SchedulerType.LINEAR[0m
+[35m[2026-05-11 19:28:02,705] [   DEBUG][0m - max_estimate_samples          : 100000.0[0m
+[35m[2026-05-11 19:28:02,705] [   DEBUG][0m - max_evaluate_steps            : -1[0m
+[35m[2026-05-11 19:28:02,705] [   DEBUG][0m - max_grad_norm                 : 1.0[0m
+[35m[2026-05-11 19:28:02,705] [   DEBUG][0m - max_gradient_accumulation_steps: 4[0m
+[35m[2026-05-11 19:28:02,705] [   DEBUG][0m - max_seq_len                   : 4096[0m
+[35m[2026-05-11 19:28:02,705] [   DEBUG][0m - max_steps                     : 300[0m
+[35m[2026-05-11 19:28:02,705] [   DEBUG][0m - merge_with_qdq_base_model     : False[0m
+[35m[2026-05-11 19:28:02,705] [   DEBUG][0m - metric_for_best_model         : None[0m
+[35m[2026-05-11 19:28:02,705] [   DEBUG][0m - metrics_output_path           : None[0m
+[35m[2026-05-11 19:28:02,705] [   DEBUG][0m - min_lr                        : 0.0[0m
+[35m[2026-05-11 19:28:02,705] [   DEBUG][0m - minimum_eval_times            : None[0m
+[35m[2026-05-11 19:28:02,706] [   DEBUG][0m - model_name_or_path            : ./models/Llama-3-8b[0m
+[35m[2026-05-11 19:28:02,706] [   DEBUG][0m - moe_deep_gemm                 : False[0m
+[35m[2026-05-11 19:28:02,706] [   DEBUG][0m - moe_deepep_num_sms            : None[0m
+[35m[2026-05-11 19:28:02,706] [   DEBUG][0m - moe_dequant_input             : False[0m
+[35m[2026-05-11 19:28:02,706] [   DEBUG][0m - moe_dropout_prob              : 0.0[0m
+[35m[2026-05-11 19:28:02,706] [   DEBUG][0m - moe_ep_barrier                : True[0m
+[35m[2026-05-11 19:28:02,706] [   DEBUG][0m - moe_expert_capacity_factor    : 0.0[0m
+[35m[2026-05-11 19:28:02,706] [   DEBUG][0m - moe_expert_fusion             : True[0m
+[35m[2026-05-11 19:28:02,706] [   DEBUG][0m - moe_gate_lr_ratio             : None[0m
+[35m[2026-05-11 19:28:02,706] [   DEBUG][0m - moe_grouped_gemm              : False[0m
+[35m[2026-05-11 19:28:02,707] [   DEBUG][0m - moe_pad_expert_input_to_capacity: False[0m
+[35m[2026-05-11 19:28:02,707] [   DEBUG][0m - moe_router_bias_update_rate   : 0.0[0m
+[35m[2026-05-11 19:28:02,707] [   DEBUG][0m - moe_router_force_load_balancing: False[0m
+[35m[2026-05-11 19:28:02,707] [   DEBUG][0m - moe_router_fusion             : True[0m
+[35m[2026-05-11 19:28:02,707] [   DEBUG][0m - moe_router_load_balancing_type: seq_aux_loss[0m
+[35m[2026-05-11 19:28:02,707] [   DEBUG][0m - moe_sharding_parallel_rank    : 0[0m
+[35m[2026-05-11 19:28:02,707] [   DEBUG][0m - moe_sharding_parallel_size    : 1[0m
+[35m[2026-05-11 19:28:02,707] [   DEBUG][0m - moe_shared_expert_overlap     : True[0m
+[35m[2026-05-11 19:28:02,707] [   DEBUG][0m - moe_subbatch_token_num_after_dispatch: None[0m
+[35m[2026-05-11 19:28:02,707] [   DEBUG][0m - moe_subbatch_token_num_before_dispatch: 0[0m
+[35m[2026-05-11 19:28:02,708] [   DEBUG][0m - moe_token_dispatcher_type     : deepep[0m
+[35m[2026-05-11 19:28:02,708] [   DEBUG][0m - moe_token_drop_policy         : probs[0m
+[35m[2026-05-11 19:28:02,708] [   DEBUG][0m - moe_use_fusion_node           : True[0m
+[35m[2026-05-11 19:28:02,708] [   DEBUG][0m - moe_with_send_router_loss     : True[0m
+[35m[2026-05-11 19:28:02,708] [   DEBUG][0m - mp_async_allreduce            : False[0m
+[35m[2026-05-11 19:28:02,708] [   DEBUG][0m - mp_fused_linear_param_grad_add: False[0m
+[35m[2026-05-11 19:28:02,708] [   DEBUG][0m - mp_skip_c_identity            : False[0m
+[35m[2026-05-11 19:28:02,708] [   DEBUG][0m - mtp_distillation_loss         : False[0m
+[35m[2026-05-11 19:28:02,708] [   DEBUG][0m - mtp_num_layers                : 0[0m
+[35m[2026-05-11 19:28:02,708] [   DEBUG][0m - multi_latent_attention        : False[0m
+[35m[2026-05-11 19:28:02,708] [   DEBUG][0m - n_routed_experts              : None[0m
+[35m[2026-05-11 19:28:02,709] [   DEBUG][0m - nccl_comm_group_config        : None[0m
+[35m[2026-05-11 19:28:02,709] [   DEBUG][0m - need_data                     : True[0m
+[35m[2026-05-11 19:28:02,709] [   DEBUG][0m - no_cuda                       : False[0m
+[35m[2026-05-11 19:28:02,709] [   DEBUG][0m - no_recompute_layers           : None[0m
+[35m[2026-05-11 19:28:02,709] [   DEBUG][0m - no_rope_freq                  : False[0m
+[35m[2026-05-11 19:28:02,709] [   DEBUG][0m - non_batch_p2p_comm            : False[0m
+[35m[2026-05-11 19:28:02,709] [   DEBUG][0m - normalization                 : RMSNorm[0m
+[35m[2026-05-11 19:28:02,709] [   DEBUG][0m - normalize_logps               : False[0m
+[35m[2026-05-11 19:28:02,709] [   DEBUG][0m - num_attention_heads           : None[0m
+[35m[2026-05-11 19:28:02,709] [   DEBUG][0m - num_consecutive               : 1[0m
+[35m[2026-05-11 19:28:02,710] [   DEBUG][0m - num_cycles                    : 0.5[0m
+[35m[2026-05-11 19:28:02,710] [   DEBUG][0m - num_empty_layers_add_in_head  : 0[0m
+[35m[2026-05-11 19:28:02,710] [   DEBUG][0m - num_empty_layers_add_in_tail  : 0[0m
+[35m[2026-05-11 19:28:02,710] [   DEBUG][0m - num_experts_per_tok           : None[0m
+[35m[2026-05-11 19:28:02,710] [   DEBUG][0m - num_hidden_layers             : None[0m
+[35m[2026-05-11 19:28:02,710] [   DEBUG][0m - num_key_value_heads           : None[0m
+[35m[2026-05-11 19:28:02,710] [   DEBUG][0m - num_nextn_predict_layers      : 0[0m
+[35m[2026-05-11 19:28:02,710] [   DEBUG][0m - num_of_gpus                   : -1[0m
+[35m[2026-05-11 19:28:02,710] [   DEBUG][0m - num_train_epochs              : 1.0[0m
+[35m[2026-05-11 19:28:02,710] [   DEBUG][0m - offload_fp8_expert_master_weight: True[0m
+[35m[2026-05-11 19:28:02,711] [   DEBUG][0m - offload_queue                 : False[0m
+[35m[2026-05-11 19:28:02,711] [   DEBUG][0m - offset_alpha                  : 0.0[0m
+[35m[2026-05-11 19:28:02,711] [   DEBUG][0m - optim                         : OptimizerNames.ADAMW[0m
+[35m[2026-05-11 19:28:02,711] [   DEBUG][0m - optim_shard_num               : 1[0m
+[35m[2026-05-11 19:28:02,711] [   DEBUG][0m - optimizer_name_suffix         : tp00_pp00[0m
+[35m[2026-05-11 19:28:02,711] [   DEBUG][0m - ordered_save_group_size       : 0[0m
+[35m[2026-05-11 19:28:02,711] [   DEBUG][0m - output_dir                    : ./checkpoints/pt/llama3-8b[0m
+[35m[2026-05-11 19:28:02,711] [   DEBUG][0m - output_layer_init_method      : None[0m
+[35m[2026-05-11 19:28:02,711] [   DEBUG][0m - output_signal_dir             : ./checkpoints/pt/llama3-8b[0m
+[35m[2026-05-11 19:28:02,711] [   DEBUG][0m - overlap                       : False[0m
+[35m[2026-05-11 19:28:02,712] [   DEBUG][0m - overlap_p2p_comm              : False[0m
+[35m[2026-05-11 19:28:02,712] [   DEBUG][0m - overwrite_output_dir          : True[0m
+[35m[2026-05-11 19:28:02,712] [   DEBUG][0m - p2p_cache_shape               : True[0m
+[35m[2026-05-11 19:28:02,712] [   DEBUG][0m - pad_token_id                  : 0[0m
+[35m[2026-05-11 19:28:02,712] [   DEBUG][0m - partial_send_recv             : True[0m
+[35m[2026-05-11 19:28:02,712] [   DEBUG][0m - past_index                    : -1[0m
+[35m[2026-05-11 19:28:02,712] [   DEBUG][0m - pdc_download_ckpt             : False[0m
+[35m[2026-05-11 19:28:02,712] [   DEBUG][0m - pdc_download_timeout          : 300[0m
+[35m[2026-05-11 19:28:02,712] [   DEBUG][0m - per_device_eval_batch_size    : 1[0m
+[35m[2026-05-11 19:28:02,712] [   DEBUG][0m - per_device_train_batch_size   : 1[0m
+[35m[2026-05-11 19:28:02,713] [   DEBUG][0m - pipeline_model_parallel_size  : 2[0m
+[35m[2026-05-11 19:28:02,713] [   DEBUG][0m - pipeline_parallel_config      : [0m
+[35m[2026-05-11 19:28:02,713] [   DEBUG][0m - pipeline_parallel_rank        : 0[0m
+[35m[2026-05-11 19:28:02,713] [   DEBUG][0m - position_embedding_type       : rope[0m
+[35m[2026-05-11 19:28:02,713] [   DEBUG][0m - power                         : 1.0[0m
+[35m[2026-05-11 19:28:02,713] [   DEBUG][0m - pp_delay_scale_loss           : True[0m
+[35m[2026-05-11 19:28:02,713] [   DEBUG][0m - pp_need_data                  : False[0m
+[35m[2026-05-11 19:28:02,713] [   DEBUG][0m - pp_need_data_degree           : 0[0m
+[35m[2026-05-11 19:28:02,713] [   DEBUG][0m - pp_release_grads              : False[0m
+[35m[2026-05-11 19:28:02,713] [   DEBUG][0m - pp_sharding_comm_overlap      : False[0m
+[35m[2026-05-11 19:28:02,713] [   DEBUG][0m - pp_sync_moment                : False[0m
+[35m[2026-05-11 19:28:02,714] [   DEBUG][0m - pp_sync_param                 : False[0m
+[35m[2026-05-11 19:28:02,714] [   DEBUG][0m - pre_alloc_memory              : 0[0m
+[35m[2026-05-11 19:28:02,714] [   DEBUG][0m - prediction_loss_only          : False[0m
+[35m[2026-05-11 19:28:02,714] [   DEBUG][0m - pref_loss_ratio               : 1.0[0m
+[35m[2026-05-11 19:28:02,714] [   DEBUG][0m - prefetch_factor               : 2[0m
+[35m[2026-05-11 19:28:02,714] [   DEBUG][0m - process_index                 : 0[0m
+[35m[2026-05-11 19:28:02,714] [   DEBUG][0m - profile                       : False[0m
+[35m[2026-05-11 19:28:02,714] [   DEBUG][0m - profile_step_end              : 12[0m
+[35m[2026-05-11 19:28:02,714] [   DEBUG][0m - profile_step_start            : 10[0m
+[35m[2026-05-11 19:28:02,714] [   DEBUG][0m - recompute_granularity         : full[0m
+[35m[2026-05-11 19:28:02,715] [   DEBUG][0m - recompute_method              : uniform[0m
+[35m[2026-05-11 19:28:02,715] [   DEBUG][0m - recompute_modules             : None[0m
+[35m[2026-05-11 19:28:02,715] [   DEBUG][0m - recompute_mtp_granularity     : None[0m
+[35m[2026-05-11 19:28:02,715] [   DEBUG][0m - recompute_mtp_method          : None[0m
+[35m[2026-05-11 19:28:02,715] [   DEBUG][0m - recompute_mtp_modules         : None[0m
+[35m[2026-05-11 19:28:02,715] [   DEBUG][0m - recompute_num_layers          : 1[0m
+[35m[2026-05-11 19:28:02,715] [   DEBUG][0m - recompute_use_reentrant       : True[0m
+[35m[2026-05-11 19:28:02,715] [   DEBUG][0m - reeao_dataset_rank            : 0[0m
+[35m[2026-05-11 19:28:02,715] [   DEBUG][0m - reeao_dataset_world_size      : 1[0m
+[35m[2026-05-11 19:28:02,715] [   DEBUG][0m - ref_model_update_steps        : -1[0m
+[35m[2026-05-11 19:28:02,716] [   DEBUG][0m - reference_free                : False[0m
+[35m[2026-05-11 19:28:02,716] [   DEBUG][0m - release_grads                 : False[0m
+[35m[2026-05-11 19:28:02,716] [   DEBUG][0m - remove_unused_columns         : True[0m
+[35m[2026-05-11 19:28:02,716] [   DEBUG][0m - reorder_pipeline_priority     : False[0m
+[35m[2026-05-11 19:28:02,716] [   DEBUG][0m - replace_with_c_embedding      : False[0m
+[35m[2026-05-11 19:28:02,716] [   DEBUG][0m - replace_with_parallel_cross_entropy: False[0m
+[35m[2026-05-11 19:28:02,716] [   DEBUG][0m - replicate_saved_into_local    : False[0m
+[35m[2026-05-11 19:28:02,716] [   DEBUG][0m - report_to                     : ['visualdl'][0m
+[35m[2026-05-11 19:28:02,716] [   DEBUG][0m - resume_from_checkpoint        : None[0m
+[35m[2026-05-11 19:28:02,716] [   DEBUG][0m - resume_from_huggingface_ckpt  : None[0m
+[35m[2026-05-11 19:28:02,717] [   DEBUG][0m - router_aux_loss_coef          : 0.0[0m
+[35m[2026-05-11 19:28:02,717] [   DEBUG][0m - router_z_loss_coef            : None[0m
+[35m[2026-05-11 19:28:02,717] [   DEBUG][0m - run_name                      : ./checkpoints/pt/llama3-8b[0m
+[35m[2026-05-11 19:28:02,717] [   DEBUG][0m - same_data                     : None[0m
+[35m[2026-05-11 19:28:02,717] [   DEBUG][0m - save_checkpoint_format        : flex_checkpoint[0m
+[35m[2026-05-11 19:28:02,717] [   DEBUG][0m - save_hf_memory_growth_threshold: 8[0m
+[35m[2026-05-11 19:28:02,717] [   DEBUG][0m - save_hf_steps                 : -1[0m
+[35m[2026-05-11 19:28:02,717] [   DEBUG][0m - save_hf_total_limit           : None[0m
+[35m[2026-05-11 19:28:02,717] [   DEBUG][0m - save_last_step                : False[0m
+[35m[2026-05-11 19:28:02,717] [   DEBUG][0m - save_on_each_node             : False[0m
+[35m[2026-05-11 19:28:02,718] [   DEBUG][0m - save_rng_states               : True[0m
+[35m[2026-05-11 19:28:02,718] [   DEBUG][0m - save_sharded_model            : False[0m
+[35m[2026-05-11 19:28:02,718] [   DEBUG][0m - save_sharding_stage1_model_include_freeze_params: False[0m
+[35m[2026-05-11 19:28:02,718] [   DEBUG][0m - save_steps                    : 300[0m
+[35m[2026-05-11 19:28:02,718] [   DEBUG][0m - save_strategy                 : IntervalStrategy.NO[0m
+[35m[2026-05-11 19:28:02,718] [   DEBUG][0m - save_to_hf                    : True[0m
+[35m[2026-05-11 19:28:02,718] [   DEBUG][0m - save_tokenizer                : True[0m
+[35m[2026-05-11 19:28:02,718] [   DEBUG][0m - save_total_limit              : None[0m
+[35m[2026-05-11 19:28:02,718] [   DEBUG][0m - scale_loss                    : 32768[0m
+[35m[2026-05-11 19:28:02,719] [   DEBUG][0m - sd_release_grads              : False[0m
+[35m[2026-05-11 19:28:02,719] [   DEBUG][0m - sd_sharding_comm_overlap      : False[0m
+[35m[2026-05-11 19:28:02,719] [   DEBUG][0m - sd_shardingv1_comm_overlap    : False[0m
+[35m[2026-05-11 19:28:02,719] [   DEBUG][0m - seed                          : 23[0m
+[35m[2026-05-11 19:28:02,719] [   DEBUG][0m - send_recv_overlap             : False[0m
+[35m[2026-05-11 19:28:02,719] [   DEBUG][0m - sep_parallel_size             : 1[0m
+[35m[2026-05-11 19:28:02,719] [   DEBUG][0m - sequence_parallel             : False[0m
+[35m[2026-05-11 19:28:02,719] [   DEBUG][0m - sequence_parallel_config      : [0m
+[35m[2026-05-11 19:28:02,719] [   DEBUG][0m - sft_loss_ratio                : 0.0[0m
+[35m[2026-05-11 19:28:02,719] [   DEBUG][0m - sharded_model_from_ema        : False[0m
+[35m[2026-05-11 19:28:02,720] [   DEBUG][0m - sharding                      : [][0m
+[35m[2026-05-11 19:28:02,720] [   DEBUG][0m - sharding_comm_buffer_size_MB  : -1[0m
+[35m[2026-05-11 19:28:02,720] [   DEBUG][0m - sharding_degree               : -1[0m
+[35m[2026-05-11 19:28:02,720] [   DEBUG][0m - sharding_offload_opt_buffersize_GB: -1[0m
+[35m[2026-05-11 19:28:02,720] [   DEBUG][0m - sharding_parallel_config      : [0m
+[35m[2026-05-11 19:28:02,720] [   DEBUG][0m - sharding_parallel_mesh_dimension: dp[0m
+[35m[2026-05-11 19:28:02,720] [   DEBUG][0m - sharding_parallel_rank        : 0[0m
+[35m[2026-05-11 19:28:02,720] [   DEBUG][0m - sharding_parallel_size        : 1[0m
+[35m[2026-05-11 19:28:02,720] [   DEBUG][0m - should_load_dataset           : True[0m
+[35m[2026-05-11 19:28:02,720] [   DEBUG][0m - should_load_sharding_stage1_model: False[0m
+[35m[2026-05-11 19:28:02,720] [   DEBUG][0m - should_log                    : True[0m
+[35m[2026-05-11 19:28:02,721] [   DEBUG][0m - should_save                   : True[0m
+[35m[2026-05-11 19:28:02,721] [   DEBUG][0m - should_save_model_state       : True[0m
+[35m[2026-05-11 19:28:02,721] [   DEBUG][0m - should_save_model_with_tensor_fusion: False[0m
+[35m[2026-05-11 19:28:02,721] [   DEBUG][0m - should_save_sharding_stage1_model: False[0m
+[35m[2026-05-11 19:28:02,721] [   DEBUG][0m - shuffle_consecutive           : False[0m
+[35m[2026-05-11 19:28:02,721] [   DEBUG][0m - simpo_gamma                   : 0.5[0m
+[35m[2026-05-11 19:28:02,721] [   DEBUG][0m - skip_data_intervals           : None[0m
+[35m[2026-05-11 19:28:02,721] [   DEBUG][0m - skip_memory_metrics           : True[0m
+[35m[2026-05-11 19:28:02,721] [   DEBUG][0m - skip_profile_timer            : True[0m
+[35m[2026-05-11 19:28:02,721] [   DEBUG][0m - softmax_scale                 : None[0m
+[35m[2026-05-11 19:28:02,722] [   DEBUG][0m - softmax_type                  : vanilla[0m
+[35m[2026-05-11 19:28:02,722] [   DEBUG][0m - sp_allreduce_avg_in_gradinent_scale: False[0m
+[35m[2026-05-11 19:28:02,722] [   DEBUG][0m - sp_async_reduce_scatter       : False[0m
+[35m[2026-05-11 19:28:02,722] [   DEBUG][0m - split_backward                : False[0m
+[35m[2026-05-11 19:28:02,722] [   DEBUG][0m - split_inputs_sequence_dim     : True[0m
+[35m[2026-05-11 19:28:02,722] [   DEBUG][0m - split_norm_comm               : False[0m
+[35m[2026-05-11 19:28:02,722] [   DEBUG][0m - split_param                   : True[0m
+[35m[2026-05-11 19:28:02,722] [   DEBUG][0m - stage1_allgather_overlap      : False[0m
+[35m[2026-05-11 19:28:02,722] [   DEBUG][0m - stage1_broadcast_overlap      : False[0m
+[35m[2026-05-11 19:28:02,722] [   DEBUG][0m - stage1_overlap                : False[0m
+[35m[2026-05-11 19:28:02,723] [   DEBUG][0m - stage1_reduce_avg             : True[0m
+[35m[2026-05-11 19:28:02,723] [   DEBUG][0m - stage1_tensor_fusion          : False[0m
+[35m[2026-05-11 19:28:02,723] [   DEBUG][0m - stage2_overlap                : False[0m
+[35m[2026-05-11 19:28:02,723] [   DEBUG][0m - sync_grad                     : False[0m
+[35m[2026-05-11 19:28:02,723] [   DEBUG][0m - tensor_fusion                 : False[0m
+[35m[2026-05-11 19:28:02,723] [   DEBUG][0m - tensor_model_parallel_size    : 2[0m
+[35m[2026-05-11 19:28:02,723] [   DEBUG][0m - tensor_parallel_config        : [0m
+[35m[2026-05-11 19:28:02,723] [   DEBUG][0m - tensor_parallel_output        : True[0m
+[35m[2026-05-11 19:28:02,723] [   DEBUG][0m - tensor_parallel_rank          : 0[0m
+[35m[2026-05-11 19:28:02,723] [   DEBUG][0m - tensorwise_offload_optimizer  : False[0m
+[35m[2026-05-11 19:28:02,724] [   DEBUG][0m - test_iters                    : 100[0m
+[35m[2026-05-11 19:28:02,724] [   DEBUG][0m - tie_word_embeddings           : None[0m
+[35m[2026-05-11 19:28:02,724] [   DEBUG][0m - timer                         : False[0m
+[35m[2026-05-11 19:28:02,724] [   DEBUG][0m - to_static                     : False[0m
+[35m[2026-05-11 19:28:02,724] [   DEBUG][0m - token_balance_loss            : False[0m
+[35m[2026-05-11 19:28:02,724] [   DEBUG][0m - tp_async_allreduce            : False[0m
+[35m[2026-05-11 19:28:02,724] [   DEBUG][0m - tp_sync_moment                : False[0m
+[35m[2026-05-11 19:28:02,724] [   DEBUG][0m - tp_sync_param                 : False[0m
+[35m[2026-05-11 19:28:02,724] [   DEBUG][0m - train_batch_size              : 1[0m
+[35m[2026-05-11 19:28:02,724] [   DEBUG][0m - train_mtp_only                : False[0m
+[35m[2026-05-11 19:28:02,725] [   DEBUG][0m - unified_checkpoint            : False[0m
+[35m[2026-05-11 19:28:02,725] [   DEBUG][0m - unified_checkpoint_config     : [0m
+[35m[2026-05-11 19:28:02,725] [   DEBUG][0m - use_async_save                : False[0m
+[35m[2026-05-11 19:28:02,725] [   DEBUG][0m - use_cache                     : False[0m
+[35m[2026-05-11 19:28:02,725] [   DEBUG][0m - use_dualpipev                 : False[0m
+[35m[2026-05-11 19:28:02,725] [   DEBUG][0m - use_expert_parallel           : False[0m
+[35m[2026-05-11 19:28:02,725] [   DEBUG][0m - use_filtered_label_loss       : False[0m
+[35m[2026-05-11 19:28:02,725] [   DEBUG][0m - use_fp8                       : False[0m
+[35m[2026-05-11 19:28:02,725] [   DEBUG][0m - use_fused_head_and_loss_fn    : False[0m
+[35m[2026-05-11 19:28:02,725] [   DEBUG][0m - use_fused_linear_cross_entropy: False[0m
+[35m[2026-05-11 19:28:02,726] [   DEBUG][0m - use_hybrid_parallel           : True[0m
+[35m[2026-05-11 19:28:02,726] [   DEBUG][0m - use_intermediate_api          : False[0m
+[35m[2026-05-11 19:28:02,726] [   DEBUG][0m - use_lowprecision_moment       : False[0m
+[35m[2026-05-11 19:28:02,726] [   DEBUG][0m - use_moe                       : False[0m
+[35m[2026-05-11 19:28:02,726] [   DEBUG][0m - use_ortho_loss_callback       : False[0m
+[35m[2026-05-11 19:28:02,726] [   DEBUG][0m - use_qk_norm                   : None[0m
+[35m[2026-05-11 19:28:02,726] [   DEBUG][0m - use_recompute_mtp             : False[0m
+[35m[2026-05-11 19:28:02,726] [   DEBUG][0m - use_unified_moe               : False[0m
+[35m[2026-05-11 19:28:02,726] [   DEBUG][0m - using_sonic_moe               : False[0m
+[35m[2026-05-11 19:28:02,726] [   DEBUG][0m - variable_seq_lengths          : False[0m
+[35m[2026-05-11 19:28:02,726] [   DEBUG][0m - virtual_pipeline_model_parallel_size: 1[0m
+[35m[2026-05-11 19:28:02,727] [   DEBUG][0m - wandb_api_key                 : None[0m
+[35m[2026-05-11 19:28:02,727] [   DEBUG][0m - wandb_http_proxy              : None[0m
+[35m[2026-05-11 19:28:02,727] [   DEBUG][0m - warmup_ratio                  : 0.0[0m
+[35m[2026-05-11 19:28:02,727] [   DEBUG][0m - warmup_steps                  : 10[0m
+[35m[2026-05-11 19:28:02,727] [   DEBUG][0m - weight_decay                  : 0.0[0m
+[35m[2026-05-11 19:28:02,727] [   DEBUG][0m - weight_name_suffix            : tp00_pp00[0m
+[35m[2026-05-11 19:28:02,727] [   DEBUG][0m - weight_quantize_algo          : None[0m
+[35m[2026-05-11 19:28:02,727] [   DEBUG][0m - world_size                    : 4[0m
+[35m[2026-05-11 19:28:02,727] [   DEBUG][0m - zcc_ema_interval              : 1[0m
+[35m[2026-05-11 19:28:02,727] [   DEBUG][0m - zcc_ema_loss_threshold        : None[0m
+[35m[2026-05-11 19:28:02,728] [   DEBUG][0m - zcc_pipeline_hooks_capacity_usage: 0.6[0m
+[35m[2026-05-11 19:28:02,728] [   DEBUG][0m - zcc_save_ema_coef             : None[0m
+[35m[2026-05-11 19:28:02,728] [   DEBUG][0m - zcc_workers_num               : 3[0m
+[35m[2026-05-11 19:28:02,728] [   DEBUG][0m - [0m
+[32m[2026-05-11 19:28:02,729] [    INFO][0m - Starting training from resume_from_checkpoint : None[0m
+[32m[2026-05-11 19:28:02,740] [    INFO][0m - [timelog] RuntimeTimer: 0.00s (2026-05-11 19:28:02) [0m
+[32m[2026-05-11 19:28:02,740] [    INFO][0m - ***** Running training *****[0m
+[32m[2026-05-11 19:28:02,740] [    INFO][0m -   Num examples = 1,200[0m
+[32m[2026-05-11 19:28:02,741] [    INFO][0m -   Num Epochs = 1[0m
+[32m[2026-05-11 19:28:02,741] [    INFO][0m -   Instantaneous batch size per device = 1[0m
+[32m[2026-05-11 19:28:02,741] [    INFO][0m -   Total train batch size (w. parallel, distributed & accumulation) = 4[0m
+[32m[2026-05-11 19:28:02,741] [    INFO][0m -   Gradient Accumulation steps = 4[0m
+[32m[2026-05-11 19:28:02,741] [    INFO][0m -   Total optimization steps = 300[0m
+[32m[2026-05-11 19:28:02,741] [    INFO][0m -   Total num train samples = 1,200[0m
+[2026-05-11 19:28:02,750] [    INFO] pipeline_parallel.py:808 - Pipeline scheduler is in dynamic_shape mode=False
+[2026-05-11 19:28:02,750] [    INFO] pipeline_parallel.py:818 - dp_comm_overlap False;             sharding_comm_overlap False;             sharding_split_param False;
+[2026-05-11 19:28:02,751] [    INFO] pipeline_parallel.py:890 - Pipeline Info -- num_stages: 2, stage_id: 0
+[2026-05-11 19:28:02,751] [    INFO] pipeline_parallel.py:895 - start broadcast mp parameters
+W0511 19:28:02.819608 94779 nccl_comm_context.cc:70] ncclCommInitRankConfigMemOpt is not supported.
+[2026-05-11 19:28:03,193] [ WARNING] hybrid_parallel_optimizer.py:332 - While using ClipGradByGlobalNorm in TensorParallel, PipelineParallel or Sharding, the grad clip of original optimizer will be changed.
+[35m[2026-05-11 19:28:03,197] [   DEBUG][0m -   Number of trainable parameters = 2,007,629,824 (per device)[0m
+[35m[2026-05-11 19:28:03,203] [   DEBUG][0m -   Number of trainable parameters = 8,030,527,488 (all devices, roughly)[0m
+
+TrainProcess:   0%|          | 0/300 [00:00<?, ?it/s]W0511 19:28:10.948613 94779 nccl_comm_context.cc:70] ncclCommInitRankConfigMemOpt is not supported.
+W0511 19:28:31.721740 94779 nccl_comm_context.cc:70] ncclCommInitRankConfigMemOpt is not supported.
+
+TrainProcess:   0%|          | 1/300 [00:30<2:31:40, 30.44s/it][32m[2026-05-11 19:28:33,697] [    INFO][0m - loss: 12.75451851, learning_rate: 1e-05, global_step: 1, current_memory_allocated: 29.91601800918579, current_memory_reserved: 29.962892293930054, max_memory_allocated: 29.916018962860107, max_memory_reserved: 29.962892293930054, interval_runtime: 30.492, interval_samples_per_second: 0.1312, interval_steps_per_second: 0.0328, global_norm: 24.157014846801758, ppl: 346112.2799761769, progress_or_epoch: 0.0033, cpu_used_memory: 236.74, cpu_available_memory: 1262.85[0m
+[32m[2026-05-11 19:28:33,697] [    INFO][0m - [DataLoad global_step: 1] data_load_time: 2335.17 ms (accumulated over 4 micro-batches)[0m
+
+TrainProcess:   1%|          | 2/300 [00:47<1:53:31, 22.86s/it][32m[2026-05-11 19:28:51,243] [    INFO][0m - loss: 12.75386238, learning_rate: 2e-05, global_step: 2, current_memory_allocated: 29.91601800918579, current_memory_reserved: 37.369142293930054, max_memory_allocated: 35.51831269264221, max_memory_reserved: 37.369142293930054, interval_runtime: 17.5455, interval_samples_per_second: 0.228, interval_steps_per_second: 0.057, global_norm: 25.716909408569336, ppl: 345885.25981143053, progress_or_epoch: 0.0067, cpu_used_memory: 236.74, cpu_available_memory: 1262.86[0m
+[32m[2026-05-11 19:28:51,243] [    INFO][0m - [DataLoad global_step: 2] data_load_time: 1.12 ms (accumulated over 4 micro-batches)[0m
+
+TrainProcess:   1%|          | 3/300 [01:05<1:41:08, 20.43s/it][32m[2026-05-11 19:29:08,787] [    INFO][0m - loss: 12.32863617, learning_rate: 3e-05, global_step: 3, current_memory_allocated: 29.91601800918579, current_memory_reserved: 37.369142293930054, max_memory_allocated: 35.51831269264221, max_memory_reserved: 37.369142293930054, interval_runtime: 17.5431, interval_samples_per_second: 0.228, interval_steps_per_second: 0.057, global_norm: 21.230274200439453, ppl: 226078.18505550342, progress_or_epoch: 0.01, cpu_used_memory: 236.73, cpu_available_memory: 1262.86[0m
+[32m[2026-05-11 19:29:08,787] [    INFO][0m - [DataLoad global_step: 3] data_load_time: 2.37 ms (accumulated over 4 micro-batches)[0m
+
+TrainProcess:   1%|▏         | 4/300 [01:23<1:35:04, 19.27s/it][32m[2026-05-11 19:29:26,303] [    INFO][0m - loss: 11.9974575, learning_rate: 4e-05, global_step: 4, current_memory_allocated: 29.91601800918579, current_memory_reserved: 37.369142293930054, max_memory_allocated: 35.51831269264221, max_memory_reserved: 37.369142293930054, interval_runtime: 17.5152, interval_samples_per_second: 0.2284, interval_steps_per_second: 0.0571, global_norm: 68.22297668457031, ppl: 162341.5129646859, progress_or_epoch: 0.0133, cpu_used_memory: 236.73, cpu_available_memory: 1262.86[0m
+[32m[2026-05-11 19:29:26,303] [    INFO][0m - [DataLoad global_step: 4] data_load_time: 0.57 ms (accumulated over 4 micro-batches)[0m
+
+TrainProcess:   2%|▏         | 5/300 [01:40<1:31:38, 18.64s/it][32m[2026-05-11 19:29:43,795] [    INFO][0m - loss: 12.38271236, learning_rate: 5e-05, global_step: 5, current_memory_allocated: 29.91601800918579, current_memory_reserved: 37.369142293930054, max_memory_allocated: 35.51831269264221, max_memory_reserved: 37.369142293930054, interval_runtime: 17.4923, interval_samples_per_second: 0.2287, interval_steps_per_second: 0.0572, global_norm: 108.02284240722656, ppl: 238640.22451533074, progress_or_epoch: 0.0167, cpu_used_memory: 236.73, cpu_available_memory: 1262.86[0m
+[32m[2026-05-11 19:29:43,796] [    INFO][0m - [DataLoad global_step: 5] data_load_time: 0.99 ms (accumulated over 4 micro-batches)[0m
+
+TrainProcess:   2%|▏         | 6/300 [01:58<1:29:24, 18.25s/it][32m[2026-05-11 19:30:01,281] [    INFO][0m - loss: 12.11230373, learning_rate: 6e-05, global_step: 6, current_memory_allocated: 29.91601800918579, current_memory_reserved: 37.369142293930054, max_memory_allocated: 35.51831269264221, max_memory_reserved: 37.369142293930054, interval_runtime: 17.4851, interval_samples_per_second: 0.2288, interval_steps_per_second: 0.0572, global_norm: 56.31935501098633, ppl: 182098.62775134173, progress_or_epoch: 0.02, cpu_used_memory: 236.72, cpu_available_memory: 1262.87[0m
+[32m[2026-05-11 19:30:01,281] [    INFO][0m - [DataLoad global_step: 6] data_load_time: 0.48 ms (accumulated over 4 micro-batches)[0m
+
+TrainProcess:   2%|▏         | 7/300 [02:15<1:27:56, 18.01s/it][32m[2026-05-11 19:30:18,804] [    INFO][0m - loss: 12.4206686, learning_rate: 7e-05, global_step: 7, current_memory_allocated: 29.91601800918579, current_memory_reserved: 37.369142293930054, max_memory_allocated: 35.51831269264221, max_memory_reserved: 37.369142293930054, interval_runtime: 17.523, interval_samples_per_second: 0.2283, interval_steps_per_second: 0.0571, global_norm: 22.4560546875, ppl: 247872.2075000778, progress_or_epoch: 0.0233, cpu_used_memory: 236.74, cpu_available_memory: 1262.85[0m
+[32m[2026-05-11 19:30:18,805] [    INFO][0m - [DataLoad global_step: 7] data_load_time: 0.78 ms (accumulated over 4 micro-batches)[0m
+
+TrainProcess:   3%|▎         | 8/300 [02:33<1:26:53, 17.86s/it][32m[2026-05-11 19:30:36,333] [    INFO][0m - loss: 16.67546082, learning_rate: 8e-05, global_step: 8, current_memory_allocated: 29.91601800918579, current_memory_reserved: 37.369142293930054, max_memory_allocated: 35.51831269264221, max_memory_reserved: 37.369142293930054, interval_runtime: 17.5281, interval_samples_per_second: 0.2282, interval_steps_per_second: 0.0571, global_norm: 159.04962158203125, ppl: 17460658.457375444, progress_or_epoch: 0.0267, cpu_used_memory: 236.74, cpu_available_memory: 1262.85[0m
+[32m[2026-05-11 19:30:36,333] [    INFO][0m - [DataLoad global_step: 8] data_load_time: 1.09 ms (accumulated over 4 micro-batches)[0m
+
+TrainProcess:   3%|▎         | 9/300 [02:50<1:25:59, 17.73s/it][32m[2026-05-11 19:30:53,785] [    INFO][0m - loss: 15.54523468, learning_rate: 9e-05, global_step: 9, current_memory_allocated: 29.91601800918579, current_memory_reserved: 37.369142293930054, max_memory_allocated: 35.51831269264221, max_memory_reserved: 37.369142293930054, interval_runtime: 17.4521, interval_samples_per_second: 0.2292, interval_steps_per_second: 0.0573, global_norm: 77.43175506591797, ppl: 5639097.990942432, progress_or_epoch: 0.03, cpu_used_memory: 236.76, cpu_available_memory: 1262.84[0m
+[32m[2026-05-11 19:30:53,786] [    INFO][0m - [DataLoad global_step: 9] data_load_time: 1.93 ms (accumulated over 4 micro-batches)[0m
+
+TrainProcess:   3%|▎         | 10/300 [03:08<1:25:25, 17.67s/it][32m[2026-05-11 19:31:11,328] [    INFO][0m - loss: 13.78538418, learning_rate: 0.0001, global_step: 10, current_memory_allocated: 29.91601800918579, current_memory_reserved: 37.369142293930054, max_memory_allocated: 35.51831269264221, max_memory_reserved: 37.369142293930054, interval_runtime: 17.5422, interval_samples_per_second: 0.228, interval_steps_per_second: 0.057, global_norm: 38.59184646606445, ppl: 970322.8983668943, progress_or_epoch: 0.0333, cpu_used_memory: 236.77, cpu_available_memory: 1262.82[0m
+[32m[2026-05-11 19:31:11,329] [    INFO][0m - [DataLoad global_step: 10] data_load_time: 1.64 ms (accumulated over 4 micro-batches)[0m
+
+TrainProcess:   4%|▎         | 11/300 [03:25<1:24:48, 17.61s/it][32m[2026-05-11 19:31:28,796] [    INFO][0m - loss: 12.09005547, learning_rate: 9.966e-05, global_step: 11, current_memory_allocated: 29.91601800918579, current_memory_reserved: 37.369142293930054, max_memory_allocated: 35.51831269264221, max_memory_reserved: 37.369142293930054, interval_runtime: 17.4677, interval_samples_per_second: 0.229, interval_steps_per_second: 0.0572, global_norm: 15.191014289855957, ppl: 178091.98580894983, progress_or_epoch: 0.0367, cpu_used_memory: 236.75, cpu_available_memory: 1262.84[0m
+[32m[2026-05-11 19:31:28,797] [    INFO][0m - [DataLoad global_step: 11] data_load_time: 2.66 ms (accumulated over 4 micro-batches)[0m
+
+TrainProcess:   4%|▍         | 12/300 [03:43<1:24:26, 17.59s/it][32m[2026-05-11 19:31:46,372] [    INFO][0m - loss: 11.66142082, learning_rate: 9.931e-05, global_step: 12, current_memory_allocated: 29.91601800918579, current_memory_reserved: 37.369142293930054, max_memory_allocated: 35.51831269264221, max_memory_reserved: 37.369142293930054, interval_runtime: 17.5749, interval_samples_per_second: 0.2276, interval_steps_per_second: 0.0569, global_norm: 8.868729591369629, ppl: 116008.74091904341, progress_or_epoch: 0.04, cpu_used_memory: 236.77, cpu_available_memory: 1262.82[0m
+[32m[2026-05-11 19:31:46,372] [    INFO][0m - [DataLoad global_step: 12] data_load_time: 0.59 ms (accumulated over 4 micro-batches)[0m
+
+TrainProcess:   4%|▍         | 13/300 [04:00<1:24:04, 17.58s/it][32m[2026-05-11 19:32:03,885] [    INFO][0m - loss: 14.78815269, learning_rate: 9.897e-05, global_step: 13, current_memory_allocated: 29.91601800918579, current_memory_reserved: 37.369142293930054, max_memory_allocated: 35.51831269264221, max_memory_reserved: 37.369142293930054, interval_runtime: 17.5129, interval_samples_per_second: 0.2284, interval_steps_per_second: 0.0571, global_norm: 82.41211700439453, ppl: 2644923.472595951, progress_or_epoch: 0.0433, cpu_used_memory: 236.74, cpu_available_memory: 1262.85[0m
+[32m[2026-05-11 19:32:03,885] [    INFO][0m - [DataLoad global_step: 13] data_load_time: 0.96 ms (accumulated over 4 micro-batches)[0m
+
+TrainProcess:   5%|▍         | 14/300 [04:18<1:23:39, 17.55s/it][32m[2026-05-11 19:32:21,374] [    INFO][0m - loss: 12.06880569, learning_rate: 9.862e-05, global_step: 14, current_memory_allocated: 29.91601800918579, current_memory_reserved: 37.369142293930054, max_memory_allocated: 35.51831269264221, max_memory_reserved: 37.369142293930054, interval_runtime: 17.4888, interval_samples_per_second: 0.2287, interval_steps_per_second: 0.0572, global_norm: 17.286754608154297, ppl: 174347.4959851844, progress_or_epoch: 0.0467, cpu_used_memory: 236.75, cpu_available_memory: 1262.84[0m
+[32m[2026-05-11 19:32:21,374] [    INFO][0m - [DataLoad global_step: 14] data_load_time: 0.42 ms (accumulated over 4 micro-batches)[0m
+
+TrainProcess:   5%|▌         | 15/300 [04:35<1:23:18, 17.54s/it][32m[2026-05-11 19:32:38,892] [    INFO][0m - loss: 11.83560181, learning_rate: 9.828e-05, global_step: 15, current_memory_allocated: 29.91601800918579, current_memory_reserved: 37.369142293930054, max_memory_allocated: 35.51831269264221, max_memory_reserved: 37.369142293930054, interval_runtime: 17.5173, interval_samples_per_second: 0.2283, interval_steps_per_second: 0.0571, global_norm: 13.583828926086426, ppl: 138081.83698473274, progress_or_epoch: 0.05, cpu_used_memory: 236.78, cpu_available_memory: 1262.81[0m
+[32m[2026-05-11 19:32:38,893] [    INFO][0m - [DataLoad global_step: 15] data_load_time: 0.30 ms (accumulated over 4 micro-batches)[0m
+
+TrainProcess:   5%|▌         | 16/300 [04:53<1:22:55, 17.52s/it][32m[2026-05-11 19:32:56,361] [    INFO][0m - loss: 10.98990345, learning_rate: 9.793e-05, global_step: 16, current_memory_allocated: 29.91601800918579, current_memory_reserved: 37.369142293930054, max_memory_allocated: 35.51831269264221, max_memory_reserved: 37.369142293930054, interval_runtime: 17.4683, interval_samples_per_second: 0.229, interval_steps_per_second: 0.0572, global_norm: 4.8037190437316895, ppl: 59272.66099931036, progress_or_epoch: 0.0533, cpu_used_memory: 236.73, cpu_available_memory: 1262.86[0m
+[32m[2026-05-11 19:32:56,361] [    INFO][0m - [DataLoad global_step: 16] data_load_time: 1.14 ms (accumulated over 4 micro-batches)[0m
+
+TrainProcess:   6%|▌         | 17/300 [05:10<1:22:40, 17.53s/it][32m[2026-05-11 19:33:13,921] [    INFO][0m - loss: 10.57577324, learning_rate: 9.759e-05, global_step: 17, current_memory_allocated: 29.91601800918579, current_memory_reserved: 37.369142293930054, max_memory_allocated: 35.51831269264221, max_memory_reserved: 37.369142293930054, interval_runtime: 17.5597, interval_samples_per_second: 0.2278, interval_steps_per_second: 0.0569, global_norm: 5.838849067687988, ppl: 39174.1841019876, progress_or_epoch: 0.0567, cpu_used_memory: 236.77, cpu_available_memory: 1262.83[0m
+[32m[2026-05-11 19:33:13,921] [    INFO][0m - [DataLoad global_step: 17] data_load_time: 1.53 ms (accumulated over 4 micro-batches)[0m
+
+TrainProcess:   6%|▌         | 18/300 [05:28<1:22:26, 17.54s/it][32m[2026-05-11 19:33:31,485] [    INFO][0m - loss: 9.75824547, learning_rate: 9.724e-05, global_step: 18, current_memory_allocated: 29.91601800918579, current_memory_reserved: 37.369142293930054, max_memory_allocated: 35.51831269264221, max_memory_reserved: 37.369142293930054, interval_runtime: 17.5636, interval_samples_per_second: 0.2277, interval_steps_per_second: 0.0569, global_norm: 5.584473609924316, ppl: 17296.258233300727, progress_or_epoch: 0.06, cpu_used_memory: 236.8, cpu_available_memory: 1262.8[0m
+[32m[2026-05-11 19:33:31,486] [    INFO][0m - [DataLoad global_step: 18] data_load_time: 1.18 ms (accumulated over 4 micro-batches)[0m
+
+TrainProcess:   6%|▋         | 19/300 [05:45<1:22:09, 17.54s/it][32m[2026-05-11 19:33:49,030] [    INFO][0m - loss: 8.78015709, learning_rate: 9.69e-05, global_step: 19, current_memory_allocated: 29.91601800918579, current_memory_reserved: 37.369142293930054, max_memory_allocated: 35.51831269264221, max_memory_reserved: 37.369142293930054, interval_runtime: 17.5437, interval_samples_per_second: 0.228, interval_steps_per_second: 0.057, global_norm: 12.970958709716797, ppl: 6503.898790562857, progress_or_epoch: 0.0633, cpu_used_memory: 236.76, cpu_available_memory: 1262.83[0m
+[32m[2026-05-11 19:33:49,030] [    INFO][0m - [DataLoad global_step: 19] data_load_time: 1.28 ms (accumulated over 4 micro-batches)[0m
+

@@ -1,6 +1,6 @@
-# Llama-2 DCU 训练项目
+# Llama DCU 训练项目
 
-在国产 DCU 上复现 Llama-2 的预训练、SFT 和 LoRA 训练流程。
+在国产 DCU 上验证 Llama-2 / Llama-3 的预训练、SFT 和 LoRA 训练流程。
 
 ## 1. 环境准备
 
@@ -41,6 +41,14 @@ wget https://paddlenlp.bj.bcebos.com/datasets/PDC_DATASETS/SFT/school_math_0.25M
 tar -xf data/sft/school_math_0.25M.tar.gz -C data/sft/
 ```
 
+#### Llama-3 SFT 数据（Chat Template）
+
+Llama-3 需要专用的对话格式标记，原始数据需转换：
+
+```bash
+python3 scripts/prepare_llama3_sft_data.py
+```
+
 ## 3. 模型准备
 
 ### 13B 基座模型
@@ -48,6 +56,13 @@ tar -xf data/sft/school_math_0.25M.tar.gz -C data/sft/
 ```bash
 mkdir -p models/Llama-2-13b
 modelscope download --model modelscope/Llama-2-13b-ms --local_dir models/Llama-2-13b
+```
+
+### Llama-3-8B 模型
+
+```bash
+mkdir -p models/Llama-3-8b
+modelscope download --model LLM-Research/Meta-Llama-3-8B --local_dir models/Llama-3-8b
 ```
 
 ### 26B 模型
@@ -103,26 +118,44 @@ bash scripts/pt/prepare_52b_model.sh
 rocm-smi
 ```
 
-### 预训练
+### Llama-2 预训练
 
 ```bash
-bash scripts/pt/run.sh
-bash scripts/pt/run_26b.sh
-bash scripts/pt/run_52b_2node.sh
+bash scripts/pt/run.sh          # 13B
+bash scripts/pt/run_26b.sh      # 26B
+bash scripts/pt/run_52b_2node.sh # 52B
 ```
 
-### SFT
+### Llama-3 预训练
+
+```bash
+bash scripts/pt/run_llama3_8b.sh
+```
+
+### Llama-2 SFT
 
 ```bash
 bash scripts/sft/run.sh
 bash scripts/sft/run_26b.sh
 ```
 
-### LoRA
+### Llama-3 SFT
+
+```bash
+bash scripts/sft/run_llama3_8b.sh
+```
+
+### Llama-2 LoRA
 
 ```bash
 bash scripts/lora/run.sh
 bash scripts/lora/run_26b.sh
+```
+
+### Llama-3 LoRA
+
+```bash
+bash scripts/lora/run_llama3_8b.sh
 ```
 
 ### 按节点拆分执行训练脚本
