@@ -45,7 +45,7 @@ cd "$PROJECT_ROOT"
 [ -f "$CONFIG_FILE" ] || { echo "Config not found: $CONFIG_FILE" >&2; exit 1; }
 
 # 停掉正在运行的训练进程
-mpirun -H ${HOSTS:-f09r2n15,f09r2n16,f09r2n17,f09r2n18}:1 pkill -f paddleformers.cli.launcher.*llama3_70b || true
+mpirun -H ${HOSTS:-f09r2n17,f09r2n18,f09r2n19,f09r2n20}:1 pkill -f paddleformers.cli.launcher.*llama3_70b || true
 sleep 5
 
 # 激活虚拟环境
