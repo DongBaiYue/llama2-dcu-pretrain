@@ -82,6 +82,7 @@ mpirun -H "$HOSTS" \
     -x NCCL_NET_PLUGIN=shca \
     -x HSA_FORCE_FINE_GRAIN_PCIE=1 \
     -x PYTHONUNBUFFERED=1 \
+    -x FLAGS_deterministic_rng=1 \
     -x CUDA_VISIBLE_DEVICES="$GPUS" \
     -x PYTHONPATH \
     bash -lc "export RANK=\${OMPI_COMM_WORLD_RANK} && source '$VENV_DIR/bin/activate' && cd '$PROJECT_ROOT' && paddleformers-cli train '$CONFIG_FILE'" \

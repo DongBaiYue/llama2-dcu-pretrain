@@ -63,6 +63,7 @@ mpirun \
   --bind-to none \
   --map-by ppr:1:node \
   -x PYTHONUNBUFFERED=1 \
+  -x FLAGS_deterministic_rng=1 \
   -x CUDA_VISIBLE_DEVICES="$GPUS_PER_NODE" \
   -x PYTHONPATH="$PYTHONPATH_OVERRIDE" \
   -x NNODES="$NNODES" \

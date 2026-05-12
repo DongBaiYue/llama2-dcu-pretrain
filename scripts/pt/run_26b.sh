@@ -38,6 +38,7 @@ echo "PADDLEFORMERS_DIST_LOG=$PADDLEFORMERS_DIST_LOG"
 echo "CUDA_VISIBLE_DEVICES=$CUDA_VISIBLE_DEVICES"
 echo "PYTHONPATH=$PYTHONPATH"
 
+export FLAGS_deterministic_rng=1
 paddleformers-cli train "$CONFIG_FILE" > "$LOG_FILE" 2>&1
 
 echo "Llama-2-26B pretrain completed."
