@@ -26,9 +26,9 @@ case "$DEVICE" in
         DIST_LOG_DIR="logs/pt/llama3-8b.dist"
         ;;
     gpu)
-        CONFIG_FILE="configs/pt/train_gpu.yaml"
-        LOG_FILE="logs/pt/13b_gpu.log"
-        DIST_LOG_DIR="logs/pt/13b_gpu.dist"
+        CONFIG_FILE="configs/pt/train_llama3_8b.yaml"
+        LOG_FILE="logs/pt/llama3-8b_gpu.log"
+        DIST_LOG_DIR="logs/pt/llama3-8b_gpu.dist"
         ;;
     *)
         echo "ERROR: 未知设备类型 '$DEVICE', 请使用 dcu 或 gpu" >&2
