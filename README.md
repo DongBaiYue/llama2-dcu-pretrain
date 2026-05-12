@@ -72,6 +72,18 @@ mkdir -p models/Llama-3-70b
 modelscope download --model LLM-Research/Meta-Llama-3-70B --local_dir models/Llama-3-70b
 ```
 
+### 100B 千亿模型
+
+100B 由 Llama-3-70B 深度扩张得到，将 `num_hidden_layers` 从 80 扩到 120（≈104B 参数），其余结构不变。
+
+模型目录可直接通过脚本生成：
+
+```bash
+bash scripts/pt/prepare_100b_model.sh
+```
+
+脚本会基于 `models/Llama-3-70b/` 复制 tokenizer 文件，并将 `config.json` 中的 `num_hidden_layers` 改为 120。
+
 ### 26B 模型
 
 26B 由 13B 配置等比扩张得到。当前仓库使用 **深度翻倍** 的方式，从 40 层扩到 80 层；Tokenizer 相关文件沿用 13B。
@@ -136,8 +148,9 @@ bash scripts/pt/run_52b_2node.sh # 52B
 ### Llama-3 预训练
 
 ```bash
-bash scripts/pt/run_llama3_8b.sh     # 8B
-bash scripts/pt/run_llama3_70b.sh    # 70B (4 节点 32 卡)
+bash scripts/pt/run_llama3_8b.sh      # 8B
+bash scripts/pt/run_llama3_70b.sh     # 70B (4 节点 32 卡)
+bash scripts/pt/run_llama3_100b.sh    # 100B (4 节点 32 卡)
 ```
 
 ### Llama-2 SFT
