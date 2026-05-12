@@ -20,11 +20,11 @@ do_train: true
 disable_tqdm: true
 seed: 23
 per_device_train_batch_size: 1
-max_steps: 300
-eval_steps: 300
+max_steps: 50
+eval_steps: 50
 evaluation_strategy: steps
 eval_iters: 10
-save_steps: 300
+save_steps: 50
 save_strategy: "no"
 logging_steps: 1
 gradient_accumulation_steps: 4
@@ -33,8 +33,8 @@ output_dir: ./checkpoints/sft/llama3-8b
 overwrite_output_dir: true
 
 # train
-warmup_steps: 10
-learning_rate: 1.0e-5
+warmup_steps: 5
+learning_rate: 1.0e-6
 
 # performance
 tensor_model_parallel_size: 2
