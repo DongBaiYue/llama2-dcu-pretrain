@@ -8,7 +8,7 @@
 git clone https://github.com/DongBaiYue/llama2-dcu-pretrain.git
 cd llama2-dcu-pretrain
 
-source /public/home/baidu_test/hygon_2030/py310/bin/activate
+source py310/bin/activate
 ```
 
 ### 安装 PaddleFormers
@@ -171,7 +171,7 @@ watch -n 1 rocm-smi
 
 1. 训练前确认 DCU 空闲。
 2. 70B / 100B 需要 4 节点 32 卡，通过 `mpirun` 启动多节点训练；若未显式设置 `MASTER_ADDR`，脚本会自动解析**当前发起节点的首个 IP** 作为 master 地址。
-3. 本仓库脚本默认使用 `/public/home/baidu_test/hygon_2030/py310` 虚拟环境。
+3. 本仓库脚本默认使用 `py310` 虚拟环境。
 4. 训练脚本会显式设置 `PYTHONPATH="$PROJECT_ROOT/../Paddle/build/python:${PYTHONPATH:-}"`，以优先使用本地 Paddle build。
 5. DCU 不支持 `flashmask`，配置中的 `_attn_implementation` 请使用 `eager`。
 6. 当前配置中不要再使用 `fuse_rms_norm`，否则 `paddleformers-cli` 会报参数解析错误。
