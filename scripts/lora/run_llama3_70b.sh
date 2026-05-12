@@ -45,7 +45,7 @@ cd "$PROJECT_ROOT"
 [ -f "$CONFIG_FILE" ] || { echo "Config not found: $CONFIG_FILE" >&2; exit 1; }
 
 # 停掉正在运行的训练进程
-mpirun -H ${HOSTS:-f09r2n17,f09r2n18,f09r2n19,f09r2n20}:1 pkill -f paddleformers.cli.launcher.*llama3_70b || true
+mpirun -H ${HOSTS:-f09r4n17,f09r4n18,f09r4n19,f09r4n20}:1 pkill -f paddleformers.cli.launcher.*llama3_70b || true
 sleep 5
 
 # 激活虚拟环境
@@ -55,7 +55,7 @@ export PYTHONPATH="$PROJECT_ROOT/../Paddle/build/python:${PYTHONPATH:-}"
 
 # 分布式配置
 GPUS="0,1,2,3,4,5,6,7"
-HOSTS="${HOSTS:-f09r2n17,f09r2n18,f09r2n19,f09r2n20}"
+HOSTS="${HOSTS:-f09r4n17,f09r4n18,f09r4n19,f09r4n20}"
 NNODES=$(echo "$HOSTS" | tr ',' '\n' | wc -l)
 MASTER_ADDR="$(hostname -I 2>/dev/null | awk '{print $1}')"
 
