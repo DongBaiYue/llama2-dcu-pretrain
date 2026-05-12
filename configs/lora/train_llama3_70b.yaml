@@ -1,0 +1,50 @@
+### data
+train_dataset_type: erniekit
+eval_dataset_type: erniekit
+train_dataset_path: ./data/sft/school_math_0.25M/train_llama3.json
+train_dataset_prob: "1.0"
+eval_dataset_path: ./data/sft/school_math_0.25M/dev_llama3.json
+eval_dataset_prob: "1.0"
+max_seq_len: 2048
+packing: true
+
+### model
+model_name_or_path: ./models/Llama-3-70b
+_attn_implementation: eager
+lora_rank: 8
+lora_alpha: 16
+
+### finetuning
+stage: SFT
+fine_tuning: lora
+do_train: true
+disable_tqdm: true
+seed: 23
+per_device_train_batch_size: 1
+max_steps: 300
+eval_steps: 300
+evaluation_strategy: steps
+eval_iters: 10
+save_steps: 300
+save_strategy: "no"
+logging_steps: 1
+gradient_accumulation_steps: 4
+logging_dir: ./logs/lora/llama3-70b
+output_dir: ./checkpoints/lora/llama3-70b
+overwrite_output_dir: true
+
+# train
+warmup_steps: 10
+learning_rate: 1.0e-4
+
+# performance
+tensor_model_parallel_size: 8
+pipeline_model_parallel_size: 4
+sharding: stage1
+recompute_granularity: full
+recompute_method: uniform
+recompute_num_layers: 1
+bf16: true
+
+# device
+device: gpu

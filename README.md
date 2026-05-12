@@ -65,6 +65,13 @@ mkdir -p models/Llama-3-8b
 modelscope download --model LLM-Research/Meta-Llama-3-8B --local_dir models/Llama-3-8b
 ```
 
+### Llama-3-70B 模型
+
+```bash
+mkdir -p models/Llama-3-70b
+modelscope download --model LLM-Research/Meta-Llama-3-70B --local_dir models/Llama-3-70b
+```
+
 ### 26B 模型
 
 26B 由 13B 配置等比扩张得到。当前仓库使用 **深度翻倍** 的方式，从 40 层扩到 80 层；Tokenizer 相关文件沿用 13B。
@@ -129,7 +136,8 @@ bash scripts/pt/run_52b_2node.sh # 52B
 ### Llama-3 预训练
 
 ```bash
-bash scripts/pt/run_llama3_8b.sh
+bash scripts/pt/run_llama3_8b.sh     # 8B
+bash scripts/pt/run_llama3_70b.sh    # 70B (4 节点 32 卡)
 ```
 
 ### Llama-2 SFT
@@ -142,7 +150,8 @@ bash scripts/sft/run_26b.sh
 ### Llama-3 SFT
 
 ```bash
-bash scripts/sft/run_llama3_8b.sh
+bash scripts/sft/run_llama3_8b.sh    # 8B
+bash scripts/sft/run_llama3_70b.sh   # 70B (4 节点 32 卡)
 ```
 
 ### Llama-2 LoRA
@@ -155,7 +164,8 @@ bash scripts/lora/run_26b.sh
 ### Llama-3 LoRA
 
 ```bash
-bash scripts/lora/run_llama3_8b.sh
+bash scripts/lora/run_llama3_8b.sh    # 8B
+bash scripts/lora/run_llama3_70b.sh   # 70B (4 节点 32 卡)
 ```
 
 ### 按节点拆分执行训练脚本
