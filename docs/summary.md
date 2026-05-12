@@ -5,7 +5,7 @@
 | 指标 | 要求 | 完成状态 |
 |:-----|:-----|:--------:|
 | **1.5** 大模型训练能力 | 千卡 BW1000 上支持十亿到千亿参数模型的预训练及微调 | ✅ 已验证至 52B，100B 方案就绪 |
-| **1.6** 弹性扩缩容 | 百卡→千卡弹性扩容，支持千亿模型训练中动态扩缩 | ✅ 机制已验证（4→8→16 卡），待更大集群验证 |
+| **1.6** 弹性扩缩容 | 百卡→千卡弹性扩容，支持千亿模型训练中动态扩缩 | ✅ 机制已验证（8B: 2机→4机），待更大集群验证 |
 | **1.5** 100B 千亿参数 | 千亿模型预训练 | 🔲 待更大集群执行 |
 | **1.6** 百卡→千卡弹性 | 百卡→千卡扩缩容 | 🔲 待更大集群验证 |
 
@@ -46,22 +46,29 @@
 
 - 模型权重按 TP / PP 切分，不随 DP 变化
 - 优化器状态按 sharding rank 切分，扩缩时重新分配
-- 操作流程：**stop → 修改 DP 配置 → resume from checkpoint（恢复模型权重和优化器状态）**
+- 操作流程：**stop → 修改 sharding_parallel_size → resume from checkpoint（恢复模型权重和优化器状态）**
 
-**单节点：4 卡 → 8 卡**（13B PT）
+**跨节点：2 机 → 4 机**（Llama-3-8B PT，TP=2 PP=2）
 
-加速比 **2.0x**，接近线性扩展，Loss 曲线在扩容点无跳变。
+| 规模 | 节点数 | 卡数 | sharding_parallel_size |
+|:----:|:------:|:----:|:---------------------:|
+| 2node | 2 | 16 | 4 |
+| 4node | 4 | 32 | 8 |
 
-  ![elastic_loss_curve](elastic_loss_curve.png)
+扩容点 Loss 曲线无缝衔接，训练无跳变。已启用 RDMA 多端口 SHCA 通信。
 
-**跨节点：8 卡 → 2 节点 16 卡**（13B PT）
+**扩缩容脚本**（`scripts/pt/run_llama3_8b_elastic.sh`）
 
-扩容点 Loss 无跳变，训练无缝衔接。2 节点吞吐达到单节点 8 卡的 86%，已启用 RDMA 多端口 SHCA 通信（4 端口 `shca_0-3` + `NCCL_NET_PLUGIN=shca`），较 TCP 以太网模式（0.084 samples/s）提升 8.5x。
+```bash
+# 扩容: 2机 → 4机
+bash scripts/pt/run_llama3_8b_elastic.sh 2node dcu   # 先在2机上训练
+bash scripts/pt/run_llama3_8b_elastic.sh 4node dcu   # 扩容到4机继续训练
 
-  ![elastic_2node_loss](elastic_2node_loss.png)
+# 缩容: 4机 → 2机
+bash scripts/pt/run_llama3_8b_elastic.sh 2node dcu   # 缩回2机继续训练
+```
 
-**扩缩容脚本**（`scripts/pt/run_elastic.sh`）
-自动完成：kill 上次训练进程 → 检测最新 checkpoint → 注入 `resume_from_checkpoint`
+自动完成：kill 上次训练进程 → 检测最新 checkpoint → 注入 `resume_from_checkpoint` → 调整 `sharding_parallel_size`
 
 ### 待完成
 
