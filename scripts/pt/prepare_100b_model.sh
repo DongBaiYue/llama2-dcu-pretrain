@@ -15,8 +15,9 @@ fi
 
 mkdir -p "$MODEL_DIR"
 
-# 复制 tokenizer 相关文件
-cp "$SRC_DIR/tokenizer.model" "$MODEL_DIR/"
+# 复制 tokenizer 相关文件（Llama-3 用 tokenizer.json 而非 tokenizer.model）
+[ -f "$SRC_DIR/tokenizer.model" ] && cp "$SRC_DIR/tokenizer.model" "$MODEL_DIR/"
+[ -f "$SRC_DIR/tokenizer.json" ] && cp "$SRC_DIR/tokenizer.json" "$MODEL_DIR/"
 cp "$SRC_DIR/tokenizer_config.json" "$MODEL_DIR/"
 cp "$SRC_DIR/special_tokens_map.json" "$MODEL_DIR/"
 [ -f "$SRC_DIR/added_tokens.json" ] && cp "$SRC_DIR/added_tokens.json" "$MODEL_DIR/"
