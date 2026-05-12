@@ -48,6 +48,6 @@ ax2.set_ylabel("AE", fontsize=12)
 ax2.grid(True, alpha=0.3)
 
 plt.tight_layout()
-out = "docs/llama3_lora_loss_compare.png"
+out = "docs/precision/llama3_lora_loss_compare.png"
 plt.savefig(out, dpi=150)
 print("Saved to %s" % out)

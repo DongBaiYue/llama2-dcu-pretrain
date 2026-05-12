@@ -179,4 +179,4 @@ watch -n 1 rocm-smi
 ## 8. 参考资料
 
 - [PaddleFormers](https://github.com/PaddlePaddle/PaddleFormers)
-- [千亿模型扩张指南](docs/scaling_to_110b.md)
+- [千亿模型扩张指南](docs/scaling/scaling_to_100b.md)
