@@ -41,6 +41,7 @@ sharding: stage1
 recompute_granularity: full
 recompute_method: uniform
 recompute_num_layers: 1
+tensorwise_offload_optimizer: true
 bf16: true
 
 # device
