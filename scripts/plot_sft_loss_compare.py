@@ -22,7 +22,7 @@ def extract_loss(path):
                     data[step] = loss
     return data
 
-dcu = extract_loss("logs/sft/llama3-8b_lr1e6.log")
+dcu = extract_loss("logs/sft/llama3-8b.log")
 gpu = extract_loss("logs/sft/llama3-8b_gpu.log")
 
 print("DCU steps: %d, GPU steps: %d" % (len(dcu), len(gpu)))

@@ -17,16 +17,37 @@
 
 **验证模型选择**：采用 Llama-2 作为验证载体，因其架构公开、GPU 基线可对标，便于量化 DCU 训练精度。所验证的分布式并行、弹性扩缩容、精度对齐等能力与模型架构无关，可迁移至 Qwen、Llama-3 等新架构模型。
 
-### 已完成验证
+### 已完成验证（Llama-2-13B）
 
 | 模型 | 参数量 | 训练任务 | 卡数 | 并行策略 | 精度（vs GPU） |
 |:----:|:------:|:--------:|:----:|:--------:|:-------------:|
 | Llama-2-13B | ~13B | PT / SFT / LoRA | 4 | TP=2, PP=2 | PT 0.93%，SFT 0.51%，LoRA 0.44% |
-| Llama-3-8B | ~8B | PT / SFT / LoRA | 4 | TP=2, PP=2 | PT 0.59% |
 
-- 精度对齐达标：与 GPU(A100) PT 稳态相对误差 <1%（Llama-2-13B 0.93%，Llama-3-8B 0.59%）
+- 精度对齐达标：与 GPU(A100) PT 稳态相对误差 <1%（Llama-2-13B 0.93%）
 
   ![all_loss_compare_300step_v2](precision/all_loss_compare_300step_v2.png)
+
+### Llama-3-8B 精度验证
+
+在 Llama-2 验证基础上，进一步完成 Llama-3-8B 的 PT / SFT / LoRA 全任务精度验证。
+
+| 模型 | 参数量 | 训练任务 | 卡数 | 并行策略 | 精度（vs GPU） |
+|:----:|:------:|:--------:|:----:|:--------:|:-------------:|
+| Llama-3-8B | ~8B | PT | 4 | TP=2, PP=2 | 稳态 RE 0.59% |
+| Llama-3-8B | ~8B | SFT | 4 | TP=2, PP=2 | 平均 AE 0.0095 |
+| Llama-3-8B | ~8B | LoRA | 4 | TP=2, PP=2 | 平均 AE 0.0046 |
+
+**PT（预训练）**：DCU 与 GPU loss 曲线高度重合，稳态（step≥50）平均相对误差 0.59%，优于 Llama-2-13B 的 0.93%
+
+![llama3_pt_loss_compare](precision/llama3_pt_loss_compare.png)
+
+**SFT（指令微调）**：loss 量级极小（~10⁻³），采用绝对误差衡量，平均 AE = 0.0095
+
+![llama3_sft_loss_compare](precision/llama3_sft_loss_compare.png)
+
+**LoRA（低秩微调）**：loss 量级极小（~10⁻⁴），采用绝对误差衡量，平均 AE = 0.0046
+
+![llama3_lora_loss_compare](precision/llama3_lora_loss_compare.png)
 
 ### 待完成
 
@@ -46,6 +67,18 @@
 - 模型权重按 TP / PP 切分，不随 DP 变化
 - 优化器状态按 sharding rank 切分，扩缩时重新分配
 - 操作流程：**stop → 修改 sharding_parallel_size → resume from checkpoint（恢复模型权重和优化器状态）**
+
+**单节点：4 卡 → 8 卡**（Llama-2-13B PT）
+
+加速比 **2.0x**，接近线性扩展，Loss 曲线在扩容点无跳变。
+
+![elastic_4card_to_8card](scaling/elastic_4card_to_8card.png)
+
+**跨节点：8 卡 → 2 节点 16 卡**（Llama-2-13B PT）
+
+扩容点 Loss 无跳变，训练无缝衔接。2 节点吞吐达到单节点 8 卡的 86%，已启用 RDMA 多端口 SHCA 通信（4 端口 `shca_0-3` + `NCCL_NET_PLUGIN=shca`），较 TCP 以太网模式（0.084 samples/s）提升 8.5x。
+
+![elastic_8card_to_16card](scaling/elastic_8card_to_16card.png)
 
 **跨节点：2 机 → 4 机**（Llama-3-8B PT，TP=2 PP=2）
 
