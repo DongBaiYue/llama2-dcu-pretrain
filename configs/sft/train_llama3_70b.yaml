@@ -36,7 +36,7 @@ overwrite_output_dir: true
 
 # train
 warmup_steps: 5
-learning_rate: 1.0e-5
+learning_rate: 1.0e-6
 
 # performance
 tensor_model_parallel_size: 8
