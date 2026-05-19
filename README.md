@@ -180,3 +180,7 @@ watch -n 1 rocm-smi
 
 - [PaddleFormers](https://github.com/PaddlePaddle/PaddleFormers)
 - [千亿模型扩张指南](docs/scaling/scaling_to_100b.md)
+
+
+mpirun -H f09r1n14,f09r1n15,f09r1n16,f09r1n17,f09r1n18,f09r2n05,f09r2n06,f09r2n07,f09r2n20,f09r4n18,f09r4n19,f10r3n14,f10r3n15,f10r3n17,f10r3n19,f10r3n20 bash -lc 'h=$(hostname -s); rocm-smi --showpids 2>/dev/null | grep -q "No KFD PIDs currently running!" && echo "$h"' 2>/dev/null | sort -u
+f09r1n16,f09r1n17,f10r3n17,f10r3n19

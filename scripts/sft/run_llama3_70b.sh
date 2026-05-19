@@ -47,8 +47,8 @@ cd "$PROJECT_ROOT"
 
 # 停掉正在运行的训练进程
 if [ "$DEVICE" = "dcu" ]; then
-    STOP_HOSTS="${HOSTS:-f09r4n17,f09r4n18,f09r4n19,f09r4n20}"
-else
+        STOP_HOSTS="${HOSTS:-f09r2n05,f10r3n19,f09r1n15,f09r1n16}"
+    else
     STOP_HOSTFILE="${HOSTFILE:-/root/paddlejob/workspace/hostfile}"
     STOP_HOSTS="${HOSTS:-$(awk '{printf "%s%s", sep, $1; sep=","}' "$STOP_HOSTFILE")}"
 fi
@@ -64,7 +64,7 @@ command -v paddleformers-cli >/dev/null 2>&1 || { echo "paddleformers-cli not fo
 # 分布式配置
 GPUS="0,1,2,3,4,5,6,7"
 if [ "$DEVICE" = "dcu" ]; then
-    HOSTS="${HOSTS:-f09r4n17,f09r4n18,f09r4n19,f09r4n20}"
+    HOSTS="${HOSTS:-f09r2n05,f10r3n19,f09r1n15,f09r1n16}"
 else
     HOSTFILE="${HOSTFILE:-/root/paddlejob/workspace/hostfile}"
     HOSTS="${HOSTS:-$(awk '{printf "%s%s", sep, $1; sep=","}' "$HOSTFILE")}"
@@ -72,6 +72,7 @@ fi
 NNODES=$(echo "$HOSTS" | tr ',' '\n' | wc -l)
 MASTER_ADDR="$(hostname -I 2>/dev/null | awk '{print $1}')"
 
+export PYTHONPATH="$PROJECT_ROOT/../Paddle/build/python:${PYTHONPATH:-}"
 export PYTHONUNBUFFERED=1
 mkdir -p "$(dirname "$LOG_FILE")" "$DIST_LOG_DIR"
 export PADDLEFORMERS_DIST_LOG="$DIST_LOG_DIR"
@@ -98,7 +99,7 @@ if [ "$DEVICE" = "dcu" ]; then
         -x FLAGS_deterministic_rng=1 \
         -x CUDA_VISIBLE_DEVICES="$GPUS" \
         -x PYTHONPATH \
-        bash -lc "export RANK=\${OMPI_COMM_WORLD_RANK} && source '$VENV_DIR/bin/activate' && cd '$PROJECT_ROOT' && paddleformers-cli train '$CONFIG_FILE'" \
+        bash -lc "export RANK=\${OMPI_COMM_WORLD_RANK} && export PADDLEFORMERS_DIST_LOG=$DIST_LOG_DIR/node_\${RANK} && source '$VENV_DIR/bin/activate' && cd '$PROJECT_ROOT' && paddleformers-cli train '$CONFIG_FILE'" \
         >"$LOG_FILE" 2>&1
 else
     # GPU: 仿照 DCU 方式，使用 orterun -H
