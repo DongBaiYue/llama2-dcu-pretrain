@@ -47,17 +47,7 @@ PaddleFormers: ../PaddleFormers
 
 ## DCU 侧输入要求
 
-完整对比前，需要用户或 DCU agent 提供：
-
-```text
-1. DCU rank0 主日志，或包含完整训练输出的日志内容
-2. DCU 使用的关键配置字段
-3. DCU world_size
-4. DCU Total train batch size
-5. DCU Gradient Accumulation steps
-6. DCU 是否冷启动 / 是否 resume checkpoint
-7. DCU step loss，或包含 step loss 的原始日志
-```
+完整对比前，需要用户或 DCU agent 提供足够复核的信息：DCU 配置关键字段、日志来源、冷启动/续训状态、训练是否正常结束、step loss、最终 loss、原始日志证据、缺失项或异常。
 
 如果缺少关键材料，不要给 pass/fail，只列出缺失项并说明无法完成逐 step 对比。
 
@@ -144,7 +134,7 @@ stable 区间 relative_diff < 1% 认为精度对齐通过。
 
 ## 输出格式
 
-输出必须包含：
+输出要足够让 DCU leader 复核，至少包含：
 
 ```text
 1. GPU / DCU 日志来源
@@ -154,8 +144,8 @@ stable 区间 relative_diff < 1% 认为精度对齐通过。
 5. step / metric 对比表
 6. warmup 区间 mean/max relative_diff（如适用）
 7. stable 区间 mean/max relative_diff（如适用）
-8. pass/fail 结论
-9. 如果失败，列出最可能原因和下一步检查项
+8. 可比时给出 pass/fail；不可比时只说明原因
+9. 如果失败或不可比，列出最可能原因和下一步检查项
 ```
 
 ## 常见风险
