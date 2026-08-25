@@ -1,6 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 
+module load compiler/dtk/25.04.4
+
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
 VENV_DIR="$PROJECT_ROOT/../py310"

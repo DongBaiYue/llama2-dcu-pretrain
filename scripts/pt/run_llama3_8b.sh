@@ -1,6 +1,9 @@
 #!/bin/bash
 set -euo pipefail
 
+module load compiler/dtk/25.04.4
+module load mpi/hpcx/2.18.0/gcc-8.5.0/shca
+
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
 VENV_DIR="$PROJECT_ROOT/../py310"

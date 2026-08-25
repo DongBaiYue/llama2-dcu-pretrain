@@ -17,6 +17,7 @@ do_train: true
 do_eval: true
 seed: 23
 per_device_train_batch_size: 1
+per_device_eval_batch_size: 1
 max_steps: 300
 eval_steps: 300
 evaluation_strategy: steps

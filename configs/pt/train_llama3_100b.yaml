@@ -9,7 +9,7 @@ model_name_or_path: ./models/Llama-3-100b
 # DCU 不支持 flashmask
 _attn_implementation: eager
 continue_training: false
-share_folder: true
+share_folder: false
 
 ### finetuning
 stage: PT
@@ -18,11 +18,12 @@ do_train: true
 do_eval: true
 seed: 23
 per_device_train_batch_size: 1
-max_steps: 300
-eval_steps: 300
+per_device_eval_batch_size: 1
+max_steps: 50
+eval_steps: 50
 evaluation_strategy: steps
 eval_iters: 10
-save_steps: 300
+save_steps: 50
 save_strategy: "no"
 logging_steps: 1
 gradient_accumulation_steps: 4
@@ -36,12 +37,13 @@ learning_rate: 1.0e-4
 
 # performance
 tensor_model_parallel_size: 8
-pipeline_model_parallel_size: 4
+pipeline_model_parallel_size: 8
+sharding_parallel_size: 1
 sharding: stage1
 recompute_granularity: full
 recompute_method: uniform
 recompute_num_layers: 1
-tensorwise_offload_optimizer: true
+tensorwise_offload_optimizer: false
 bf16: true
 
 # device

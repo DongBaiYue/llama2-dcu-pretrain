@@ -52,7 +52,7 @@ save_sharded_model: true
 load_sharded_model: true
 save_checkpoint_format: flex_checkpoint
 load_checkpoint_format: sharding_io
-save_to_hf: false
+save_safetensors: false
 
 # device
 device: gpu

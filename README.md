@@ -18,7 +18,9 @@ git clone https://github.com/PaddlePaddle/PaddleFormers.git
 cd PaddleFormers
 pip install -e .
 # python -m pip install --pre paddlepaddle-gpu -i https://www.paddlepaddle.org.cn/packages/nightly/gpu/
-python -m pip install --pre paddlepaddle-dcu -i https://www.paddlepaddle.org.cn/packages/nightly/dcu/
+# python -m pip install --pre paddlepaddle-dcu -i https://www.paddlepaddle.org.cn/packages/nightly/dcu/
+wget https://github.com/DongBaiYue/llama2-dcu-pretrain/releases/download/v3.5.0-dcu-dtk25/paddlepaddle_dcu-3.5.0.dev20260504-cp310-cp310-linux_x86_64.whl
+python -m pip install paddlepaddle_dcu-3.5.0.dev20260504-cp310-cp310-linux_x86_64.whl
 ```
 
 ## 2. 数据准备
@@ -130,6 +132,7 @@ bash scripts/lora/run.sh
 ```bash
 bash scripts/lora/run_llama3_8b.sh    # 8B
 bash scripts/lora/run_llama3_70b.sh   # 70B (4 节点 32 卡)
+bash scripts/lora/run_llama3_100b.sh  # 100B (默认 8 节点，可传 128node)
 ```
 
 ### 弹性扩缩容（Llama-3-8B）

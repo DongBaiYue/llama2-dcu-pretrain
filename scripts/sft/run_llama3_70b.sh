@@ -6,7 +6,6 @@ PROJECT_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
 
 # 用法: run_llama3_70b.sh [dcu|gpu]
 # 4 节点 32 卡: TP=8, PP=4
-# 需要环境变量 HOSTS 指定节点列表，如: HOSTS=node1,node2,node3,node4
 
 DEVICE="${1:-auto}"
 

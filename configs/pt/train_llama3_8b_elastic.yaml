@@ -45,13 +45,14 @@ recompute_num_layers: 1
 bf16: true
 
 # checkpoint
+resume_from_checkpoint: checkpoints/pt/llama3-8b_elastic/checkpoint-60
 save_total_limit: 1
 save_rng_states: false
 save_sharded_model: true
 load_sharded_model: true
 save_checkpoint_format: sharding_io
 load_checkpoint_format: sharding_io
-save_to_hf: false
+save_safetensors: false
 
 # device
 device: gpu

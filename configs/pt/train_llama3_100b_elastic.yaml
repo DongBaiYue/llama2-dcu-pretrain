@@ -1,0 +1,60 @@
+### data
+dataset_type: pretrain
+input_dir: "1.0 ./data/pt/llama_openwebtext_100k"
+split: "990,10,0"
+max_seq_len: 4096
+
+### model
+model_name_or_path: ./models/Llama-3-100b
+# DCU 不支持 flashmask
+_attn_implementation: eager
+continue_training: false
+share_folder: false
+
+### finetuning
+stage: PT
+fine_tuning: full
+do_train: true
+do_eval: true
+seed: 23
+per_device_train_batch_size: 1
+per_device_eval_batch_size: 1
+max_steps: 60
+eval_steps: 60
+evaluation_strategy: steps
+eval_iters: 10
+save_steps: 30
+save_strategy: steps
+logging_steps: 1
+gradient_accumulation_steps: 4
+logging_dir: ./logs/pt/llama3-100b_elastic
+output_dir: ./checkpoints/pt/llama3-100b
+overwrite_output_dir: true
+
+# train
+warmup_steps: 10
+learning_rate: 1.0e-4
+
+# performance
+tensor_model_parallel_size: 8
+pipeline_model_parallel_size: 8
+sharding_parallel_size: 1
+sharding: stage1
+recompute_granularity: full
+recompute_method: uniform
+recompute_num_layers: 1
+tensorwise_offload_optimizer: false
+bf16: true
+
+# checkpoint (固定 sharding_io)
+save_total_limit: 2
+save_rng_states: false
+save_sharded_model: true
+load_sharded_model: true
+save_checkpoint_format: sharding_io
+load_checkpoint_format: sharding_io
+resume_from_checkpoint: checkpoints/pt/llama3-100b/checkpoint-30
+save_safetensors: false
+
+# device
+device: gpu
