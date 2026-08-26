@@ -4,6 +4,7 @@ checkpoints/
 data/
 logs/*/*
 !logs/*/*.log
+!logs/*/*.png
 paddleformers_dist_log/
 
 # Python
